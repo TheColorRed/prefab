@@ -1,0 +1,273 @@
+extends ../../wrapper
+block content
+  style.
+    .grid-border > .cell, .grid#grid-mixed > .cell > .grid > .cell {
+      border: solid 1px #ccc;
+      padding: 20px;
+      text-align: center;
+    }
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Layout
+    .card-body
+        p.
+          Layouts are ways to control the look and flow of content on the page.
+          #{name} uses flexbox to control the layout of a page where
+          grids are used to control the direction of the layout while
+          cells are used to control the location of the content in the grid.
+  .section
+    h2 Grids
+    p.
+      Grids control the direction of the cells on the page and by default the flow horizontally.
+      Grids can contain #[code .cell]'s and they can also contain other #[code .grid]'s.
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <!-- Your cells/grids go here -->\n'
+      ='</div>'
+  .section
+    h2 Cells
+    p.
+      Cells control the location of a group of content, and range from #[code .cell-1] to #[code .cell-12].
+    .grid.grid-border
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+    .grid.grid-border
+      .cell.cell-2 .cell-2
+      .cell.cell-2 .cell-2
+      .cell.cell-2 .cell-2
+      .cell.cell-2 .cell-2
+      .cell.cell-2 .cell-2
+      .cell.cell-2 .cell-2
+    .grid.grid-border
+    .grid.grid-border
+      .cell.cell-3 .cell-3
+      .cell.cell-3 .cell-3
+      .cell.cell-3 .cell-3
+      .cell.cell-3 .cell-3
+    .grid.grid-border
+      .cell.cell-4 .cell-4
+      .cell.cell-4 .cell-4
+      .cell.cell-4 .cell-4
+    .grid.grid-border
+      .cell.cell-5 .cell-5
+      .cell.cell-5 .cell-5
+    .grid.grid-border
+      .cell.cell-6 .cell-6
+      .cell.cell-6 .cell-6
+    .grid.grid-border
+      .cell.cell-7 .cell-7
+    .grid.grid-border
+      .cell.cell-8 .cell-8
+    .grid.grid-border
+      .cell.cell-9 .cell-9
+    .grid.grid-border
+      .cell.cell-10 .cell-10
+    .grid.grid-border
+      .cell.cell-11 .cell-11
+    .grid.grid-border
+      .cell.cell-12 .cell-12
+  .section
+    h2 Vertical Grids
+    p.
+      Grids can also align content vertically as well as horizontally, but by default they align content horizontally.
+      To align items vertically use the #[code .grid-vertical] class.
+    .grid.grid-vertical.grid-border
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+    pre: code.language-html
+      ='<div class="grid grid-vertical">\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='</div>'
+    p.
+      This can be used to mix vertical and horizontal layouts to achieve different layouts.
+    .grid#grid-mixed
+      .cell.cell-2
+        .grid.grid-vertical
+          .cell .cell-12
+          .cell .cell-12
+          .cell .cell-12
+      .cell.cell-8
+        .grid
+          .cell.cell-6 .cell-6
+          .cell.cell-6 .cell-6
+      .cell.cell-2
+        .grid.grid-vertical
+          .cell .cell-12
+          .cell .cell-12
+          .cell .cell-12
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-2">\n'
+      ='    <div class="grid grid-vertical">\n'
+      ='      <div class="cell">.cell-12</div>\n'
+      ='      <div class="cell">.cell-12</div>\n'
+      ='      <div class="cell">.cell-12</div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-8">\n'
+      ='    <div class="grid">\n'
+      ='      <div class="cell cell-6">.cell-6</div>\n'
+      ='      <div class="cell cell-6">.cell-6</div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-2">\n'
+      ='    <div class="grid grid-vertical">\n'
+      ='      <div class="cell">.cell-12</div>\n'
+      ='      <div class="cell">.cell-12</div>\n'
+      ='      <div class="cell">.cell-12</div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+  .section
+    h2 Grid Wrapping
+    p.
+      By default grids will try to place as much as possible on the same grid row,
+      to overcome this #[code .grid-wrap] can be added to move content to the next row.
+    h5 With wrapping
+    .grid.grid-wrap.grid-border
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+      .cell.cell-1 .cell-1
+    pre: code.language-html
+      ='<div class="grid grid-wrap">\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='  <div class="cell cell-1">.cell-1</div>\n'
+      ='</div>'
+  .section
+    h2 Grid Alignment
+    p.
+      Grid cells offten need to be align #[code left/center/right] and #[code top/middle/bottom]
+      to create an appearance that looks appealing to the user, this can be done on the grid,
+      then onto the cell.
+    p.
+      By placing an alignment on a horizontal grid we can determine the #[code left/center/right],
+      then by placing an alignment on the cell we can determine the #[code top/middle/bottom].
+    p.
+      This is then reversed when using a vertical grid. By placing an alignment on a vertical
+      grid we can determine the #[code top/middle/bottom], then by placing an alignment on the cell we can
+      determine the #[code left/center/right].
+    h5 Left Alignments
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-border
+          .cell.cell-start Left Top
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-border
+          .cell.cell-middle Left Middle
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-border
+          .cell.cell-end Left Bottom
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-start">Left Top</div>\n'
+      ='</div>\n'
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-middle">Left Middle</div>\n'
+      ='</div>\n'
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-end">Left Bottom</div>\n'
+      ='</div>'
+    h5 Center Alignments
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-middle.grid-border
+          .cell.cell-start Center Top
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-middle.grid-border
+          .cell Center Middle
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-middle.grid-border
+          .cell.cell-end Center Bottom
+    pre: code.language-html
+      ='<div class="grid grid-middle">\n'
+      ='  <div class="cell cell-start">Center Top</div>\n'
+      ='</div>\n'
+      ='<div class="grid grid-middle">\n'
+      ='  <div class="cell">Center Middle</div>\n'
+      ='</div>\n'
+      ='<div class="grid grid-middle">\n'
+      ='  <div class="cell cell-end">Center Bottom</div>\n'
+      ='</div>'
+    h5 Right Alignments
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-end.grid-border
+          .cell.cell-start Right Top
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-end.grid-border
+          .cell.cell-middle Right Middle
+    .grid.grid-border
+      .cell.cell-12(style='height: 200px')
+        .grid.grid-end.grid-border
+          .cell.cell-end Right Bottom
+    pre: code.language-html
+      ='<div class="grid grid-end">\n'
+      ='  <div class="cell cell-start">Right Top</div>\n'
+      ='</div>\n'
+      ='<div class="grid grid-end">\n'
+      ='  <div class="cell cell-middle">Right Middle</div>\n'
+      ='</div>\n'
+      ='<div class="grid grid-end">\n'
+      ='  <div class="cell cell-end">Right Bottom</div>\n'
+      ='</div>'

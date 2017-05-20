@@ -1,0 +1,6 @@
+{
+    "editor.tabSize": 2,
+    "scss-scan.customPaths": [
+        "src/sass/_variables.scss"
+    ]
+}

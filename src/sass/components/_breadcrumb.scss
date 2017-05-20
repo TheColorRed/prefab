@@ -1,0 +1,78 @@
+@mixin before-after {
+  font-family: 'Material Icons';
+  content: $breadcrumb-separator;
+  font-size: 1.5em;
+  color: $grey;
+  vertical-align: top;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0 10px 0 8px;
+}
+
+@mixin breadcrumb-list-item {
+  & {
+    line-height: 1px;
+  }
+
+  &:not(:first-child) {
+    &:before {
+      @include before-after;
+    }
+  }
+
+  & > span {
+    color: $grey;
+    cursor: default;
+    vertical-align: middle;
+  }
+
+  & > a {
+    color: $primary-color;
+    display: inline;
+    vertical-align: middle;
+  }
+}
+
+ul.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  background-color: $light-grey;
+  border-radius: $border-radius;
+  padding: 20px;
+  align-items: center;
+  list-style: none;
+
+  & > li {
+    @include breadcrumb-list-item;
+  }
+
+  &.breadcrumb-right {
+    justify-content: flex-end;
+  }
+
+  &.breadcrumb-reverse {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
+
+  &.breadcrumb-right-reverse {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  &.breadcrumb-right-reverse,
+  &.breadcrumb-reverse {
+    & > li {
+      &:last-child:before,
+      &:first-child:after {
+        display: none !important;
+      }
+
+      &:before {
+        @include before-after;
+        content: $breadcrumb-separator-reverse;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+extends ../../wrapper
+block content
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Collections
+    .card-body
+        p.
+          Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.
+  .section
+    h2 Basic Collection
+    ul.collection
+      li Billy
+      li Bob
+      li Joe
+    pre: code.language-html
+      ='<ul class="collection">\n'
+      ='  <li>Billy</li>\n'
+      ='  <li>Bob</li>\n'
+      ='  <li>Joe</li>\n'
+      ='</ul>'
+  .section
+    h2 Link Collections
+    .collection
+      a(href='') Billy
+      a(href='') Bob
+      a(href='') Joe
+    pre: code.language-html
+      ='<div class="collection">\n'
+      ='  <a href="">Billy</a>\n'
+      ='  <a href="">Bob</a>\n'
+      ='  <a href="">Joe</a>\n'
+      ='</div>'
+  .section
+    h2 Borderless Collections
+    .collection.borderless
+      a(href='') Billy
+      a(href='') Bob
+      a(href='') Joe
+    pre: code.language-html
+      ='<div class="collection borderless">\n'
+      ='  <a href="">Billy</a>\n'
+      ='  <a href="">Bob</a>\n'
+      ='  <a href="">Joe</a>\n'
+      ='</div>'

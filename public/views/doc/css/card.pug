@@ -1,0 +1,194 @@
+extends ../../wrapper
+block content
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Cards
+    .card-body
+        p.
+          Cards are a convenient means of displaying content composed of
+          different types of objects. They’re also well-suited for presenting
+          similar objects whose size or supported actions can vary considerably,
+          like photos with captions of variable length.
+  .section
+    h2 Basic Card
+    .grid
+      .cell.cell-5.card
+        .card-body.primary-color.white-text
+          h2.card-title Card Title
+          p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to be used effectively.
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5 card">\n'
+      ='    <div class="card-body primary-color white-text">\n'
+      ='      <h2 class="card-title">Card Title</h2>\n'
+      ='      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to be used effectively.</p>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+  .section
+    h2 Header Card
+    style.
+      #card-example2 .card-header {
+        background-image: url(https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg);
+      }
+    .grid
+      .cell.cell-5.card#card-example2
+        .card-header.white-text
+          h2.card-title Card Title
+        .card-body
+          p I am a simple card with a header and a body. With a background image I stand out more than other headers and convey what I am about.
+    pre: code.language-html
+      ='<style>\n'
+      ='  #card-example2 .card-header {\n'
+      ='      background-image: url(https://static.pexels.com/photos/87646/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg);\n'
+      ='  }\n'
+      ='</style>\n'
+      ='<div class="grid">\n'
+      ='  <div id="card-example2" class="cell cell-5 card">\n'
+      ='    <div class="card-header white-text">\n'
+      ='      <h2 class="card-title">Card Title</h2>\n'
+      ='    </div>\n'
+      ='    <div class="card-body">\n'
+      ='      <p>I am a simple card with a header and a body. With a background image I stand out more than other headers and convey what I am about.</p>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+  .section
+    h2 Call-to-Action Card
+    p.
+      A call-to-action card is a card that has an actions section where the user can select an action.
+      By default actions align to the right, see below on how to move the actions to the left.
+    h5 Actions on Bottom
+    .grid
+      .cell.cell-5.card
+        .card-body
+          p Would you like to continue?
+        .card-actions
+          a.btn Yes
+          a.btn No
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5 card">\n'
+      ='    <div class="card-body">\n'
+      ='      <p>Would you like to continue?</p>\n'
+      ='    </div>\n'
+      ='    <div class="card-actions"><a class="btn">Yes</a><a class="btn">No</a></div>\n'
+      ='  </div>\n'
+      ='</div>'
+    h5 Actions on Top
+    .grid
+      .cell.cell-5.card
+        .card-actions
+          a.btn Close
+        .card-body
+          p You are not allowed in here!
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5 card">\n'
+      ='    <div class="card-actions"><a class="btn">Yes</a><a class="btn">No</a></div>\n'
+      ='    <div class="card-body">\n'
+      ='      <p>Would you like to continue?</p>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+    h5 Actions to the Left
+    p.
+      Actions can be moved to the left using #[code .card-actions-left].
+    .grid
+      .cell.cell-5.card
+        .card-body
+          p Would you like to continue?
+        .card-actions.card-actions-left
+          a.btn Yes
+          a.btn No
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5 card">\n'
+      ='    <div class="card-body">\n'
+      ='      <p>Would you like to continue?</p>\n'
+      ='    </div>\n'
+      ='    <div class="card-actions card-actions-left"><a class="btn">Yes</a><a class="btn">No</a></div>\n'
+      ='  </div>\n'
+      ='</div>'
+  .section
+    h2 Card Sizes
+    p.
+      By adding #[code .card-sm], #[code .card-md] or #[code .card-lg] to a card, you can limit the size of the card.
+      The card body will start to scroll if the content extends past the maximum height.
+    .grid.grid-space-between
+      .cell.cell-3
+        .card.card-sm
+          .card-header.primary-color.white-text
+            h2.card-title Small Card
+          .card-body
+            p I am a small card with a header height of 175px and a total maximum height of 325px.
+      .cell.cell-3
+        .card.card-md
+          .card-header.primary-color.white-text
+            h2.card-title Medium Card
+          .card-body
+            p I am a medium card with a header height of 225px and a total maximum height of 425px.
+      .cell.cell-3
+        .card.card-lg
+          .card-header.primary-color.white-text
+            h2.card-title large Card
+          .card-body
+            p I am a large card with a header height of 275px and a total maximum height of 525px.
+    h5 Small Card
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5">\n'
+      ='    <div class="card card-sm">\n'
+      ='      <div class="card-header primary-color white-text">\n'
+      ='        <h2 class="card-title">large Card</h2>\n'
+      ='      </div>\n'
+      ='      <div class="card-body">\n'
+      ='        <p>I am a small card with a header height of 175px and a total maximum height of 325px.</p>\n'
+      ='      </div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+    h5 Medium Card
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5">\n'
+      ='    <div class="card card-md">\n'
+      ='      <div class="card-header primary-color white-text">\n'
+      ='        <h2 class="card-title">large Card</h2>\n'
+      ='      </div>\n'
+      ='      <div class="card-body">\n'
+      ='        <p>I am a medium card with a header height of 225px and a total maximum height of 425px.</p>\n'
+      ='      </div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+    h5 Large Card
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5">\n'
+      ='    <div class="card card-lg">\n'
+      ='      <div class="card-header primary-color white-text">\n'
+      ='        <h2 class="card-title">large Card</h2>\n'
+      ='      </div>\n'
+      ='      <div class="card-body">\n'
+      ='        <p>I am a large card with a header height of 275px and a total maximum height of 525px.</p>\n'
+      ='      </div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'
+  .section
+    h2 Card Panel
+    .grid
+      .cell.cell-5
+        .card-panel.primary-color.white-text
+          h2.card-title Card Title
+          p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+    pre: code.language-html
+      ='<div class="grid">\n'
+      ='  <div class="cell cell-5">\n'
+      ='    <div class="card-panel primary-color white-text">\n'
+      ='      <h2 class="card-title">Card Title</h2>\n'
+      ='      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</p>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='</div>'

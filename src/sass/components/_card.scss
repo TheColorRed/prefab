@@ -1,0 +1,127 @@
+@mixin card {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+@mixin card-title {
+  font-size: 2.2rem;
+  margin: 0 0 1rem;
+}
+
+.card-panel {
+  @include card;
+  padding: 20px;
+
+  .card-title {
+    @include card-title;
+  }
+
+  @for $i from 1 through 6 {
+    & > h#{$i} {
+      margin: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.card {
+  @include card;
+
+  .card-body,
+  .card-header {
+    padding: 20px;
+  }
+
+  .card-title {
+    @include card-title;
+  }
+
+  & > .card-body:first-child {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  & > .card-body:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  & > .card-body:only-child {
+    border-radius: $border-radius;
+  }
+
+  &.card-sm {
+    max-height: 325px;
+  }
+
+  &.card-md {
+    max-height: 425px;
+
+    & > .card-header {
+      min-height: 225px;
+    }
+  }
+
+  &.card-lg {
+    max-height: 525px;
+
+    & > .card-header {
+      min-height: 275px;
+    }
+  }
+
+  & > .card-header {
+    min-height: 175px;
+    flex: 1;
+    display: flex;
+    padding: 1rem;
+    border-radius: $border-radius $border-radius 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .card-title {
+      align-self: flex-end;
+    }
+
+    @for $i from 1 through 6 {
+      & > h#{$i} {
+        margin: 0;
+      }
+    }
+  }
+
+  & > .card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: auto;
+
+    &:last-child {
+      border-top: solid 1px $light-grey;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  & > .card-actions {
+    &:last-child {
+      border-top: solid 1px $light-grey;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+    min-height: 58px;
+
+    &.card-actions-left {
+      justify-content: flex-start;
+    }
+  }
+}

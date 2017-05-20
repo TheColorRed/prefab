@@ -1,0 +1,78 @@
+.grid {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 0;
+
+  & > .cell > .grid {
+    height: 100%;
+  }
+
+  &.grid-vertical {
+    flex-direction: column;
+  }
+
+  &.grid-middle {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.grid-center {
+    align-items: center;
+  }
+
+  &.grid-start {
+    justify-content: flex-start;
+  }
+
+  &.grid-end {
+    justify-content: flex-end;
+  }
+
+  &.grid-space-around {
+    justify-content: space-around;
+  }
+
+  &.grid-space-between {
+    justify-content: space-between;
+  }
+
+  &.grid-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.grid-stretch {
+    align-items: stretch;
+  }
+
+  & > .cell {
+    padding: 0;
+
+    &.cell-middle {
+      align-self: center;
+      justify-content: center;
+    }
+
+    &.cell-end {
+      align-self: flex-end;
+    }
+
+    &.cell-start {
+      align-self: flex-start;
+    }
+
+    // Create the cell widths
+    @for $i from 1 through 12 {
+      &.cell-#{$i} {
+        width: calc(#{$i} / 12 * 100%);
+        flex: 0 $i auto;
+      }
+    }
+    // Create the cell offsets
+    @for $i from 1 through 12 {
+      &.cell-offset-#{$i} {
+        margin-left: calc(#{$i} / 12 * 100%);
+      }
+    }
+  }
+}

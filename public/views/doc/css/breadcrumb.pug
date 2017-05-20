@@ -1,0 +1,56 @@
+extends ../../wrapper
+block content
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Breadcrumbs
+    .card-body
+        p.
+          Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.
+  .section
+    h2 Basic Breadcrumbs
+    ul.breadcrumb
+      li: a(href='') Home
+      li: a(href='') CSS
+      li: span Breadcrumbs
+    pre: code.language-html
+      ='<ul class="breadcrumb">\n'
+      ='  <li><a href="">Home</a></li>\n'
+      ='  <li><a href="">CSS</a></li>\n'
+      ='  <li><span>Breadcrumbs</span></li>\n'
+      ='</ul>'
+  .section
+    h2 Reversed Breadcrumbs
+    ul.breadcrumb.breadcrumb-reverse
+      li: a(href='') Home
+      li: a(href='') CSS
+      li: span Breadcrumbs
+    pre: code.language-html
+      ='<ul class="breadcrumb breadcrumb-reverse">\n'
+      ='  <li><a href="">Home</a></li>\n'
+      ='  <li><a href="">CSS</a></li>\n'
+      ='  <li><span>Breadcrumbs</span></li>\n'
+      ='</ul>'
+  .section
+    h2 Right Breadcrumbs
+    ul.breadcrumb.breadcrumb-right
+      li: a(href='') Home
+      li: a(href='') CSS
+      li: span Breadcrumbs
+    pre: code.language-html
+      ='<ul class="breadcrumb breadcrumb-right">\n'
+      ='  <li><a href="">Home</a></li>\n'
+      ='  <li><a href="">CSS</a></li>\n'
+      ='  <li><span>Breadcrumbs</span></li>\n'
+      ='</ul>'
+  .section
+    h2 Right Reversed Breadcrumbs
+    ul.breadcrumb.breadcrumb-right-reverse
+      li: a(href='') Home
+      li: a(href='') CSS
+      li: span Breadcrumbs
+    pre: code.language-html
+      ='<ul class="breadcrumb breadcrumb-right-reverse">\n'
+      ='  <li><a href="">Home</a></li>\n'
+      ='  <li><a href="">CSS</a></li>\n'
+      ='  <li><span>Breadcrumbs</span></li>\n'
+      ='</ul>'

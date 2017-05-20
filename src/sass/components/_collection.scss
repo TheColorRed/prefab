@@ -1,0 +1,59 @@
+@mixin list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin list-items {
+  padding: 15px 30px;
+  border: solid 1px $light-grey;
+  border-bottom: 0;
+  display: flex;
+  flex-direction: row;
+
+  &:first-child {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+    border: solid 1px $light-grey;
+  }
+}
+
+ul.collection {
+  @include list-group;
+
+  & > li {
+    @include list-items;
+  }
+
+  &.borderless > li {
+    border: 0;
+  }
+}
+
+div.collection {
+  @include list-group;
+
+  & > a {
+    @include list-items;
+
+    &:hover {
+      background-color: $hover-background-color;
+      color: #ffffff;
+    }
+  }
+
+  &.borderless > a {
+    border: 0;
+
+    &:hover {
+      background-color: transparent;
+      color: $hover-text-color;
+    }
+  }
+}

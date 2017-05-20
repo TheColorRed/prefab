@@ -1,0 +1,126 @@
+extends ../../wrapper
+
+mixin color(c, color)
+  if (c == 0)
+    div(class=`${color}-50 example-color`) #[span #{color}-50] #[span.hex.pull-right]
+  else if (c == 5)
+    div(class=`${color} white-text example-color`) #[span #{color}] #[span.hex.pull-right]
+  else
+    div(class=`${color}-${c*100} ${c > 5 ? 'white-text': ''} example-color`) #[span #{color}-#{c*100}] #[span.hex.pull-right]
+
+block content
+  style.
+    .color-block > div:not(.header)  {
+      padding: 10px;
+    }
+    .colors .header {
+      padding: 10px;
+      padding-top: 50px;
+    }
+  .section
+    .card
+      .card-header.secondary-color.white-text
+        h4.card-title Colors
+      .card-body
+        p.
+            Colors are what makes the page stand out, #{name} supports a magnitude of colors,
+            by using #[code .color] class for background colors
+            or #[code .color-text] class for text colors.
+
+    pre: code.language-html
+          = '<span class="red white-text">Hello</span>'
+    p.
+        You can adjust the color of the foreground or background by appending a number to it.
+        #[code 50 - 400] will make the color lighter and
+        #[code 600 - 900] will make the color darker.
+        #[code class="red-100"] and #[code class="red-text-900"] will look like this: #[span.red-100.red-text-900 Hello].
+    p.
+        You also have access to the #[code .primary-color] and #[code .secondary-color],
+        these can also be adjusted from #[code 50 - 400] and #[code 600 - 900] along with their text classes resulting in something
+        like this #[span.secondary-color-100.primary-color-text-900 Hello]
+  .section
+    h4 Primary and Secondary Colors
+    p.
+      Here are the current primary and secondary colors that are setup.
+    .grid.colors
+      .cell.cell-12
+        .grid.grid-wrap.grid-space-between
+          each color in ['primary-color', 'secondary-color']
+            .cell.cell-5.color-block
+              div.header.white-text.example-color(class=`${color}`) #[span #{color}] #[span.hex.pull-right]
+              - for (let i = 0; i < 10; i++)
+                +color(i, color)
+  .section
+    h4 Color Palette
+    p.
+      Here are additional colors that can be used. If you would like to add your
+      own additional colors see the section below on adding colors to the color palette.
+    - var colors = ['red', 'pink', 'hot-pink', 'deep-pink', 'light-purple', 'purple', 'deep-purple', 'indigo', 'blue', 'deep-sky-blue', 'dodger-blue', 'sky-blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'olive', 'gold', 'amber', 'orange', 'deep-orange', 'brown', 'burly-wood', 'grey', 'blue-grey']
+    .grid.colors
+      .cell.cell-12
+        .grid.grid-wrap.grid-space-between
+          - let c = 0;
+          each color in colors
+            .cell.cell-5.color-block(style='margin-bottom: 4rem')
+              div.header.white-text.example-color(class=`${color}`) #[span #{color}] #[span.hex.pull-right]
+              - for (let i = 0; i < 10; i++)
+                +color(i, color)
+          .cell.cell-4
+              div.black-text.white.example-color #[span white] #[span.hex.pull-right]
+              div.white-text.black.example-color #[span black] #[span.hex.pull-right]
+    script.
+      function rgb2hex(rgb){
+        rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+        return (rgb && rgb.length === 4) ? "#" +
+        ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+      }
+      let colorBlock = document.querySelectorAll('.example-color');
+      for (let block of colorBlock) {
+        let color = rgb2hex(window.getComputedStyle(block, null).getPropertyValue('background-color'));
+        block.querySelector('span.hex').innerText = color;
+      }
+  .section
+    h4 Adding your own colors
+    p.
+        You can add your own colors by modifying the #[code src/sass/_color-list.scss] file which contains a list of base colors.
+        Give your new color a name and a hex value. After that just rebuild the css and your color pallet will be availble
+        and contain values from #[code 50 - 900]
+    pre: code.language-scss
+        = '$base-colors: (\n'
+        = '    \'red\': #f44336,\n'
+        = '    \'pink\': #e91e63,\n'
+        = '    \'hot-pink\': #ff69b4,\n'
+        = '    \'deep-pink\': #ff1493,\n'
+        = '    \'purple\': #9c27b0,\n'
+        = '    \'deep-purple\': #673ab7,\n'
+        = '    \'light-purple\': #9370db,\n'
+        = '    \'indigo\': #3f51b5,\n'
+        = '    \'blue\': #2196f3,\n'
+        = '    \'light-blue\': #03a9f4,\n'
+        = '    \'sky-blue\': #87ceeb,\n'
+        = '    \'cyan\': #00bcd4,\n'
+        = '    \'teal\': #009688,\n'
+        = '    \'green\': #4caf50,\n'
+        = '    \'light-green\': #8bc34a,\n'
+        = '    \'lime\': #32cd32,\n'
+        = '    \'olive\': #cddc39,\n'
+        = '    \'yellow\': #ffeb3b,\n'
+        = '    \'gold\': #ffd700,\n'
+        = '    \'amber\': #ffc107,\n'
+        = '    \'orange\': #ff9800,\n'
+        = '    \'deep-orange\': #ff5722,\n'
+        = '    \'brown\': #795548,\n'
+        = '    \'burly-wood\': #deb887,\n'
+        = '    \'grey\': #9e9e9e,\n'
+        = '    \'blue-grey\': #607d8b\n'
+        = ');'
+  .section
+    h4 Primary and Secondary Colors
+    p.
+      You can set the #[code $primary-color] and the #[code $secondary-color] in the #[code src/sass/_variables.scss] file.
+      Once changed you will need to rebuild the css.
+    p.
+      You can also modify how much the the colors lighten and darken in the #[code variables] file by changing the
+      #[code $lighten-darken-amount] variable.
