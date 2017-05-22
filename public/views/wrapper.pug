@@ -1,9 +1,10 @@
 doctype html
 html
   head
-    title CSS Framework
-    link(href='/css/framework.css' rel='stylesheet')
+    title Prefab Framework
+    link(href='/css/prefab.min.css' rel='stylesheet')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css')
+    script(src='/js/prefab.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-scss.min.js')
     style.
@@ -19,15 +20,18 @@ html
         .cell.cell-2
           nav.nav-vertical.white.nav-raised-2
             ul
-              li(class=`${page == 'badge' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/badge') Badges
-              li(class=`${page == 'breadcrumb' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/breadcrumb') Breadcrumbs
-              li(class=`${page == 'card' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/card') Cards
-              li(class=`${page == 'collection' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/collection') Collections
-              li(class=`${page == 'color' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/color') Colors
-              li(class=`${page == 'layout' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/layout') Layout
-              li(class=`${page == 'navigation' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/navigation') Navigation
-              li(class=`${page == 'typography' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/typography') Typography
-              li(class=`${page == 'view' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/view') Views
+              if section == 'css'
+                li(class=`${page == 'badge' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/badge') Badges
+                li(class=`${page == 'breadcrumb' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/breadcrumb') Breadcrumbs
+                li(class=`${page == 'card' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/card') Cards
+                li(class=`${page == 'collection' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/collection') Collections
+                li(class=`${page == 'color' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/color') Colors
+                li(class=`${page == 'layout' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/layout') Layout
+                li(class=`${page == 'navigation' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/navigation') Navigation
+                li(class=`${page == 'typography' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/typography') Typography
+                li(class=`${page == 'view' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/view') Views
+              else if section == 'js'
+                li(class=`${page == 'tooltip' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/js/tooltip') Tooltips
         .cell.cell-10
           .grid.grid-vertical
             nav.fixed.cell.cell-10
@@ -37,8 +41,8 @@ html
                     a(href='/')
                       img(src='https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/2014/02/Olympic-logo.png', alt='')
                   ul
-                    li(class=`${primaryPage == 'css' ? 'active': ''}`): a(href='/doc/css') CSS
-                    li(class=`${primaryPage == 'javascript' ? 'active': ''}`): a(href='/doc/javascript') JavaScript
+                    li(class=`${section == 'css' ? 'active': ''}`): a(href='/doc/css') CSS
+                    li(class=`${section == 'js' ? 'active': ''}`): a(href='/doc/js') JavaScript
             .content.grid.grid-center.grid-vertical
               .cell.cell-8.main-content
                 block content

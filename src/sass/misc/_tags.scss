@@ -45,6 +45,7 @@ $fontsize: $h1-fontsize + $h-font-decrease-amount;
 a {
   text-decoration: none;
   color: $link-text-color;
+  cursor: pointer;
 }
 
 a:hover {

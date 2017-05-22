@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "system",
+    "outFile": "../../public/assets/js/prefab.js",
+    "removeComments": true,
+    "declaration": true,
+    "strict": true
+  },
+  "files": [
+    "./components/tooltip.ts",
+    "./main.ts"
+  ]
+}

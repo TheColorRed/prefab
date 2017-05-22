@@ -4,12 +4,58 @@
     "version": "2.0.0",
     "isShellCommand": true,
     "showOutput": "always",
-    "command": "node-sass",
-    "args": [
-        "-w",
-        "./src/sass/main.scss",
-        "./public/assets/css/framework.css",
-        "--output-style",
-        "compressed"
+    "tasks": [
+        {
+            "isBuildCommand": true,
+            "taskName": "Build",
+            "dependsOn": [
+                "Build Sass",
+                "Build Compressed Sass",
+                "Compress JavaScript"
+            ]
+        },
+        {
+            "taskName": "Build Sass",
+            "command": "node-sass",
+            "args": [
+                "./src/sass/main.scss",
+                "./public/assets/css/prefab.css"
+            ]
+        },
+        {
+            "taskName": "Build Compressed Sass",
+            "command": "node-sass",
+            "args": [
+                "./src/sass/main.scss",
+                "./public/assets/css/prefab.min.css",
+                "--output-style",
+                "compressed"
+            ]
+        },
+        {
+            "taskName": "Build TypeScript",
+            "command": "tsc",
+            "problemMatcher": "$tsc-watch",
+            "echoCommand": true,
+            "args": [
+                // "-w",
+                "-p",
+                "./src/typescript"
+                // "&& uglifyjs -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js"
+            ]
+        },
+        {
+            "taskName": "Compress JavaScript",
+            "command": "uglifyjs",
+            "args": [
+                "-c",
+                "-m",
+                "-o",
+                "./public/assets/js/prefab.min.js",
+                "--",
+                "./public/assets/js/prefab.js"
+            ],
+            "dependsOn": "Build TypeScript"
+        }
     ]
 }

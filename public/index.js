@@ -8,17 +8,17 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/assets'));
 
 app.locals = {
-    name: 'Awesome'
+    name: 'Prefab'
 }
 
 app.get('/', (req, res) => {
     res.render('index', { page: 'home' });
-}).get('/doc/css', (req, res) => {
-    res.render('doc/css', { primaryPage: 'css', page: 'css' })
-}).get('/doc/css/:page', (req, res) => {
-    res.render('doc/css/' + req.params.page, { primaryPage: 'css', page: req.params.page })
+}).get('/doc/:section', (req, res) => {
+    res.render('doc/' + req.params.section, { section: req.params.section, page: req.params.section })
+}).get('/doc/:section/:page', (req, res) => {
+    res.render('doc/' + req.params.section + '/' + req.params.page, { section: req.params.section, page: req.params.page })
 }).get('/examples/:page', (req, res) => {
-    res.render('examples/' + req.params.page, { primaryPage: 'css', page: req.params.page })
+    res.render('examples/' + req.params.page, { section: 'css', page: req.params.page })
 })
 
 app.listen(3000, function () {

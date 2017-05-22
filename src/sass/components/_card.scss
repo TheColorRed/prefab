@@ -111,6 +111,14 @@
   }
 
   & > .card-actions {
+    a {
+      color: $secondary-color;
+
+      &:hover {
+        color: $hover-text-color;
+      }
+    }
+
     &:last-child {
       border-top: solid 1px $light-grey;
     }
@@ -118,7 +126,7 @@
     flex-direction: row;
     justify-content: flex-end;
     padding: 10px;
-    min-height: 58px;
+    // min-height: 58px;
 
     &.card-actions-left {
       justify-content: flex-start;

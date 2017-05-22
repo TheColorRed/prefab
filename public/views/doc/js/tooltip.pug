@@ -1,0 +1,54 @@
+extends ../../wrapper
+block content
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Tooltips
+    .card-body
+        p.
+          Tooltips are small, interactive, textual hints for mainly graphical elements. When using icons for actions you can use a tooltip to give people clarification on its function.
+  .section
+    h2 Tooltip Delays
+    .card-panel
+      .grid
+        .cell.cell-4.text-center
+          p: a.tooltip(title='I am a tooltip') Basic Tooltip
+        .cell.cell-4.text-center
+          p: a.tooltip(title='I am a delayed opening tooltip' open-delay='1000') Delayed Opening Tooltip
+        .cell.cell-4.text-center
+          p: a.tooltip(title='I am a delayed closing tooltip' close-delay='1000') Delayed Closing Tooltip
+    pre: code.language-html
+      ='<!-- Basic Tooltip -->\n'
+      ='<a title="I am a tooltip" class="tooltip">Basic Tooltip</a>\n'
+      ='<!-- Delayed Opening Tooltip -->\n'
+      ='<a title="I am a delayed opening tooltip" class="tooltip" open-delay="1000">Basic Tooltip</a>\n'
+      ='<!-- Delayed Closing Tooltip -->\n'
+      ='<a title="I am a delayed closing tooltip" class="tooltip" close-delay="1000">Basic Tooltip</a>'
+  .section
+    h2 Tooltip positioning
+    .card-panel
+      .grid
+        .cell.cell-3.text-center
+          p: a.tooltip(title='I am a tooltip above the content' position='top') Top Tooltip
+        .cell.cell-3.text-center
+          p: a.tooltip(title='I am a tooltip to the right of the content' position='right') Right Tooltip
+        .cell.cell-3.text-center
+          p: a.tooltip(title='I am a tooltip below the content' position='bottom') Bottom Tooltip (Default)
+        .cell.cell-3.text-center
+          p: a.tooltip(title='I am a tooltip to the left of the content' position='left') Left Tooltip
+    pre: code.language-html
+      ='<!-- Tooltip on top -->\n'
+      ='<a title="I am a tooltip above the content" position="top" class="tooltip">Top Tooltip</a>\n'
+      ='<!-- Tooltip to the right -->\n'
+      ='<a title="I am a tooltip to the right of the content" position="right" class="tooltip">Right Tooltip</a>\n'
+      ='<!-- Tooltip on bottom -->\n'
+      ='<a title="I am a tooltip below the content" position="bottom" class="tooltip">Bottom Tooltip (Default)</a>\n'
+      ='<!-- Tooltip to the left -->\n'
+      ='<a title="I am a tooltip to the left of the content" position="left" class="tooltip">Left Tooltip</a>'
+  .section
+    h2 Tooltip Speed
+    p.
+      Tooltips in #{name} use css to control the speed, so to change the speed you need to edit the #[code src/sass/_variables.scss] file to change the animation open/close speeds.
+  .section
+    h2 Tooltip Animation
+    p.
+      Tooltips in #{name} use css to control the animation, so to change the animation you will need to edit the #[code src/sass/components/_tooltip.scss] file and tweak the keyframes for #[code @keyframes tooltip-open] and #[code @keyframes tooltip-close].
