@@ -28,6 +28,10 @@ block content
     h2 Cells
     p.
       Cells control the location of a group of content, and range from #[code .cell-1] to #[code .cell-12].
+      For multiple cells to fill the width of a grid the sum of the cells should equal 12.
+    p(style='white-space:pre;').
+      Full Width: #[code .cell-3] + #[code .cell-9] = #[code .cell-12]
+      Partial Width: #[code .cell-5] + #[code .cell-5] = #[code .cell-10]
     .grid.grid-border
       .cell.cell-1 .cell-1
       .cell.cell-1 .cell-1
@@ -76,6 +80,34 @@ block content
       .cell.cell-11 .cell-11
     .grid.grid-border
       .cell.cell-12 .cell-12
+  .section
+    h2 Cell Offsets
+    p.
+      Cell offsets push the cell to the right.
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-1 .cell-offset-1
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-2 .cell-offset-2
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-3 .cell-offset-3
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-4 .cell-offset-4
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-5 .cell-offset-5
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-6 .cell-offset-6
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-7 .cell-offset-7
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-8 .cell-offset-8
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-9 .cell-offset-9
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-10 .cell-offset-10
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-11 .cell-offset-11
+    .grid.grid-vertical.grid-border
+      .cell.cell-2.cell-offset-12 .cell-offset-12
   .section
     h2 Vertical Grids
     p.

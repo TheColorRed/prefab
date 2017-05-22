@@ -1,0 +1,37 @@
+extends ../../wrapper
+block content
+  .section
+    h2 Basic Pagination
+    .grid.grid-middle
+      .cell
+        ul.pagination
+          li.page-disabled: a: i.material-icons first_page
+          li.page-disabled: a: i.material-icons chevron_left
+          li.page-selected: a 1
+          li: a 2
+          li: a 3
+          li: a 4
+          li: a 5
+          li.
+            #[a #[i.material-icons chevron_right]]
+            #[span.tooltip Next Page]
+          li.
+            #[a #[i.material-icons last_page]]
+            #[span.tooltip Last Page]
+    pre: code.language-html
+      ='<ul class="pagination">\n'
+      ='  <li class="page-disabled"><a href="/page/1"><i class="material-icons">chevron_left</i></a></li>\n'
+      ='  <li class="page-selected"><a href="/page/1">1</a></li>\n'
+      ='  <li><a href="/page/2">2</a></li>\n'
+      ='  <li><a href="/page/3">3</a></li>\n'
+      ='  <li><a href="/page/4">4</a></li>\n'
+      ='  <li><a href="/page/5">5</a></li>\n'
+      ='  <li>\n'
+      ='    <a href="/page/2"><i class="material-icons">chevron_right</i></a>\n'
+      ='    <span class="tooltip">Next Page</span>\n'
+      ='  </li>\n'
+      ='  <li>\n'
+      ='    <a href="/page/20"><i class="material-icons">last_page</i></a>\n'
+      ='    <span class="tooltip">Last Page</span>\n'
+      ='  </li>\n'
+      ='</ul>'

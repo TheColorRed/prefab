@@ -35,6 +35,7 @@
 @import './misc/borders';
 @import './misc/visibility';
 @import './misc/helpers';
+@import './misc/_transition';
 
 // Import components
 @import './components/card';
@@ -43,4 +44,5 @@
 @import './components/collection';
 @import './components/breadcrumb';
 @import './components/tooltip';
+@import './components/pagination';
 // @import './components/parallax'

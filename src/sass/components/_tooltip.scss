@@ -1,5 +1,5 @@
-.tool-tip {
-  padding: 10px 15px;
+* + .tooltip {
+  padding: 5px 10px;
   position: absolute;
   z-index: 2000;
   color: transparent;

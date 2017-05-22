@@ -36,3 +36,18 @@
     color: $secondary-color;
   }
 }
+
+.fab {
+  border-radius: 100%;
+  padding: 10px;
+  display: inline-flex;
+  font-size: 20rem;
+
+  &.fab-lg > i {
+    font-size: 3rem;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}

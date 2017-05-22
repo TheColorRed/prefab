@@ -1,0 +1,37 @@
+ul.pagination {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 1.25rem;
+  padding: 0;
+  margin: 0 0 2rem 0;
+
+  & > li {
+    &.page-selected {
+      pointer-events: none;
+
+      & > a {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+
+    &.page-disabled {
+      pointer-events: none;
+
+      & > a {
+        color: $grey;
+      }
+    }
+
+    & > a {
+      padding: 5px 15px;
+      border-radius: $border-radius;
+      display: inline-block;
+
+      &:hover {
+        background-color: $light-grey;
+      }
+    }
+  }
+}

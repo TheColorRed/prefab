@@ -1,0 +1,43 @@
+extends ../../wrapper
+
+block content
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Transitions
+    .card-body
+        p.
+          Transitions add small effects to items to give them flair. This helps certain items stand out more than other items.
+  .section
+    h2 Scalling
+    .grid
+      .cell.cell-2
+        a#scaler.fab.fab-lg.red.white-text: i.material-icons add
+      .cell.cell-6
+        a#toggle.btn.red.white-text Toggle Scale
+    script.
+      let scaler = document.querySelector('#scaler');
+      let toggle = document.querySelector('#toggle');
+      toggle.addEventListener('click', e => {
+        let isScaledOut = scaler.classList.contains('scale-out');
+        if (!isScaledOut) {
+          scaler.classList.remove('scale-in');
+          scaler.classList.add('scale-out');
+        } else {
+          scaler.classList.remove('scale-out');
+          scaler.classList.add('scale-in');
+        }
+      });
+  .section
+    h2 Pulse
+    .grid
+      .cell.cell-6
+        a.fab.fab-lg.pulse.red.white-text: i.material-icons add
+    pre: code.language-html
+      ='<a class="fab fab-lg pulse red white-text"><i class="material-icons">add</i></a>'
+  .section
+    h2 Heart Beat
+    .grid
+      .cell.cell-6
+        a.fab.fab-lg.heart-beat.red.white-text: i.material-icons add
+    pre: code.language-html
+      ='<a class="fab fab-lg heart-beat red white-text"><i class="material-icons">add</i></a>'

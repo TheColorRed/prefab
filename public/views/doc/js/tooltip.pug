@@ -7,43 +7,122 @@ block content
         p.
           Tooltips are small, interactive, textual hints for mainly graphical elements. When using icons for actions you can use a tooltip to give people clarification on its function.
   .section
+    h2 Formatting
+    p.
+      When creating a tooltip, the tip itself should come directly after the item
+      as a sibling you would like to apply the tip too and the tip should not be a child of the sibling either.
+      If you do not do this, tooltips may still work but you might get some unexpected results with your tooltips.
+    p.
+      Below are some examples of valid and invalid tooltips.
+    h5 Invalid Tooltip
+    pre: code.language-html
+      ='<div>\n'
+      ='  <span class="tooltip">I am the tooltip</span>\n'
+      ='  <a href="#">Hover over me</a>\n'
+      ='</div>'
+    p.
+      This is invalid because the tip is the first element within the div
+    hr
+    h5 Invalid Tooltip
+    pre: code.language-html
+      ='<div>\n'
+      ='  <a href="#">Hover over me</a>\n'
+      ='  <div>\n'
+      ='    <span class="tooltip">I am the tooltip</span>\n'
+      ='  </div>\n'
+      ='</div>'
+    p.
+      This is invalid because the tip is is a child of the sibling and not the sibling itself
+    hr
+    h5 Valid Tooltip
+    pre: code.language-html
+      ='<div>\n'
+      ='  <a href="#">Hover over me</a>\n'
+      ='  <span class="tooltip">I am the tooltip</span>\n'
+      ='</div>'
+    p.
+      This is valid because the tip comes directly after the element
+    hr
+    h5 Valid Tooltip
+    pre: code.language-html
+      ='<div>\n'
+      ='  <a href="#">Hover over me</a>\n'
+      ='  <div class="tooltip">\n'
+      ='    <span>I am the tooltip</span>\n'
+      ='  </div>\n'
+      ='</div>'
+    p.
+      This is valid because the tip comes directly after the element even though
+      the conetent is nested within a child element
+  .section
     h2 Tooltip Delays
     .card-panel
       .grid
         .cell.cell-4.text-center
-          p: a.tooltip(title='I am a tooltip') Basic Tooltip
+          p.
+            #[a Basic Tooltip]
+            #[span.tooltip I am a basic tooltip]
         .cell.cell-4.text-center
-          p: a.tooltip(title='I am a delayed opening tooltip' open-delay='1000') Delayed Opening Tooltip
+          p.
+            #[a(open-delay='1000') Delayed Opening Tooltip]
+            #[span.tooltip I am a delayed opening tooltip]
         .cell.cell-4.text-center
-          p: a.tooltip(title='I am a delayed closing tooltip' close-delay='1000') Delayed Closing Tooltip
+          p.
+            #[a(close-delay='1000') Delayed Closing Tooltip]
+            #[span.tooltip I am a delayed closing tooltip]
     pre: code.language-html
       ='<!-- Basic Tooltip -->\n'
-      ='<a title="I am a tooltip" class="tooltip">Basic Tooltip</a>\n'
+      ='<a href="#">Basic Tooltip</a>\n'
+      ='<span class="tooltip">I am a basic tooltip</span>\n\n'
       ='<!-- Delayed Opening Tooltip -->\n'
-      ='<a title="I am a delayed opening tooltip" class="tooltip" open-delay="1000">Basic Tooltip</a>\n'
+      ='<a href="#" open-delay="1000">Delayed Opening Tooltip</a>\n'
+      ='<span class="tooltip">I am a delayed opening tooltip</span>\n\n'
       ='<!-- Delayed Closing Tooltip -->\n'
-      ='<a title="I am a delayed closing tooltip" class="tooltip" close-delay="1000">Basic Tooltip</a>'
+      ='<a href="#" close-delay="1000">Delayed Closing Tooltip</a>\n'
+      ='<span class="tooltip">I am a delayed closing tooltip</span>'
   .section
     h2 Tooltip positioning
     .card-panel
       .grid
         .cell.cell-3.text-center
-          p: a.tooltip(title='I am a tooltip above the content' position='top') Top Tooltip
+          p.
+            #[a(position='top') Top Tooltip]
+            #[span.tooltip I am a tooltip above the content]
         .cell.cell-3.text-center
-          p: a.tooltip(title='I am a tooltip to the right of the content' position='right') Right Tooltip
+          p.
+            #[a(position='right') Right Tooltip]
+            #[span.tooltip I am a tooltip to the right of the content]
         .cell.cell-3.text-center
-          p: a.tooltip(title='I am a tooltip below the content' position='bottom') Bottom Tooltip (Default)
+          p.
+            #[a(position='bottom') Bottom Tooltip (Default)]
+            #[span.tooltip I am a tooltip below the content]
         .cell.cell-3.text-center
-          p: a.tooltip(title='I am a tooltip to the left of the content' position='left') Left Tooltip
+          p.
+            #[a(position='left') Left Tooltip]
+            #[span.tooltip I am a tooltip to the left of the content]
     pre: code.language-html
       ='<!-- Tooltip on top -->\n'
-      ='<a title="I am a tooltip above the content" position="top" class="tooltip">Top Tooltip</a>\n'
+      ='<a href="#" position="top">Top Tooltip</a>\n'
+      ='<span class="tooltip">I am a tooltip above the content</span>\n\n'
       ='<!-- Tooltip to the right -->\n'
-      ='<a title="I am a tooltip to the right of the content" position="right" class="tooltip">Right Tooltip</a>\n'
+      ='<a href="#" position="right">Right Tooltip</a>\n'
+      ='<span class="tooltip">I am a tooltip to the right of the content</span>\n\n'
       ='<!-- Tooltip on bottom -->\n'
-      ='<a title="I am a tooltip below the content" position="bottom" class="tooltip">Bottom Tooltip (Default)</a>\n'
+      ='<a href="#" position="bottom">Bottom Tooltip (Default)</a>\n'
+      ='<span class="tooltip">I am a tooltip below the content</span>\n\n'
       ='<!-- Tooltip to the left -->\n'
-      ='<a title="I am a tooltip to the left of the content" position="left" class="tooltip">Left Tooltip</a>'
+      ='<a href="#" position="left">Left Tooltip</a>\n'
+      ='<span class="tooltip">I am a tooltip to the left of the content</span>'
+  .section
+  h2 Tooltips With HTML
+  p.
+    Tooltips are just HTML elements so, you can have elements within your tooltips by just adding the html.
+  .card-panel
+      .grid
+        .cell.cell-12.text-center
+          p.
+            #[a I contian an icon]
+            #[span.tooltip #[i.material-icons tag_faces] Stay Happy!]
   .section
     h2 Tooltip Speed
     p.
