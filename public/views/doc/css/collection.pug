@@ -1,44 +1,63 @@
 extends ../../wrapper
 block content
-  .card.section
-    .card-header.secondary-color.white-text
-      h2.card-title Collections
-    .card-body
-        p.
-          Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.
+  +card-header('Collections', 'Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.')
   .section
     h2 Basic Collection
     ul.collection
       li Billy
-      li Bob
+      li.selected Bob
       li Joe
+      li Martain
     pre: code.language-html
       ='<ul class="collection">\n'
       ='  <li>Billy</li>\n'
-      ='  <li>Bob</li>\n'
+      ='  <li class="selected">Bob</li>\n'
       ='  <li>Joe</li>\n'
+      ='  <li>Martain</li>\n'
       ='</ul>'
   .section
     h2 Link Collections
     .collection
       a(href='') Billy
-      a(href='') Bob
+      a(href='').selected Bob
       a(href='') Joe
+      a(href='') Martain
     pre: code.language-html
       ='<div class="collection">\n'
       ='  <a href="">Billy</a>\n'
-      ='  <a href="">Bob</a>\n'
+      ='  <a href="" class="selected">Bob</a>\n'
       ='  <a href="">Joe</a>\n'
+      ='  <a href="">Martain</a>\n'
+      ='</div>'
+  .section
+    h2 Avatar Link Collection
+    .collection
+      a(href='').
+        #[img(src='http://placehold.it/100x100')] Billy
+      a(href='').selected.
+        #[img(src='http://placehold.it/100x100')] Bob
+      a(href='').
+        #[img(src='http://placehold.it/100x100')] Joe
+      a(href='').
+        #[img(src='http://placehold.it/100x100')] Martain
+    pre: code.language-html
+      ='<div class="collection">\n'
+      ='  <a href=""><img src="http://placehold.it/100x100"/> Billy</a>\n'
+      ='  <a href="" class="selected"><img src="http://placehold.it/100x100"/> Bob</a>\n'
+      ='  <a href=""><img src="http://placehold.it/100x100"/> Joe</a>\n'
+      ='  <a href=""><img src="http://placehold.it/100x100"/> Martain</a>\n'
       ='</div>'
   .section
     h2 Borderless Collections
     .collection.borderless
       a(href='') Billy
-      a(href='') Bob
+      a(href='').selected Bob
       a(href='') Joe
+      a(href='') Martain
     pre: code.language-html
       ='<div class="collection borderless">\n'
       ='  <a href="">Billy</a>\n'
-      ='  <a href="">Bob</a>\n'
+      ='  <a href="" class="selected">Bob</a>\n'
       ='  <a href="">Joe</a>\n'
+      ='  <a href="">Martain</a>\n'
       ='</div>'

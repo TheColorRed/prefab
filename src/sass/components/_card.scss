@@ -3,7 +3,7 @@
   border-radius: $border-radius;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: $block-margin-bottom;
 }
 
 @mixin card-title {
@@ -113,9 +113,10 @@
   & > .card-actions {
     a {
       color: $secondary-color;
+      transition: $transition;
 
       &:hover {
-        color: $hover-text-color;
+        color: darken($secondary-color, $lighten-darken-amount * 2);
       }
     }
 

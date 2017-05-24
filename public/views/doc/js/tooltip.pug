@@ -114,6 +114,59 @@ block content
       ='<a href="#" position="left">Left Tooltip</a>\n'
       ='<span class="tooltip">I am a tooltip to the left of the content</span>'
   .section
+    h2 Tooltip Animations
+    .card-panel
+      .grid
+        .cell.cell-3.text-center
+          p.
+            #[a(animation='bounce') Bouncing Tooltip]
+            #[span.tooltip I bounced open]
+        .cell.cell-3.text-center
+          p.
+            #[a(animation='spin') Spinning Tooltip]
+            #[span.tooltip I spun open]
+        .cell.cell-3.text-center
+    pre: code.language-html
+      ='<!-- Bouncing Tooltip -->\n'
+      ='<a href="#" animation="bounce">Bouncing Tooltip</a>\n'
+      ='<span class="tooltip">I bounced open</span>\n\n'
+      ='<!-- Spinning Tooltip -->\n'
+      ='<a href="#" animation="spin">Spinning Tooltip</a>\n'
+      ='<span class="tooltip">I spun open</span>\n\n'
+    .card-panel
+      .grid
+        .cell.cell-3.text-center
+          p.
+            #[a(animation='slide-left') Sliding Tooltip Left]
+            #[span.tooltip I slid open from the left]
+        .cell.cell-3.text-center
+          p.
+            #[a(animation='slide-right') Sliding Tooltip Right]
+            #[span.tooltip I slid open from the right]
+        .cell.cell-3.text-center
+          p.
+            #[a(animation='slide-up') Sliding Tooltip Up]
+            #[span.tooltip I slid open from the bottom]
+        .cell.cell-3.text-center
+          p.
+            #[a(animation='slide-down') Sliding Tooltip Down]
+            #[span.tooltip I slid open from the top]
+    pre: code.language-html
+      ='<!-- Sliding Tooltip Left (Both are the same) -->\n'
+      ='<a href="#" animation="slide">Sliding Tooltip Left</a>\n'
+      ='<span class="tooltip">I slid open from the left</span>\n'
+      ='<a href="#" animation="slide-left">Sliding Tooltip Left</a>\n'
+      ='<span class="tooltip">I slid open from the left</span>\n\n'
+      ='<!-- Sliding Tooltip Right -->\n'
+      ='<a href="#" animation="slide-right">Sliding Tooltip Right</a>\n'
+      ='<span class="tooltip">I slid open from the right</span>\n\n'
+      ='<!-- Sliding Tooltip Up -->\n'
+      ='<a href="#" animation="slide-up">Sliding Tooltip Up</a>\n'
+      ='<span class="tooltip">I slid open from the top</span>\n\n'
+      ='<!-- Sliding Tooltip Down -->\n'
+      ='<a href="#" animation="slide-down">Sliding Tooltip Down</a>\n'
+      ='<span class="tooltip">I slid open from the bottom</span>'
+  .section
   h2 Tooltips With HTML
   p.
     Tooltips are just HTML elements so, you can have elements within your tooltips by just adding the html.

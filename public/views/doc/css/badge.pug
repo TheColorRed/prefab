@@ -1,10 +1,5 @@
 extends ../../wrapper
 block content
-  .card.section
-    .card-header.secondary-color.white-text
-      h2.card-title Badges
-    .card-body
-        p.
-          Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.
+  +card-header('Badges', 'Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.')
   .section
     p hello #[span.badge 4 new]

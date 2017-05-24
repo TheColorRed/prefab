@@ -1,4 +1,12 @@
 mixin button(text, cls = '', id = '')
   a(id=`${id.length > 0 ? id : ''}` class=`${cls.length > 0 ? cls : ''}`).btn.secondary-color.purple-hover.white-text= text
+
 mixin fab(icon, cls = '', id = '')
   a(id=`${id.length > 0 ? id : ''}` class=`${cls.length > 0 ? cls : ''}`).fab.fab-lg.secondary-color.purple-hover.white-text: i.material-icons= icon
+
+mixin card-header(title, content)
+  .card.section
+    .card-header.secondary-color.white-text
+      h4.card-title= title
+    .card-body
+      p!= content

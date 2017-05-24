@@ -17,27 +17,18 @@ block content
       padding: 10px;
       padding-top: 50px;
     }
-  .section
-    .card
-      .card-header.secondary-color.white-text
-        h4.card-title Colors
-      .card-body
-        p.
-            Colors are what makes the page stand out, #{name} supports a magnitude of colors,
-            by using #[code .color] class for background colors
-            or #[code .color-text] class for text colors.
-
-    pre: code.language-html
-          = '<span class="red white-text">Hello</span>'
-    p.
-        You can adjust the color of the foreground or background by appending a number to it.
-        #[code 50 - 400] will make the color lighter and
-        #[code 600 - 900] will make the color darker.
-        #[code class="red-100"] and #[code class="red-text-900"] will look like this: #[span.red-100.red-text-900 Hello].
-    p.
-        You also have access to the #[code .primary-color] and #[code .secondary-color],
-        these can also be adjusted from #[code 50 - 400] and #[code 600 - 900] along with their text classes resulting in something
-        like this #[span.secondary-color-100.primary-color-text-900 Hello]
+  +card-header('Colors', `Colors are what makes the page stand out, #{name} supports a magnitude of colors, by using #[code .color] class for background colors or #[code .color-text] class for text colors.`)
+  pre: code.language-html
+    = '<span class="red white-text">Hello</span>'
+  p.
+    You can adjust the color of the foreground or background by appending a number to it.
+    #[code 50 - 400] will make the color lighter and
+    #[code 600 - 900] will make the color darker.
+    #[code class="red-100"] and #[code class="red-text-900"] will look like this: #[span.red-100.red-text-900 Hello].
+  p.
+    You also have access to the #[code .primary-color] and #[code .secondary-color],
+    these can also be adjusted from #[code 50 - 400] and #[code 600 - 900] along with their text classes resulting in something
+    like this #[span.secondary-color-100.primary-color-text-900 Hello]
   .section
     h4 Primary and Secondary Colors
     p.

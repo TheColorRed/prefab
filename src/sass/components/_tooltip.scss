@@ -1,5 +1,5 @@
 * + .tooltip {
-  padding: 5px 10px;
+  padding: 5px 20px;
   position: absolute;
   z-index: 2000;
   color: transparent;
@@ -10,8 +10,117 @@
   pointer-events: none;
   animation: tooltip-close $tooltip-close-speed forwards;
 
+  &.show-bounce {
+    animation: tooltip-open-bounce $tooltip-open-speed forwards;
+  }
+
+  &.show-spin {
+    animation: tooltip-open-spin $tooltip-open-speed forwards;
+  }
+
+  &.show-slide,
+  &.show-slide-left {
+    animation: tooltip-open-slide-left $tooltip-open-speed forwards;
+  }
+
+  &.show-slide-right {
+    animation: tooltip-open-slide-right $tooltip-open-speed forwards;
+  }
+
+  &.show-slide-up {
+    animation: tooltip-open-slide-up $tooltip-open-speed forwards;
+  }
+
+  &.show-slide-down {
+    animation: tooltip-open-slide-down $tooltip-open-speed forwards;
+  }
+
   &.show {
     animation: tooltip-open $tooltip-open-speed forwards;
+  }
+}
+
+@keyframes tooltip-open-bounce {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  75% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    display: inline;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tooltip-open-spin {
+  from {
+    display: none;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  to {
+    display: inline;
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tooltip-open-slide-left {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    display: inline;
+    opacity: 1;
+  }
+}
+
+@keyframes tooltip-open-slide-right {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    display: inline;
+    opacity: 1;
+  }
+}
+
+@keyframes tooltip-open-slide-up {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    display: inline;
+    opacity: 1;
+  }
+}
+
+@keyframes tooltip-open-slide-down {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    display: inline;
+    opacity: 1;
   }
 }
 

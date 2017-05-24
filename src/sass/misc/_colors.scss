@@ -18,7 +18,7 @@
         background-color: $color;
       }
 
-      &:hover {
+      &[class^='-hover']:hover {
         background-color: lighten($color, $amount * 2);
       }
     }
@@ -33,7 +33,7 @@
         color: $color;
       }
 
-      &:hover {
+      &[class^='-hover']:hover {
         color: lighten($color, $amount * 2);
       }
     }
@@ -118,7 +118,7 @@
     .fab.#{$name} {
       background-color: $color;
 
-      &:hover {
+      &[class^='-hover']:hover {
         background-color: lighten($color, $lighten-darken-amount * 2);
       }
     }
@@ -142,6 +142,10 @@
     .fab.#{$name}-text-hover:hover,
     .#{$name}-text-hover:hover {
       color: $color;
+
+      &[class^='-hover']:hover {
+        color: darken($color, $lighten-darken-amount * 2);
+      }
     }
 
     @if $name == $primary {

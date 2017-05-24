@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@types/compression": "0.0.33",
-    "compression": "^1.6.2"
+    "compression": "^1.6.2",
+    "material-design-icons": "^3.0.1"
   }
 }

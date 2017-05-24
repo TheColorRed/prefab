@@ -27,12 +27,14 @@ var prefab;
         hoverLeave(e) {
             let delay = parseInt(this.element.getAttribute('close-delay') || this.element.getAttribute('data-close-delay') || '0');
             clearTimeout(this.timeout);
-            this.timeout = setTimeout(() => this.tip.classList.remove('show'), delay);
+            this.timeout = setTimeout(() => this.tip.classList.remove('show', 'show-bounce', 'show-spin', 'show-slide-left', 'show-slide-right', 'show-slide-up', 'show-slide-down'), delay);
         }
         positionTooltip() {
             let rect = this.element.getBoundingClientRect();
             let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft, scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             let position = this.element.getAttribute('position') || this.element.getAttribute('data-positon') || null;
+            let animation = this.element.getAttribute('animation') || this.element.getAttribute('data-animation') || 'show';
+            animation = ('show-' + animation).replace('show-show', 'show');
             position = typeof position == 'string' ? position.toLowerCase() : null;
             switch (position) {
                 case 'top':
@@ -53,7 +55,7 @@ var prefab;
                     this.tip.style.top = rect.bottom + scrollTop + 5 + 'px';
                     break;
             }
-            this.tip.classList.add('show');
+            this.tip.classList.add(animation);
         }
     }
     prefab.tooltip = tooltip;

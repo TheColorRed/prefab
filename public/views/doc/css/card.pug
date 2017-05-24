@@ -1,21 +1,6 @@
 extends ../../wrapper
 block content
-  .card.section
-    .card-header.secondary-color.white-text
-      h2.card-title Cards
-    .card-body
-        p.
-          Cards are a convenient means of displaying content composed of
-          different types of objects. They’re also well-suited for presenting
-          similar objects whose size or supported actions can vary considerably,
-          like photos with captions of variable length.
-  .section
-    h2 Basic Card
-    .grid
-      .cell.cell-5.card
-        .card-body.primary-color.white-text
-          h2.card-title Card Title
-          p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to be used effectively.
+  +card-header('Cards', 'Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.')
     pre: code.language-html
       ='<div class="grid">\n'
       ='  <div class="cell cell-5 card">\n'
@@ -80,14 +65,18 @@ block content
       .cell.cell-5.card
         .card-actions
           a: i.material-icons close
+          span.tooltip Close
         .card-body
           p You are not allowed in here!
     pre: code.language-html
       ='<div class="grid">\n'
       ='  <div class="cell cell-5 card">\n'
-      ='    <div class="card-actions"><a class="btn">Yes</a><a class="btn">No</a></div>\n'
+      ='    <div class="card-actions">\n'
+      ='      <a class="btn"><i class="material-icons">close</i></a>\n'
+      ='      <span class="tooltip">Close</span>\n'
+      ='    </div>\n'
       ='    <div class="card-body">\n'
-      ='      <p>Would you like to continue?</p>\n'
+      ='      <p>You are not allowed in here!</p>\n'
       ='    </div>\n'
       ='  </div>\n'
       ='</div>'

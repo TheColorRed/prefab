@@ -1,12 +1,7 @@
 extends ../../wrapper
 
 block content
-  .card.section
-    .card-header.secondary-color.white-text
-      h2.card-title Transitions
-    .card-body
-        p.
-          Transitions add small effects to items to give them flair. This helps certain items stand out more than other items.
+  +card-header('Transitions', 'Transitions add small effects to items to give them flair. This helps certain items stand out more than other items.')
   .section
     h2 Scaling
     p.
@@ -15,7 +10,7 @@ block content
       Click on the button that says "Scale Out" to scale the circle.
     .grid
       .cell.cell-2.cell-middle
-        +fab('arrow_downward', '', 'scaler')
+        +fab('remove', '', 'scaler')
       .cell.cell-6.cell-middle
         +button('Scale Out', '', 'toggle')
     script.
@@ -35,12 +30,15 @@ block content
       });
   .section
     h2 Spin
-    .grid
+    .grid.grid-margin-bottom
       .cell.cell-4.text-center
+        h5 Fast
         +fab('autorenew', 'spin-fast')
       .cell.cell-4.text-center
+        h5 Normal
         +fab('autorenew', 'spin')
       .cell.cell-4.text-center
+        h5 Slow
         +fab('autorenew', 'spin-slow')
     pre: code.language-html
       ='<!-- Fast Spin -->\n'
@@ -51,12 +49,15 @@ block content
       ='<a class="fab fab-lg spin-slow secondary-color white-text"><i class="material-icons">autorenew</i></a>'
   .section
     h2 Spin Delay
-    .grid
+    .grid.grid-margin-bottom
       .cell.cell-4.text-center
+        h5 Fast
         +fab('autorenew', 'spin-delay-fast')
       .cell.cell-4.text-center
+        h5 Normal
         +fab('autorenew', 'spin-delay')
       .cell.cell-4.text-center
+        h5 Slow
         +fab('autorenew', 'spin-delay-slow')
     pre: code.language-html
       ='<!-- Fast Spin Delay -->\n'
@@ -67,7 +68,7 @@ block content
       ='<a class="fab fab-lg spin-delay-slow secondary-color white-text"><i class="material-icons">autorenew</i></a>'
   .section
     h2 Pulse
-    .grid
+    .grid.grid-margin-bottom
       .cell.cell-4.text-center
         h5 Fast
         +fab('add', 'pulse-fast')
@@ -86,7 +87,7 @@ block content
       ='<a class="fab fab-lg pulse-slow secondary-color white-text"><i class="material-icons">add</i></a>'
   .section
     h2 Heart Beat
-    .grid
+    .grid.grid-margin-bottom
       .cell.cell-4.text-center
         h5 Fast
         +fab('add', 'heart-beat-fast')

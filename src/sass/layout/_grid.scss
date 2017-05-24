@@ -45,6 +45,10 @@
     align-items: stretch;
   }
 
+  &.grid-margin-bottom {
+    margin-bottom: $block-margin-bottom;
+  }
+
   & > .cell {
     padding: 0;
 

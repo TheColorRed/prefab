@@ -2,20 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-  vertical-align: middle; }
+  font-family: 'Material Icons'; }
 
 body {
   display: flex;
@@ -92,6 +79,8 @@ body {
     flex-wrap: wrap; }
   .grid.grid-stretch {
     align-items: stretch; }
+  .grid.grid-margin-bottom {
+    margin-bottom: 2rem; }
   .grid > .cell {
     padding: 0; }
     .grid > .cell.cell-middle {
@@ -241,51 +230,6 @@ nav {
         nav ul > li.active a {
           color: #ffffff; }
 
-.btn {
-  background: 0 0;
-  border: none;
-  border-radius: 3px;
-  color: #e91e63;
-  position: relative;
-  height: 2.5rem;
-  margin: 0;
-  min-width: 64px;
-  padding: 0 1rem;
-  display: inline-block;
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: .5rem;
-  overflow: hidden;
-  will-change: box-shadow;
-  transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  line-height: 2.6rem;
-  vertical-align: middle; }
-  .btn.btn-lg {
-    font-size: 1.5rem;
-    line-height: 3.6rem;
-    height: 3.5rem; }
-  .btn:hover {
-    background-color: #f0f0f0;
-    color: #e91e63; }
-
-.fab {
-  border-radius: 100%;
-  padding: 10px;
-  display: inline-flex;
-  font-size: 20rem;
-  transition: box-shadow 0.5s, background-color 0.5s, color 0.5s; }
-  .fab.fab-lg > i {
-    font-size: 3rem; }
-  .fab:hover {
-    color: #fff; }
-
 body,
 html {
   font-size: 15px;
@@ -296,6 +240,42 @@ body {
 
 * {
   box-sizing: border-box; }
+
+hr {
+  border: none;
+  border-bottom: solid 1px #ccc;
+  width: 100%;
+  margin: 40px 0; }
+
+p {
+  font-size: 1.25rem;
+  margin: 2.5rem 0; }
+
+p:not(.flow-text) {
+  line-height: 2rem; }
+
+p:last-child {
+  margin-bottom: 0; }
+
+p:first-child {
+  margin-top: 0; }
+
+pre {
+  margin-bottom: 2rem; }
+
+:not(pre) > code {
+  background-color: #f0f0f0;
+  color: #e91e63;
+  padding: 0 3px;
+  border-radius: 3px; }
+
+a {
+  text-decoration: none;
+  color: #1e90ff;
+  cursor: pointer; }
+
+a:hover {
+  color: #70b8ff; }
 
 h1,
 h2,
@@ -353,38 +333,58 @@ h6 {
     font-size: .6em;
     vertical-align: middle; }
 
-a {
-  text-decoration: none;
-  color: #1e90ff;
-  cursor: pointer; }
-
-a:hover {
-  color: #70b8ff; }
-
-hr {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+.btn {
+  background: 0 0;
   border: none;
-  border-bottom: solid 1px #ccc;
-  width: 100%;
-  margin: 40px 0; }
-
-p {
-  font-size: 1.25rem;
-  margin: 2.5rem 0; }
-
-p:not(.flow-text) {
-  line-height: 2rem; }
-
-p:last-child {
-  margin-bottom: 0; }
-
-p:first-child {
-  margin-top: 0; }
-
-:not(pre) > code {
-  background-color: #f0f0f0;
+  border-radius: 3px;
   color: #e91e63;
-  padding: 0 3px;
-  border-radius: 3px; }
+  position: relative;
+  height: 2.5rem;
+  margin: 0;
+  min-width: 64px;
+  padding: 0 1rem;
+  display: inline-block;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: .5rem;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.6rem;
+  vertical-align: middle; }
+  input[type='button'].btn-lg,
+  input[type='submit'].btn-lg,
+  input[type='reset'].btn-lg,
+  .btn.btn-lg {
+    font-size: 1.5rem;
+    line-height: 3.6rem;
+    height: 3.5rem; }
+  input[type='button']:hover,
+  input[type='submit']:hover,
+  input[type='reset']:hover,
+  .btn:hover {
+    background-color: #f0f0f0;
+    color: #ca1452; }
+
+.fab {
+  border-radius: 100%;
+  padding: 10px;
+  display: inline-flex;
+  transition: box-shadow 0.5s, background-color 0.5s, color 0.5s; }
+  .fab.fab-lg > i {
+    font-size: 3rem; }
+  .fab:hover {
+    color: #fff; }
 
 .black {
   background-color: #000000; }
@@ -415,15 +415,15 @@ p:first-child {
 .btn.red-50,
 .fab.red-50 {
   background-color: #fff8f7; }
-  .btn.red-50:hover,
-  .fab.red-50:hover {
+  .btn.red-50[class^='-hover']:hover,
+  .fab.red-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.red-text-50,
 .fab.red-text-50 {
   color: #fff8f7; }
-  .btn.red-text-50:hover,
-  .fab.red-text-50:hover {
+  .btn.red-text-50[class^='-hover']:hover,
+  .fab.red-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.red-text-hover-50:hover,
@@ -445,15 +445,15 @@ p:first-child {
 .btn.red-100,
 .fab.red-100 {
   background-color: #fcd4d1; }
-  .btn.red-100:hover,
-  .fab.red-100:hover {
+  .btn.red-100[class^='-hover']:hover,
+  .fab.red-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.red-text-100,
 .fab.red-text-100 {
   color: #fcd4d1; }
-  .btn.red-text-100:hover,
-  .fab.red-text-100:hover {
+  .btn.red-text-100[class^='-hover']:hover,
+  .fab.red-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.red-text-hover-100:hover,
@@ -475,15 +475,15 @@ p:first-child {
 .btn.red-200,
 .fab.red-200 {
   background-color: #fab0aa; }
-  .btn.red-200:hover,
-  .fab.red-200:hover {
+  .btn.red-200[class^='-hover']:hover,
+  .fab.red-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.red-text-200,
 .fab.red-text-200 {
   color: #fab0aa; }
-  .btn.red-text-200:hover,
-  .fab.red-text-200:hover {
+  .btn.red-text-200[class^='-hover']:hover,
+  .fab.red-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.red-text-hover-200:hover,
@@ -505,15 +505,15 @@ p:first-child {
 .btn.red-300,
 .fab.red-300 {
   background-color: #f88b83; }
-  .btn.red-300:hover,
-  .fab.red-300:hover {
+  .btn.red-300[class^='-hover']:hover,
+  .fab.red-300[class^='-hover']:hover {
     background-color: #fcd4d1; }
 
 .btn.red-text-300,
 .fab.red-text-300 {
   color: #f88b83; }
-  .btn.red-text-300:hover,
-  .fab.red-text-300:hover {
+  .btn.red-text-300[class^='-hover']:hover,
+  .fab.red-text-300[class^='-hover']:hover {
     color: #fcd4d1; }
 
 .btn.red-text-hover-300:hover,
@@ -535,15 +535,15 @@ p:first-child {
 .btn.red-400,
 .fab.red-400 {
   background-color: #f6675d; }
-  .btn.red-400:hover,
-  .fab.red-400:hover {
+  .btn.red-400[class^='-hover']:hover,
+  .fab.red-400[class^='-hover']:hover {
     background-color: #f88b83; }
 
 .btn.red-text-400,
 .fab.red-text-400 {
   color: #f6675d; }
-  .btn.red-text-400:hover,
-  .fab.red-text-400:hover {
+  .btn.red-text-400[class^='-hover']:hover,
+  .fab.red-text-400[class^='-hover']:hover {
     color: #f88b83; }
 
 .btn.red-text-hover-400:hover,
@@ -565,8 +565,8 @@ p:first-child {
 .btn.red,
 .fab.red {
   background-color: #f44336; }
-  .btn.red:hover,
-  .fab.red:hover {
+  .btn.red[class^='-hover']:hover,
+  .fab.red[class^='-hover']:hover {
     background-color: #f88b83; }
 
 .btn.red-text,
@@ -585,6 +585,10 @@ p:first-child {
 .fab.red-text-hover:hover,
 .red-text-hover:hover {
   color: #f44336; }
+  .btn.red-text-hover:hover[class^='-hover']:hover,
+  .fab.red-text-hover:hover[class^='-hover']:hover,
+  .red-text-hover:hover[class^='-hover']:hover {
+    color: #cd180b; }
 
 .red-600 {
   background-color: #f6675d; }
@@ -595,15 +599,15 @@ p:first-child {
 .btn.red-600,
 .fab.red-600 {
   background-color: #f21f0f; }
-  .btn.red-600:hover,
-  .fab.red-600:hover {
+  .btn.red-600[class^='-hover']:hover,
+  .fab.red-600[class^='-hover']:hover {
     background-color: #f88b83; }
 
 .btn.red-text-600,
 .fab.red-text-600 {
   color: #f21f0f; }
-  .btn.red-text-600:hover,
-  .fab.red-text-600:hover {
+  .btn.red-text-600[class^='-hover']:hover,
+  .fab.red-text-600[class^='-hover']:hover {
     color: #f88b83; }
 
 .btn.red-text-hover-600:hover,
@@ -625,15 +629,15 @@ p:first-child {
 .btn.red-700,
 .fab.red-700 {
   background-color: #cd180b; }
-  .btn.red-700:hover,
-  .fab.red-700:hover {
+  .btn.red-700[class^='-hover']:hover,
+  .fab.red-700[class^='-hover']:hover {
     background-color: #fcd4d1; }
 
 .btn.red-text-700,
 .fab.red-text-700 {
   color: #cd180b; }
-  .btn.red-text-700:hover,
-  .fab.red-text-700:hover {
+  .btn.red-text-700[class^='-hover']:hover,
+  .fab.red-text-700[class^='-hover']:hover {
     color: #fcd4d1; }
 
 .btn.red-text-hover-700:hover,
@@ -655,15 +659,15 @@ p:first-child {
 .btn.red-800,
 .fab.red-800 {
   background-color: #a61409; }
-  .btn.red-800:hover,
-  .fab.red-800:hover {
+  .btn.red-800[class^='-hover']:hover,
+  .fab.red-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.red-text-800,
 .fab.red-text-800 {
   color: #a61409; }
-  .btn.red-text-800:hover,
-  .fab.red-text-800:hover {
+  .btn.red-text-800[class^='-hover']:hover,
+  .fab.red-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.red-text-hover-800:hover,
@@ -685,15 +689,15 @@ p:first-child {
 .btn.red-900,
 .fab.red-900 {
   background-color: #800f07; }
-  .btn.red-900:hover,
-  .fab.red-900:hover {
+  .btn.red-900[class^='-hover']:hover,
+  .fab.red-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.red-text-900,
 .fab.red-text-900 {
   color: #800f07; }
-  .btn.red-text-900:hover,
-  .fab.red-text-900:hover {
+  .btn.red-text-900[class^='-hover']:hover,
+  .fab.red-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.red-text-hover-900:hover,
@@ -715,15 +719,15 @@ p:first-child {
 .btn.pink-50,
 .fab.pink-50 {
   background-color: #fbd8e4; }
-  .btn.pink-50:hover,
-  .fab.pink-50:hover {
+  .btn.pink-50[class^='-hover']:hover,
+  .fab.pink-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.pink-text-50,
 .fab.pink-text-50 {
   color: #fbd8e4; }
-  .btn.pink-text-50:hover,
-  .fab.pink-text-50:hover {
+  .btn.pink-text-50[class^='-hover']:hover,
+  .fab.pink-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.pink-text-hover-50:hover,
@@ -751,15 +755,15 @@ p:first-child {
 .btn.pink-100,
 .fab.pink-100 {
   background-color: #f8b3ca; }
-  .btn.pink-100:hover,
-  .fab.pink-100:hover {
+  .btn.pink-100[class^='-hover']:hover,
+  .fab.pink-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.pink-text-100,
 .fab.pink-text-100 {
   color: #f8b3ca; }
-  .btn.pink-text-100:hover,
-  .fab.pink-text-100:hover {
+  .btn.pink-text-100[class^='-hover']:hover,
+  .fab.pink-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.pink-text-hover-100:hover,
@@ -787,15 +791,15 @@ p:first-child {
 .btn.pink-200,
 .fab.pink-200 {
   background-color: #f48db0; }
-  .btn.pink-200:hover,
-  .fab.pink-200:hover {
+  .btn.pink-200[class^='-hover']:hover,
+  .fab.pink-200[class^='-hover']:hover {
     background-color: #fffdfe; }
 
 .btn.pink-text-200,
 .fab.pink-text-200 {
   color: #f48db0; }
-  .btn.pink-text-200:hover,
-  .fab.pink-text-200:hover {
+  .btn.pink-text-200[class^='-hover']:hover,
+  .fab.pink-text-200[class^='-hover']:hover {
     color: #fffdfe; }
 
 .btn.pink-text-hover-200:hover,
@@ -823,15 +827,15 @@ p:first-child {
 .btn.pink-300,
 .fab.pink-300 {
   background-color: #f06897; }
-  .btn.pink-300:hover,
-  .fab.pink-300:hover {
+  .btn.pink-300[class^='-hover']:hover,
+  .fab.pink-300[class^='-hover']:hover {
     background-color: #f8b3ca; }
 
 .btn.pink-text-300,
 .fab.pink-text-300 {
   color: #f06897; }
-  .btn.pink-text-300:hover,
-  .fab.pink-text-300:hover {
+  .btn.pink-text-300[class^='-hover']:hover,
+  .fab.pink-text-300[class^='-hover']:hover {
     color: #f8b3ca; }
 
 .btn.pink-text-hover-300:hover,
@@ -859,15 +863,15 @@ p:first-child {
 .btn.pink-400,
 .fab.pink-400 {
   background-color: #ed437d; }
-  .btn.pink-400:hover,
-  .fab.pink-400:hover {
+  .btn.pink-400[class^='-hover']:hover,
+  .fab.pink-400[class^='-hover']:hover {
     background-color: #f06897; }
 
 .btn.pink-text-400,
 .fab.pink-text-400 {
   color: #ed437d; }
-  .btn.pink-text-400:hover,
-  .fab.pink-text-400:hover {
+  .btn.pink-text-400[class^='-hover']:hover,
+  .fab.pink-text-400[class^='-hover']:hover {
     color: #f06897; }
 
 .btn.pink-text-hover-400:hover,
@@ -895,8 +899,8 @@ p:first-child {
 .btn.pink,
 .fab.pink {
   background-color: #e91e63; }
-  .btn.pink:hover,
-  .fab.pink:hover {
+  .btn.pink[class^='-hover']:hover,
+  .fab.pink[class^='-hover']:hover {
     background-color: #f06897; }
 
 .btn.pink-text,
@@ -915,6 +919,10 @@ p:first-child {
 .fab.pink-text-hover:hover,
 .pink-text-hover:hover {
   color: #e91e63; }
+  .btn.pink-text-hover:hover[class^='-hover']:hover,
+  .fab.pink-text-hover:hover[class^='-hover']:hover,
+  .pink-text-hover:hover[class^='-hover']:hover {
+    color: #a51043; }
 
 .secondary-color {
   background-color: #e91e63; }
@@ -935,15 +943,15 @@ p:first-child {
 .btn.pink-600,
 .fab.pink-600 {
   background-color: #ca1452; }
-  .btn.pink-600:hover,
-  .fab.pink-600:hover {
+  .btn.pink-600[class^='-hover']:hover,
+  .fab.pink-600[class^='-hover']:hover {
     background-color: #f06897; }
 
 .btn.pink-text-600,
 .fab.pink-text-600 {
   color: #ca1452; }
-  .btn.pink-text-600:hover,
-  .fab.pink-text-600:hover {
+  .btn.pink-text-600[class^='-hover']:hover,
+  .fab.pink-text-600[class^='-hover']:hover {
     color: #f06897; }
 
 .btn.pink-text-hover-600:hover,
@@ -971,15 +979,15 @@ p:first-child {
 .btn.pink-700,
 .fab.pink-700 {
   background-color: #a51043; }
-  .btn.pink-700:hover,
-  .fab.pink-700:hover {
+  .btn.pink-700[class^='-hover']:hover,
+  .fab.pink-700[class^='-hover']:hover {
     background-color: #f8b3ca; }
 
 .btn.pink-text-700,
 .fab.pink-text-700 {
   color: #a51043; }
-  .btn.pink-text-700:hover,
-  .fab.pink-text-700:hover {
+  .btn.pink-text-700[class^='-hover']:hover,
+  .fab.pink-text-700[class^='-hover']:hover {
     color: #f8b3ca; }
 
 .btn.pink-text-hover-700:hover,
@@ -1007,15 +1015,15 @@ p:first-child {
 .btn.pink-800,
 .fab.pink-800 {
   background-color: #800d34; }
-  .btn.pink-800:hover,
-  .fab.pink-800:hover {
+  .btn.pink-800[class^='-hover']:hover,
+  .fab.pink-800[class^='-hover']:hover {
     background-color: #fffdfe; }
 
 .btn.pink-text-800,
 .fab.pink-text-800 {
   color: #800d34; }
-  .btn.pink-text-800:hover,
-  .fab.pink-text-800:hover {
+  .btn.pink-text-800[class^='-hover']:hover,
+  .fab.pink-text-800[class^='-hover']:hover {
     color: #fffdfe; }
 
 .btn.pink-text-hover-800:hover,
@@ -1043,15 +1051,15 @@ p:first-child {
 .btn.pink-900,
 .fab.pink-900 {
   background-color: #5b0925; }
-  .btn.pink-900:hover,
-  .fab.pink-900:hover {
+  .btn.pink-900[class^='-hover']:hover,
+  .fab.pink-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.pink-text-900,
 .fab.pink-text-900 {
   color: #5b0925; }
-  .btn.pink-text-900:hover,
-  .fab.pink-text-900:hover {
+  .btn.pink-text-900[class^='-hover']:hover,
+  .fab.pink-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.pink-text-hover-900:hover,
@@ -1079,15 +1087,15 @@ p:first-child {
 .btn.hot-pink-50,
 .fab.hot-pink-50 {
   background-color: white; }
-  .btn.hot-pink-50:hover,
-  .fab.hot-pink-50:hover {
+  .btn.hot-pink-50[class^='-hover']:hover,
+  .fab.hot-pink-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-50,
 .fab.hot-pink-text-50 {
   color: white; }
-  .btn.hot-pink-text-50:hover,
-  .fab.hot-pink-text-50:hover {
+  .btn.hot-pink-text-50[class^='-hover']:hover,
+  .fab.hot-pink-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-50:hover,
@@ -1109,15 +1117,15 @@ p:first-child {
 .btn.hot-pink-100,
 .fab.hot-pink-100 {
   background-color: white; }
-  .btn.hot-pink-100:hover,
-  .fab.hot-pink-100:hover {
+  .btn.hot-pink-100[class^='-hover']:hover,
+  .fab.hot-pink-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-100,
 .fab.hot-pink-text-100 {
   color: white; }
-  .btn.hot-pink-text-100:hover,
-  .fab.hot-pink-text-100:hover {
+  .btn.hot-pink-text-100[class^='-hover']:hover,
+  .fab.hot-pink-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-100:hover,
@@ -1139,15 +1147,15 @@ p:first-child {
 .btn.hot-pink-200,
 .fab.hot-pink-200 {
   background-color: #ffe3f1; }
-  .btn.hot-pink-200:hover,
-  .fab.hot-pink-200:hover {
+  .btn.hot-pink-200[class^='-hover']:hover,
+  .fab.hot-pink-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-200,
 .fab.hot-pink-text-200 {
   color: #ffe3f1; }
-  .btn.hot-pink-text-200:hover,
-  .fab.hot-pink-text-200:hover {
+  .btn.hot-pink-text-200[class^='-hover']:hover,
+  .fab.hot-pink-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-200:hover,
@@ -1169,15 +1177,15 @@ p:first-child {
 .btn.hot-pink-300,
 .fab.hot-pink-300 {
   background-color: #ffbbdd; }
-  .btn.hot-pink-300:hover,
-  .fab.hot-pink-300:hover {
+  .btn.hot-pink-300[class^='-hover']:hover,
+  .fab.hot-pink-300[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-300,
 .fab.hot-pink-text-300 {
   color: #ffbbdd; }
-  .btn.hot-pink-text-300:hover,
-  .fab.hot-pink-text-300:hover {
+  .btn.hot-pink-text-300[class^='-hover']:hover,
+  .fab.hot-pink-text-300[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-300:hover,
@@ -1199,15 +1207,15 @@ p:first-child {
 .btn.hot-pink-400,
 .fab.hot-pink-400 {
   background-color: #ff92c8; }
-  .btn.hot-pink-400:hover,
-  .fab.hot-pink-400:hover {
+  .btn.hot-pink-400[class^='-hover']:hover,
+  .fab.hot-pink-400[class^='-hover']:hover {
     background-color: #ffbbdd; }
 
 .btn.hot-pink-text-400,
 .fab.hot-pink-text-400 {
   color: #ff92c8; }
-  .btn.hot-pink-text-400:hover,
-  .fab.hot-pink-text-400:hover {
+  .btn.hot-pink-text-400[class^='-hover']:hover,
+  .fab.hot-pink-text-400[class^='-hover']:hover {
     color: #ffbbdd; }
 
 .btn.hot-pink-text-hover-400:hover,
@@ -1229,8 +1237,8 @@ p:first-child {
 .btn.hot-pink,
 .fab.hot-pink {
   background-color: #ff69b4; }
-  .btn.hot-pink:hover,
-  .fab.hot-pink:hover {
+  .btn.hot-pink[class^='-hover']:hover,
+  .fab.hot-pink[class^='-hover']:hover {
     background-color: #ffbbdd; }
 
 .btn.hot-pink-text,
@@ -1249,6 +1257,10 @@ p:first-child {
 .fab.hot-pink-text-hover:hover,
 .hot-pink-text-hover:hover {
   color: #ff69b4; }
+  .btn.hot-pink-text-hover:hover[class^='-hover']:hover,
+  .fab.hot-pink-text-hover:hover[class^='-hover']:hover,
+  .hot-pink-text-hover:hover[class^='-hover']:hover {
+    color: #ff178b; }
 
 .hot-pink-600 {
   background-color: #ff92c8; }
@@ -1259,15 +1271,15 @@ p:first-child {
 .btn.hot-pink-600,
 .fab.hot-pink-600 {
   background-color: #ff40a0; }
-  .btn.hot-pink-600:hover,
-  .fab.hot-pink-600:hover {
+  .btn.hot-pink-600[class^='-hover']:hover,
+  .fab.hot-pink-600[class^='-hover']:hover {
     background-color: #ffbbdd; }
 
 .btn.hot-pink-text-600,
 .fab.hot-pink-text-600 {
   color: #ff40a0; }
-  .btn.hot-pink-text-600:hover,
-  .fab.hot-pink-text-600:hover {
+  .btn.hot-pink-text-600[class^='-hover']:hover,
+  .fab.hot-pink-text-600[class^='-hover']:hover {
     color: #ffbbdd; }
 
 .btn.hot-pink-text-hover-600:hover,
@@ -1289,15 +1301,15 @@ p:first-child {
 .btn.hot-pink-700,
 .fab.hot-pink-700 {
   background-color: #ff178b; }
-  .btn.hot-pink-700:hover,
-  .fab.hot-pink-700:hover {
+  .btn.hot-pink-700[class^='-hover']:hover,
+  .fab.hot-pink-700[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-700,
 .fab.hot-pink-text-700 {
   color: #ff178b; }
-  .btn.hot-pink-text-700:hover,
-  .fab.hot-pink-text-700:hover {
+  .btn.hot-pink-text-700[class^='-hover']:hover,
+  .fab.hot-pink-text-700[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-700:hover,
@@ -1319,15 +1331,15 @@ p:first-child {
 .btn.hot-pink-800,
 .fab.hot-pink-800 {
   background-color: #ee0077; }
-  .btn.hot-pink-800:hover,
-  .fab.hot-pink-800:hover {
+  .btn.hot-pink-800[class^='-hover']:hover,
+  .fab.hot-pink-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-800,
 .fab.hot-pink-text-800 {
   color: #ee0077; }
-  .btn.hot-pink-text-800:hover,
-  .fab.hot-pink-text-800:hover {
+  .btn.hot-pink-text-800[class^='-hover']:hover,
+  .fab.hot-pink-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-800:hover,
@@ -1349,15 +1361,15 @@ p:first-child {
 .btn.hot-pink-900,
 .fab.hot-pink-900 {
   background-color: #c50062; }
-  .btn.hot-pink-900:hover,
-  .fab.hot-pink-900:hover {
+  .btn.hot-pink-900[class^='-hover']:hover,
+  .fab.hot-pink-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.hot-pink-text-900,
 .fab.hot-pink-text-900 {
   color: #c50062; }
-  .btn.hot-pink-text-900:hover,
-  .fab.hot-pink-text-900:hover {
+  .btn.hot-pink-text-900[class^='-hover']:hover,
+  .fab.hot-pink-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.hot-pink-text-hover-900:hover,
@@ -1379,15 +1391,15 @@ p:first-child {
 .btn.deep-pink-50,
 .fab.deep-pink-50 {
   background-color: #ffe0f1; }
-  .btn.deep-pink-50:hover,
-  .fab.deep-pink-50:hover {
+  .btn.deep-pink-50[class^='-hover']:hover,
+  .fab.deep-pink-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-pink-text-50,
 .fab.deep-pink-text-50 {
   color: #ffe0f1; }
-  .btn.deep-pink-text-50:hover,
-  .fab.deep-pink-text-50:hover {
+  .btn.deep-pink-text-50[class^='-hover']:hover,
+  .fab.deep-pink-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-pink-text-hover-50:hover,
@@ -1409,15 +1421,15 @@ p:first-child {
 .btn.deep-pink-100,
 .fab.deep-pink-100 {
   background-color: #ffb7de; }
-  .btn.deep-pink-100:hover,
-  .fab.deep-pink-100:hover {
+  .btn.deep-pink-100[class^='-hover']:hover,
+  .fab.deep-pink-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-pink-text-100,
 .fab.deep-pink-text-100 {
   color: #ffb7de; }
-  .btn.deep-pink-text-100:hover,
-  .fab.deep-pink-text-100:hover {
+  .btn.deep-pink-text-100[class^='-hover']:hover,
+  .fab.deep-pink-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-pink-text-hover-100:hover,
@@ -1439,15 +1451,15 @@ p:first-child {
 .btn.deep-pink-200,
 .fab.deep-pink-200 {
   background-color: #ff8ecb; }
-  .btn.deep-pink-200:hover,
-  .fab.deep-pink-200:hover {
+  .btn.deep-pink-200[class^='-hover']:hover,
+  .fab.deep-pink-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-pink-text-200,
 .fab.deep-pink-text-200 {
   color: #ff8ecb; }
-  .btn.deep-pink-text-200:hover,
-  .fab.deep-pink-text-200:hover {
+  .btn.deep-pink-text-200[class^='-hover']:hover,
+  .fab.deep-pink-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-pink-text-hover-200:hover,
@@ -1469,15 +1481,15 @@ p:first-child {
 .btn.deep-pink-300,
 .fab.deep-pink-300 {
   background-color: #ff66b9; }
-  .btn.deep-pink-300:hover,
-  .fab.deep-pink-300:hover {
+  .btn.deep-pink-300[class^='-hover']:hover,
+  .fab.deep-pink-300[class^='-hover']:hover {
     background-color: #ffb7de; }
 
 .btn.deep-pink-text-300,
 .fab.deep-pink-text-300 {
   color: #ff66b9; }
-  .btn.deep-pink-text-300:hover,
-  .fab.deep-pink-text-300:hover {
+  .btn.deep-pink-text-300[class^='-hover']:hover,
+  .fab.deep-pink-text-300[class^='-hover']:hover {
     color: #ffb7de; }
 
 .btn.deep-pink-text-hover-300:hover,
@@ -1499,15 +1511,15 @@ p:first-child {
 .btn.deep-pink-400,
 .fab.deep-pink-400 {
   background-color: #ff3da6; }
-  .btn.deep-pink-400:hover,
-  .fab.deep-pink-400:hover {
+  .btn.deep-pink-400[class^='-hover']:hover,
+  .fab.deep-pink-400[class^='-hover']:hover {
     background-color: #ff66b9; }
 
 .btn.deep-pink-text-400,
 .fab.deep-pink-text-400 {
   color: #ff3da6; }
-  .btn.deep-pink-text-400:hover,
-  .fab.deep-pink-text-400:hover {
+  .btn.deep-pink-text-400[class^='-hover']:hover,
+  .fab.deep-pink-text-400[class^='-hover']:hover {
     color: #ff66b9; }
 
 .btn.deep-pink-text-hover-400:hover,
@@ -1529,8 +1541,8 @@ p:first-child {
 .btn.deep-pink,
 .fab.deep-pink {
   background-color: #ff1493; }
-  .btn.deep-pink:hover,
-  .fab.deep-pink:hover {
+  .btn.deep-pink[class^='-hover']:hover,
+  .fab.deep-pink[class^='-hover']:hover {
     background-color: #ff66b9; }
 
 .btn.deep-pink-text,
@@ -1549,6 +1561,10 @@ p:first-child {
 .fab.deep-pink-text-hover:hover,
 .deep-pink-text-hover:hover {
   color: #ff1493; }
+  .btn.deep-pink-text-hover:hover[class^='-hover']:hover,
+  .fab.deep-pink-text-hover:hover[class^='-hover']:hover,
+  .deep-pink-text-hover:hover[class^='-hover']:hover {
+    color: #c10069; }
 
 .deep-pink-600 {
   background-color: #ff3da6; }
@@ -1559,15 +1575,15 @@ p:first-child {
 .btn.deep-pink-600,
 .fab.deep-pink-600 {
   background-color: #ea007f; }
-  .btn.deep-pink-600:hover,
-  .fab.deep-pink-600:hover {
+  .btn.deep-pink-600[class^='-hover']:hover,
+  .fab.deep-pink-600[class^='-hover']:hover {
     background-color: #ff66b9; }
 
 .btn.deep-pink-text-600,
 .fab.deep-pink-text-600 {
   color: #ea007f; }
-  .btn.deep-pink-text-600:hover,
-  .fab.deep-pink-text-600:hover {
+  .btn.deep-pink-text-600[class^='-hover']:hover,
+  .fab.deep-pink-text-600[class^='-hover']:hover {
     color: #ff66b9; }
 
 .btn.deep-pink-text-hover-600:hover,
@@ -1589,15 +1605,15 @@ p:first-child {
 .btn.deep-pink-700,
 .fab.deep-pink-700 {
   background-color: #c10069; }
-  .btn.deep-pink-700:hover,
-  .fab.deep-pink-700:hover {
+  .btn.deep-pink-700[class^='-hover']:hover,
+  .fab.deep-pink-700[class^='-hover']:hover {
     background-color: #ffb7de; }
 
 .btn.deep-pink-text-700,
 .fab.deep-pink-text-700 {
   color: #c10069; }
-  .btn.deep-pink-text-700:hover,
-  .fab.deep-pink-text-700:hover {
+  .btn.deep-pink-text-700[class^='-hover']:hover,
+  .fab.deep-pink-text-700[class^='-hover']:hover {
     color: #ffb7de; }
 
 .btn.deep-pink-text-hover-700:hover,
@@ -1619,15 +1635,15 @@ p:first-child {
 .btn.deep-pink-800,
 .fab.deep-pink-800 {
   background-color: #990052; }
-  .btn.deep-pink-800:hover,
-  .fab.deep-pink-800:hover {
+  .btn.deep-pink-800[class^='-hover']:hover,
+  .fab.deep-pink-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-pink-text-800,
 .fab.deep-pink-text-800 {
   color: #990052; }
-  .btn.deep-pink-text-800:hover,
-  .fab.deep-pink-text-800:hover {
+  .btn.deep-pink-text-800[class^='-hover']:hover,
+  .fab.deep-pink-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-pink-text-hover-800:hover,
@@ -1649,15 +1665,15 @@ p:first-child {
 .btn.deep-pink-900,
 .fab.deep-pink-900 {
   background-color: #70003c; }
-  .btn.deep-pink-900:hover,
-  .fab.deep-pink-900:hover {
+  .btn.deep-pink-900[class^='-hover']:hover,
+  .fab.deep-pink-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-pink-text-900,
 .fab.deep-pink-text-900 {
   color: #70003c; }
-  .btn.deep-pink-text-900:hover,
-  .fab.deep-pink-text-900:hover {
+  .btn.deep-pink-text-900[class^='-hover']:hover,
+  .fab.deep-pink-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-pink-text-hover-900:hover,
@@ -1679,15 +1695,15 @@ p:first-child {
 .btn.purple-50,
 .fab.purple-50 {
   background-color: #e6b5ee; }
-  .btn.purple-50:hover,
-  .fab.purple-50:hover {
+  .btn.purple-50[class^='-hover']:hover,
+  .fab.purple-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.purple-text-50,
 .fab.purple-text-50 {
   color: #e6b5ee; }
-  .btn.purple-text-50:hover,
-  .fab.purple-text-50:hover {
+  .btn.purple-text-50[class^='-hover']:hover,
+  .fab.purple-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.purple-text-hover-50:hover,
@@ -1709,15 +1725,15 @@ p:first-child {
 .btn.purple-100,
 .fab.purple-100 {
   background-color: #db93e7; }
-  .btn.purple-100:hover,
-  .fab.purple-100:hover {
+  .btn.purple-100[class^='-hover']:hover,
+  .fab.purple-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.purple-text-100,
 .fab.purple-text-100 {
   color: #db93e7; }
-  .btn.purple-text-100:hover,
-  .fab.purple-text-100:hover {
+  .btn.purple-text-100[class^='-hover']:hover,
+  .fab.purple-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.purple-text-hover-100:hover,
@@ -1739,15 +1755,15 @@ p:first-child {
 .btn.purple-200,
 .fab.purple-200 {
   background-color: #d072e0; }
-  .btn.purple-200:hover,
-  .fab.purple-200:hover {
+  .btn.purple-200[class^='-hover']:hover,
+  .fab.purple-200[class^='-hover']:hover {
     background-color: #f1d6f6; }
 
 .btn.purple-text-200,
 .fab.purple-text-200 {
   color: #d072e0; }
-  .btn.purple-text-200:hover,
-  .fab.purple-text-200:hover {
+  .btn.purple-text-200[class^='-hover']:hover,
+  .fab.purple-text-200[class^='-hover']:hover {
     color: #f1d6f6; }
 
 .btn.purple-text-hover-200:hover,
@@ -1769,15 +1785,15 @@ p:first-child {
 .btn.purple-300,
 .fab.purple-300 {
   background-color: #c450d8; }
-  .btn.purple-300:hover,
-  .fab.purple-300:hover {
+  .btn.purple-300[class^='-hover']:hover,
+  .fab.purple-300[class^='-hover']:hover {
     background-color: #db93e7; }
 
 .btn.purple-text-300,
 .fab.purple-text-300 {
   color: #c450d8; }
-  .btn.purple-text-300:hover,
-  .fab.purple-text-300:hover {
+  .btn.purple-text-300[class^='-hover']:hover,
+  .fab.purple-text-300[class^='-hover']:hover {
     color: #db93e7; }
 
 .btn.purple-text-hover-300:hover,
@@ -1799,15 +1815,15 @@ p:first-child {
 .btn.purple-400,
 .fab.purple-400 {
   background-color: #b92fd1; }
-  .btn.purple-400:hover,
-  .fab.purple-400:hover {
+  .btn.purple-400[class^='-hover']:hover,
+  .fab.purple-400[class^='-hover']:hover {
     background-color: #c450d8; }
 
 .btn.purple-text-400,
 .fab.purple-text-400 {
   color: #b92fd1; }
-  .btn.purple-text-400:hover,
-  .fab.purple-text-400:hover {
+  .btn.purple-text-400[class^='-hover']:hover,
+  .fab.purple-text-400[class^='-hover']:hover {
     color: #c450d8; }
 
 .btn.purple-text-hover-400:hover,
@@ -1829,8 +1845,8 @@ p:first-child {
 .btn.purple,
 .fab.purple {
   background-color: #9c27b0; }
-  .btn.purple:hover,
-  .fab.purple:hover {
+  .btn.purple[class^='-hover']:hover,
+  .fab.purple[class^='-hover']:hover {
     background-color: #c450d8; }
 
 .btn.purple-text,
@@ -1849,6 +1865,10 @@ p:first-child {
 .fab.purple-text-hover:hover,
 .purple-text-hover:hover {
   color: #9c27b0; }
+  .btn.purple-text-hover:hover[class^='-hover']:hover,
+  .fab.purple-text-hover:hover[class^='-hover']:hover,
+  .purple-text-hover:hover[class^='-hover']:hover {
+    color: #61186d; }
 
 .purple-600 {
   background-color: #b92fd1; }
@@ -1859,15 +1879,15 @@ p:first-child {
 .btn.purple-600,
 .fab.purple-600 {
   background-color: #7e208f; }
-  .btn.purple-600:hover,
-  .fab.purple-600:hover {
+  .btn.purple-600[class^='-hover']:hover,
+  .fab.purple-600[class^='-hover']:hover {
     background-color: #c450d8; }
 
 .btn.purple-text-600,
 .fab.purple-text-600 {
   color: #7e208f; }
-  .btn.purple-text-600:hover,
-  .fab.purple-text-600:hover {
+  .btn.purple-text-600[class^='-hover']:hover,
+  .fab.purple-text-600[class^='-hover']:hover {
     color: #c450d8; }
 
 .btn.purple-text-hover-600:hover,
@@ -1889,15 +1909,15 @@ p:first-child {
 .btn.purple-700,
 .fab.purple-700 {
   background-color: #61186d; }
-  .btn.purple-700:hover,
-  .fab.purple-700:hover {
+  .btn.purple-700[class^='-hover']:hover,
+  .fab.purple-700[class^='-hover']:hover {
     background-color: #db93e7; }
 
 .btn.purple-text-700,
 .fab.purple-text-700 {
   color: #61186d; }
-  .btn.purple-text-700:hover,
-  .fab.purple-text-700:hover {
+  .btn.purple-text-700[class^='-hover']:hover,
+  .fab.purple-text-700[class^='-hover']:hover {
     color: #db93e7; }
 
 .btn.purple-text-hover-700:hover,
@@ -1919,15 +1939,15 @@ p:first-child {
 .btn.purple-800,
 .fab.purple-800 {
   background-color: #43114c; }
-  .btn.purple-800:hover,
-  .fab.purple-800:hover {
+  .btn.purple-800[class^='-hover']:hover,
+  .fab.purple-800[class^='-hover']:hover {
     background-color: #f1d6f6; }
 
 .btn.purple-text-800,
 .fab.purple-text-800 {
   color: #43114c; }
-  .btn.purple-text-800:hover,
-  .fab.purple-text-800:hover {
+  .btn.purple-text-800[class^='-hover']:hover,
+  .fab.purple-text-800[class^='-hover']:hover {
     color: #f1d6f6; }
 
 .btn.purple-text-hover-800:hover,
@@ -1949,15 +1969,15 @@ p:first-child {
 .btn.purple-900,
 .fab.purple-900 {
   background-color: #26092a; }
-  .btn.purple-900:hover,
-  .fab.purple-900:hover {
+  .btn.purple-900[class^='-hover']:hover,
+  .fab.purple-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.purple-text-900,
 .fab.purple-text-900 {
   color: #26092a; }
-  .btn.purple-text-900:hover,
-  .fab.purple-text-900:hover {
+  .btn.purple-text-900[class^='-hover']:hover,
+  .fab.purple-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.purple-text-hover-900:hover,
@@ -1979,15 +1999,15 @@ p:first-child {
 .btn.deep-purple-50,
 .fab.deep-purple-50 {
   background-color: #daceef; }
-  .btn.deep-purple-50:hover,
-  .fab.deep-purple-50:hover {
+  .btn.deep-purple-50[class^='-hover']:hover,
+  .fab.deep-purple-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-purple-text-50,
 .fab.deep-purple-text-50 {
   color: #daceef; }
-  .btn.deep-purple-text-50:hover,
-  .fab.deep-purple-text-50:hover {
+  .btn.deep-purple-text-50[class^='-hover']:hover,
+  .fab.deep-purple-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-purple-text-hover-50:hover,
@@ -2009,15 +2029,15 @@ p:first-child {
 .btn.deep-purple-100,
 .fab.deep-purple-100 {
   background-color: #c2afe6; }
-  .btn.deep-purple-100:hover,
-  .fab.deep-purple-100:hover {
+  .btn.deep-purple-100[class^='-hover']:hover,
+  .fab.deep-purple-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-purple-text-100,
 .fab.deep-purple-text-100 {
   color: #c2afe6; }
-  .btn.deep-purple-text-100:hover,
-  .fab.deep-purple-text-100:hover {
+  .btn.deep-purple-text-100[class^='-hover']:hover,
+  .fab.deep-purple-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-purple-text-hover-100:hover,
@@ -2039,15 +2059,15 @@ p:first-child {
 .btn.deep-purple-200,
 .fab.deep-purple-200 {
   background-color: #ab90dc; }
-  .btn.deep-purple-200:hover,
-  .fab.deep-purple-200:hover {
+  .btn.deep-purple-200[class^='-hover']:hover,
+  .fab.deep-purple-200[class^='-hover']:hover {
     background-color: #f1edf9; }
 
 .btn.deep-purple-text-200,
 .fab.deep-purple-text-200 {
   color: #ab90dc; }
-  .btn.deep-purple-text-200:hover,
-  .fab.deep-purple-text-200:hover {
+  .btn.deep-purple-text-200[class^='-hover']:hover,
+  .fab.deep-purple-text-200[class^='-hover']:hover {
     color: #f1edf9; }
 
 .btn.deep-purple-text-hover-200:hover,
@@ -2069,15 +2089,15 @@ p:first-child {
 .btn.deep-purple-300,
 .fab.deep-purple-300 {
   background-color: #9471d2; }
-  .btn.deep-purple-300:hover,
-  .fab.deep-purple-300:hover {
+  .btn.deep-purple-300[class^='-hover']:hover,
+  .fab.deep-purple-300[class^='-hover']:hover {
     background-color: #c2afe6; }
 
 .btn.deep-purple-text-300,
 .fab.deep-purple-text-300 {
   color: #9471d2; }
-  .btn.deep-purple-text-300:hover,
-  .fab.deep-purple-text-300:hover {
+  .btn.deep-purple-text-300[class^='-hover']:hover,
+  .fab.deep-purple-text-300[class^='-hover']:hover {
     color: #c2afe6; }
 
 .btn.deep-purple-text-hover-300:hover,
@@ -2099,15 +2119,15 @@ p:first-child {
 .btn.deep-purple-400,
 .fab.deep-purple-400 {
   background-color: #7c52c8; }
-  .btn.deep-purple-400:hover,
-  .fab.deep-purple-400:hover {
+  .btn.deep-purple-400[class^='-hover']:hover,
+  .fab.deep-purple-400[class^='-hover']:hover {
     background-color: #9471d2; }
 
 .btn.deep-purple-text-400,
 .fab.deep-purple-text-400 {
   color: #7c52c8; }
-  .btn.deep-purple-text-400:hover,
-  .fab.deep-purple-text-400:hover {
+  .btn.deep-purple-text-400[class^='-hover']:hover,
+  .fab.deep-purple-text-400[class^='-hover']:hover {
     color: #9471d2; }
 
 .btn.deep-purple-text-hover-400:hover,
@@ -2129,8 +2149,8 @@ p:first-child {
 .btn.deep-purple,
 .fab.deep-purple {
   background-color: #673ab7; }
-  .btn.deep-purple:hover,
-  .fab.deep-purple:hover {
+  .btn.deep-purple[class^='-hover']:hover,
+  .fab.deep-purple[class^='-hover']:hover {
     background-color: #9471d2; }
 
 .btn.deep-purple-text,
@@ -2149,6 +2169,10 @@ p:first-child {
 .fab.deep-purple-text-hover:hover,
 .deep-purple-text-hover:hover {
   color: #673ab7; }
+  .btn.deep-purple-text-hover:hover[class^='-hover']:hover,
+  .fab.deep-purple-text-hover:hover[class^='-hover']:hover,
+  .deep-purple-text-hover:hover[class^='-hover']:hover {
+    color: #442679; }
 
 .deep-purple-600 {
   background-color: #7c52c8; }
@@ -2159,15 +2183,15 @@ p:first-child {
 .btn.deep-purple-600,
 .fab.deep-purple-600 {
   background-color: #563098; }
-  .btn.deep-purple-600:hover,
-  .fab.deep-purple-600:hover {
+  .btn.deep-purple-600[class^='-hover']:hover,
+  .fab.deep-purple-600[class^='-hover']:hover {
     background-color: #9471d2; }
 
 .btn.deep-purple-text-600,
 .fab.deep-purple-text-600 {
   color: #563098; }
-  .btn.deep-purple-text-600:hover,
-  .fab.deep-purple-text-600:hover {
+  .btn.deep-purple-text-600[class^='-hover']:hover,
+  .fab.deep-purple-text-600[class^='-hover']:hover {
     color: #9471d2; }
 
 .btn.deep-purple-text-hover-600:hover,
@@ -2189,15 +2213,15 @@ p:first-child {
 .btn.deep-purple-700,
 .fab.deep-purple-700 {
   background-color: #442679; }
-  .btn.deep-purple-700:hover,
-  .fab.deep-purple-700:hover {
+  .btn.deep-purple-700[class^='-hover']:hover,
+  .fab.deep-purple-700[class^='-hover']:hover {
     background-color: #c2afe6; }
 
 .btn.deep-purple-text-700,
 .fab.deep-purple-text-700 {
   color: #442679; }
-  .btn.deep-purple-text-700:hover,
-  .fab.deep-purple-text-700:hover {
+  .btn.deep-purple-text-700[class^='-hover']:hover,
+  .fab.deep-purple-text-700[class^='-hover']:hover {
     color: #c2afe6; }
 
 .btn.deep-purple-text-hover-700:hover,
@@ -2219,15 +2243,15 @@ p:first-child {
 .btn.deep-purple-800,
 .fab.deep-purple-800 {
   background-color: #331d5a; }
-  .btn.deep-purple-800:hover,
-  .fab.deep-purple-800:hover {
+  .btn.deep-purple-800[class^='-hover']:hover,
+  .fab.deep-purple-800[class^='-hover']:hover {
     background-color: #f1edf9; }
 
 .btn.deep-purple-text-800,
 .fab.deep-purple-text-800 {
   color: #331d5a; }
-  .btn.deep-purple-text-800:hover,
-  .fab.deep-purple-text-800:hover {
+  .btn.deep-purple-text-800[class^='-hover']:hover,
+  .fab.deep-purple-text-800[class^='-hover']:hover {
     color: #f1edf9; }
 
 .btn.deep-purple-text-hover-800:hover,
@@ -2249,15 +2273,15 @@ p:first-child {
 .btn.deep-purple-900,
 .fab.deep-purple-900 {
   background-color: #21133b; }
-  .btn.deep-purple-900:hover,
-  .fab.deep-purple-900:hover {
+  .btn.deep-purple-900[class^='-hover']:hover,
+  .fab.deep-purple-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-purple-text-900,
 .fab.deep-purple-text-900 {
   color: #21133b; }
-  .btn.deep-purple-text-900:hover,
-  .fab.deep-purple-text-900:hover {
+  .btn.deep-purple-text-900[class^='-hover']:hover,
+  .fab.deep-purple-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-purple-text-hover-900:hover,
@@ -2279,15 +2303,15 @@ p:first-child {
 .btn.light-purple-50,
 .fab.light-purple-50 {
   background-color: white; }
-  .btn.light-purple-50:hover,
-  .fab.light-purple-50:hover {
+  .btn.light-purple-50[class^='-hover']:hover,
+  .fab.light-purple-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-purple-text-50,
 .fab.light-purple-text-50 {
   color: white; }
-  .btn.light-purple-text-50:hover,
-  .fab.light-purple-text-50:hover {
+  .btn.light-purple-text-50[class^='-hover']:hover,
+  .fab.light-purple-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.light-purple-text-hover-50:hover,
@@ -2309,15 +2333,15 @@ p:first-child {
 .btn.light-purple-100,
 .fab.light-purple-100 {
   background-color: #f5f2fc; }
-  .btn.light-purple-100:hover,
-  .fab.light-purple-100:hover {
+  .btn.light-purple-100[class^='-hover']:hover,
+  .fab.light-purple-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-purple-text-100,
 .fab.light-purple-text-100 {
   color: #f5f2fc; }
-  .btn.light-purple-text-100:hover,
-  .fab.light-purple-text-100:hover {
+  .btn.light-purple-text-100[class^='-hover']:hover,
+  .fab.light-purple-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.light-purple-text-hover-100:hover,
@@ -2339,15 +2363,15 @@ p:first-child {
 .btn.light-purple-200,
 .fab.light-purple-200 {
   background-color: #ddd2f4; }
-  .btn.light-purple-200:hover,
-  .fab.light-purple-200:hover {
+  .btn.light-purple-200[class^='-hover']:hover,
+  .fab.light-purple-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-purple-text-200,
 .fab.light-purple-text-200 {
   color: #ddd2f4; }
-  .btn.light-purple-text-200:hover,
-  .fab.light-purple-text-200:hover {
+  .btn.light-purple-text-200[class^='-hover']:hover,
+  .fab.light-purple-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.light-purple-text-hover-200:hover,
@@ -2369,15 +2393,15 @@ p:first-child {
 .btn.light-purple-300,
 .fab.light-purple-300 {
   background-color: #c4b1eb; }
-  .btn.light-purple-300:hover,
-  .fab.light-purple-300:hover {
+  .btn.light-purple-300[class^='-hover']:hover,
+  .fab.light-purple-300[class^='-hover']:hover {
     background-color: #f5f2fc; }
 
 .btn.light-purple-text-300,
 .fab.light-purple-text-300 {
   color: #c4b1eb; }
-  .btn.light-purple-text-300:hover,
-  .fab.light-purple-text-300:hover {
+  .btn.light-purple-text-300[class^='-hover']:hover,
+  .fab.light-purple-text-300[class^='-hover']:hover {
     color: #f5f2fc; }
 
 .btn.light-purple-text-hover-300:hover,
@@ -2399,15 +2423,15 @@ p:first-child {
 .btn.light-purple-400,
 .fab.light-purple-400 {
   background-color: #ac91e3; }
-  .btn.light-purple-400:hover,
-  .fab.light-purple-400:hover {
+  .btn.light-purple-400[class^='-hover']:hover,
+  .fab.light-purple-400[class^='-hover']:hover {
     background-color: #c4b1eb; }
 
 .btn.light-purple-text-400,
 .fab.light-purple-text-400 {
   color: #ac91e3; }
-  .btn.light-purple-text-400:hover,
-  .fab.light-purple-text-400:hover {
+  .btn.light-purple-text-400[class^='-hover']:hover,
+  .fab.light-purple-text-400[class^='-hover']:hover {
     color: #c4b1eb; }
 
 .btn.light-purple-text-hover-400:hover,
@@ -2429,8 +2453,8 @@ p:first-child {
 .btn.light-purple,
 .fab.light-purple {
   background-color: #9370db; }
-  .btn.light-purple:hover,
-  .fab.light-purple:hover {
+  .btn.light-purple[class^='-hover']:hover,
+  .fab.light-purple[class^='-hover']:hover {
     background-color: #c4b1eb; }
 
 .btn.light-purple-text,
@@ -2449,6 +2473,10 @@ p:first-child {
 .fab.light-purple-text-hover:hover,
 .light-purple-text-hover:hover {
   color: #9370db; }
+  .btn.light-purple-text-hover:hover[class^='-hover']:hover,
+  .fab.light-purple-text-hover:hover[class^='-hover']:hover,
+  .light-purple-text-hover:hover[class^='-hover']:hover {
+    color: #6332c7; }
 
 .light-purple-600 {
   background-color: #ac91e3; }
@@ -2459,15 +2487,15 @@ p:first-child {
 .btn.light-purple-600,
 .fab.light-purple-600 {
   background-color: #7a4fd3; }
-  .btn.light-purple-600:hover,
-  .fab.light-purple-600:hover {
+  .btn.light-purple-600[class^='-hover']:hover,
+  .fab.light-purple-600[class^='-hover']:hover {
     background-color: #c4b1eb; }
 
 .btn.light-purple-text-600,
 .fab.light-purple-text-600 {
   color: #7a4fd3; }
-  .btn.light-purple-text-600:hover,
-  .fab.light-purple-text-600:hover {
+  .btn.light-purple-text-600[class^='-hover']:hover,
+  .fab.light-purple-text-600[class^='-hover']:hover {
     color: #c4b1eb; }
 
 .btn.light-purple-text-hover-600:hover,
@@ -2489,15 +2517,15 @@ p:first-child {
 .btn.light-purple-700,
 .fab.light-purple-700 {
   background-color: #6332c7; }
-  .btn.light-purple-700:hover,
-  .fab.light-purple-700:hover {
+  .btn.light-purple-700[class^='-hover']:hover,
+  .fab.light-purple-700[class^='-hover']:hover {
     background-color: #f5f2fc; }
 
 .btn.light-purple-text-700,
 .fab.light-purple-text-700 {
   color: #6332c7; }
-  .btn.light-purple-text-700:hover,
-  .fab.light-purple-text-700:hover {
+  .btn.light-purple-text-700[class^='-hover']:hover,
+  .fab.light-purple-text-700[class^='-hover']:hover {
     color: #f5f2fc; }
 
 .btn.light-purple-text-hover-700:hover,
@@ -2519,15 +2547,15 @@ p:first-child {
 .btn.light-purple-800,
 .fab.light-purple-800 {
   background-color: #532aa7; }
-  .btn.light-purple-800:hover,
-  .fab.light-purple-800:hover {
+  .btn.light-purple-800[class^='-hover']:hover,
+  .fab.light-purple-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-purple-text-800,
 .fab.light-purple-text-800 {
   color: #532aa7; }
-  .btn.light-purple-text-800:hover,
-  .fab.light-purple-text-800:hover {
+  .btn.light-purple-text-800[class^='-hover']:hover,
+  .fab.light-purple-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.light-purple-text-hover-800:hover,
@@ -2549,15 +2577,15 @@ p:first-child {
 .btn.light-purple-900,
 .fab.light-purple-900 {
   background-color: #432286; }
-  .btn.light-purple-900:hover,
-  .fab.light-purple-900:hover {
+  .btn.light-purple-900[class^='-hover']:hover,
+  .fab.light-purple-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-purple-text-900,
 .fab.light-purple-text-900 {
   color: #432286; }
-  .btn.light-purple-text-900:hover,
-  .fab.light-purple-text-900:hover {
+  .btn.light-purple-text-900[class^='-hover']:hover,
+  .fab.light-purple-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.light-purple-text-hover-900:hover,
@@ -2579,15 +2607,15 @@ p:first-child {
 .btn.indigo-50,
 .fab.indigo-50 {
   background-color: #d1d6ef; }
-  .btn.indigo-50:hover,
-  .fab.indigo-50:hover {
+  .btn.indigo-50[class^='-hover']:hover,
+  .fab.indigo-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.indigo-text-50,
 .fab.indigo-text-50 {
   color: #d1d6ef; }
-  .btn.indigo-text-50:hover,
-  .fab.indigo-text-50:hover {
+  .btn.indigo-text-50[class^='-hover']:hover,
+  .fab.indigo-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.indigo-text-hover-50:hover,
@@ -2609,15 +2637,15 @@ p:first-child {
 .btn.indigo-100,
 .fab.indigo-100 {
   background-color: #b3bae4; }
-  .btn.indigo-100:hover,
-  .fab.indigo-100:hover {
+  .btn.indigo-100[class^='-hover']:hover,
+  .fab.indigo-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.indigo-text-100,
 .fab.indigo-text-100 {
   color: #b3bae4; }
-  .btn.indigo-text-100:hover,
-  .fab.indigo-text-100:hover {
+  .btn.indigo-text-100[class^='-hover']:hover,
+  .fab.indigo-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.indigo-text-hover-100:hover,
@@ -2639,15 +2667,15 @@ p:first-child {
 .btn.indigo-200,
 .fab.indigo-200 {
   background-color: #949fda; }
-  .btn.indigo-200:hover,
-  .fab.indigo-200:hover {
+  .btn.indigo-200[class^='-hover']:hover,
+  .fab.indigo-200[class^='-hover']:hover {
     background-color: #eff1fa; }
 
 .btn.indigo-text-200,
 .fab.indigo-text-200 {
   color: #949fda; }
-  .btn.indigo-text-200:hover,
-  .fab.indigo-text-200:hover {
+  .btn.indigo-text-200[class^='-hover']:hover,
+  .fab.indigo-text-200[class^='-hover']:hover {
     color: #eff1fa; }
 
 .btn.indigo-text-hover-200:hover,
@@ -2669,15 +2697,15 @@ p:first-child {
 .btn.indigo-300,
 .fab.indigo-300 {
   background-color: #7684cf; }
-  .btn.indigo-300:hover,
-  .fab.indigo-300:hover {
+  .btn.indigo-300[class^='-hover']:hover,
+  .fab.indigo-300[class^='-hover']:hover {
     background-color: #b3bae4; }
 
 .btn.indigo-text-300,
 .fab.indigo-text-300 {
   color: #7684cf; }
-  .btn.indigo-text-300:hover,
-  .fab.indigo-text-300:hover {
+  .btn.indigo-text-300[class^='-hover']:hover,
+  .fab.indigo-text-300[class^='-hover']:hover {
     color: #b3bae4; }
 
 .btn.indigo-text-hover-300:hover,
@@ -2699,15 +2727,15 @@ p:first-child {
 .btn.indigo-400,
 .fab.indigo-400 {
   background-color: #5869c5; }
-  .btn.indigo-400:hover,
-  .fab.indigo-400:hover {
+  .btn.indigo-400[class^='-hover']:hover,
+  .fab.indigo-400[class^='-hover']:hover {
     background-color: #7684cf; }
 
 .btn.indigo-text-400,
 .fab.indigo-text-400 {
   color: #5869c5; }
-  .btn.indigo-text-400:hover,
-  .fab.indigo-text-400:hover {
+  .btn.indigo-text-400[class^='-hover']:hover,
+  .fab.indigo-text-400[class^='-hover']:hover {
     color: #7684cf; }
 
 .btn.indigo-text-hover-400:hover,
@@ -2729,8 +2757,8 @@ p:first-child {
 .btn.indigo,
 .fab.indigo {
   background-color: #3f51b5; }
-  .btn.indigo:hover,
-  .fab.indigo:hover {
+  .btn.indigo[class^='-hover']:hover,
+  .fab.indigo[class^='-hover']:hover {
     background-color: #7684cf; }
 
 .btn.indigo-text,
@@ -2749,6 +2777,10 @@ p:first-child {
 .fab.indigo-text-hover:hover,
 .indigo-text-hover:hover {
   color: #3f51b5; }
+  .btn.indigo-text-hover:hover[class^='-hover']:hover,
+  .fab.indigo-text-hover:hover[class^='-hover']:hover,
+  .indigo-text-hover:hover[class^='-hover']:hover {
+    color: #2a3678; }
 
 .indigo-600 {
   background-color: #5869c5; }
@@ -2759,15 +2791,15 @@ p:first-child {
 .btn.indigo-600,
 .fab.indigo-600 {
   background-color: #344397; }
-  .btn.indigo-600:hover,
-  .fab.indigo-600:hover {
+  .btn.indigo-600[class^='-hover']:hover,
+  .fab.indigo-600[class^='-hover']:hover {
     background-color: #7684cf; }
 
 .btn.indigo-text-600,
 .fab.indigo-text-600 {
   color: #344397; }
-  .btn.indigo-text-600:hover,
-  .fab.indigo-text-600:hover {
+  .btn.indigo-text-600[class^='-hover']:hover,
+  .fab.indigo-text-600[class^='-hover']:hover {
     color: #7684cf; }
 
 .btn.indigo-text-hover-600:hover,
@@ -2789,15 +2821,15 @@ p:first-child {
 .btn.indigo-700,
 .fab.indigo-700 {
   background-color: #2a3678; }
-  .btn.indigo-700:hover,
-  .fab.indigo-700:hover {
+  .btn.indigo-700[class^='-hover']:hover,
+  .fab.indigo-700[class^='-hover']:hover {
     background-color: #b3bae4; }
 
 .btn.indigo-text-700,
 .fab.indigo-text-700 {
   color: #2a3678; }
-  .btn.indigo-text-700:hover,
-  .fab.indigo-text-700:hover {
+  .btn.indigo-text-700[class^='-hover']:hover,
+  .fab.indigo-text-700[class^='-hover']:hover {
     color: #b3bae4; }
 
 .btn.indigo-text-hover-700:hover,
@@ -2819,15 +2851,15 @@ p:first-child {
 .btn.indigo-800,
 .fab.indigo-800 {
   background-color: #1f285a; }
-  .btn.indigo-800:hover,
-  .fab.indigo-800:hover {
+  .btn.indigo-800[class^='-hover']:hover,
+  .fab.indigo-800[class^='-hover']:hover {
     background-color: #eff1fa; }
 
 .btn.indigo-text-800,
 .fab.indigo-text-800 {
   color: #1f285a; }
-  .btn.indigo-text-800:hover,
-  .fab.indigo-text-800:hover {
+  .btn.indigo-text-800[class^='-hover']:hover,
+  .fab.indigo-text-800[class^='-hover']:hover {
     color: #eff1fa; }
 
 .btn.indigo-text-hover-800:hover,
@@ -2849,15 +2881,15 @@ p:first-child {
 .btn.indigo-900,
 .fab.indigo-900 {
   background-color: #151b3c; }
-  .btn.indigo-900:hover,
-  .fab.indigo-900:hover {
+  .btn.indigo-900[class^='-hover']:hover,
+  .fab.indigo-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.indigo-text-900,
 .fab.indigo-text-900 {
   color: #151b3c; }
-  .btn.indigo-text-900:hover,
-  .fab.indigo-text-900:hover {
+  .btn.indigo-text-900[class^='-hover']:hover,
+  .fab.indigo-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.indigo-text-hover-900:hover,
@@ -2879,15 +2911,15 @@ p:first-child {
 .btn.blue-50,
 .fab.blue-50 {
   background-color: #e3f2fd; }
-  .btn.blue-50:hover,
-  .fab.blue-50:hover {
+  .btn.blue-50[class^='-hover']:hover,
+  .fab.blue-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-text-50,
 .fab.blue-text-50 {
   color: #e3f2fd; }
-  .btn.blue-text-50:hover,
-  .fab.blue-text-50:hover {
+  .btn.blue-text-50[class^='-hover']:hover,
+  .fab.blue-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-text-hover-50:hover,
@@ -2909,15 +2941,15 @@ p:first-child {
 .btn.blue-100,
 .fab.blue-100 {
   background-color: #bcdffb; }
-  .btn.blue-100:hover,
-  .fab.blue-100:hover {
+  .btn.blue-100[class^='-hover']:hover,
+  .fab.blue-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-text-100,
 .fab.blue-text-100 {
   color: #bcdffb; }
-  .btn.blue-text-100:hover,
-  .fab.blue-text-100:hover {
+  .btn.blue-text-100[class^='-hover']:hover,
+  .fab.blue-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-text-hover-100:hover,
@@ -2939,15 +2971,15 @@ p:first-child {
 .btn.blue-200,
 .fab.blue-200 {
   background-color: #95cdf9; }
-  .btn.blue-200:hover,
-  .fab.blue-200:hover {
+  .btn.blue-200[class^='-hover']:hover,
+  .fab.blue-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-text-200,
 .fab.blue-text-200 {
   color: #95cdf9; }
-  .btn.blue-text-200:hover,
-  .fab.blue-text-200:hover {
+  .btn.blue-text-200[class^='-hover']:hover,
+  .fab.blue-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-text-hover-200:hover,
@@ -2969,15 +3001,15 @@ p:first-child {
 .btn.blue-300,
 .fab.blue-300 {
   background-color: #6ebbf7; }
-  .btn.blue-300:hover,
-  .fab.blue-300:hover {
+  .btn.blue-300[class^='-hover']:hover,
+  .fab.blue-300[class^='-hover']:hover {
     background-color: #bcdffb; }
 
 .btn.blue-text-300,
 .fab.blue-text-300 {
   color: #6ebbf7; }
-  .btn.blue-text-300:hover,
-  .fab.blue-text-300:hover {
+  .btn.blue-text-300[class^='-hover']:hover,
+  .fab.blue-text-300[class^='-hover']:hover {
     color: #bcdffb; }
 
 .btn.blue-text-hover-300:hover,
@@ -2999,15 +3031,15 @@ p:first-child {
 .btn.blue-400,
 .fab.blue-400 {
   background-color: #48a8f5; }
-  .btn.blue-400:hover,
-  .fab.blue-400:hover {
+  .btn.blue-400[class^='-hover']:hover,
+  .fab.blue-400[class^='-hover']:hover {
     background-color: #6ebbf7; }
 
 .btn.blue-text-400,
 .fab.blue-text-400 {
   color: #48a8f5; }
-  .btn.blue-text-400:hover,
-  .fab.blue-text-400:hover {
+  .btn.blue-text-400[class^='-hover']:hover,
+  .fab.blue-text-400[class^='-hover']:hover {
     color: #6ebbf7; }
 
 .btn.blue-text-hover-400:hover,
@@ -3029,8 +3061,8 @@ p:first-child {
 .btn.blue,
 .fab.blue {
   background-color: #2196f3; }
-  .btn.blue:hover,
-  .fab.blue:hover {
+  .btn.blue[class^='-hover']:hover,
+  .fab.blue[class^='-hover']:hover {
     background-color: #6ebbf7; }
 
 .btn.blue-text,
@@ -3049,6 +3081,10 @@ p:first-child {
 .fab.blue-text-hover:hover,
 .blue-text-hover:hover {
   color: #2196f3; }
+  .btn.blue-text-hover:hover[class^='-hover']:hover,
+  .fab.blue-text-hover:hover[class^='-hover']:hover,
+  .blue-text-hover:hover[class^='-hover']:hover {
+    color: #0a6bb8; }
 
 .blue-600 {
   background-color: #48a8f5; }
@@ -3059,15 +3095,15 @@ p:first-child {
 .btn.blue-600,
 .fab.blue-600 {
   background-color: #0c82df; }
-  .btn.blue-600:hover,
-  .fab.blue-600:hover {
+  .btn.blue-600[class^='-hover']:hover,
+  .fab.blue-600[class^='-hover']:hover {
     background-color: #6ebbf7; }
 
 .btn.blue-text-600,
 .fab.blue-text-600 {
   color: #0c82df; }
-  .btn.blue-text-600:hover,
-  .fab.blue-text-600:hover {
+  .btn.blue-text-600[class^='-hover']:hover,
+  .fab.blue-text-600[class^='-hover']:hover {
     color: #6ebbf7; }
 
 .btn.blue-text-hover-600:hover,
@@ -3089,15 +3125,15 @@ p:first-child {
 .btn.blue-700,
 .fab.blue-700 {
   background-color: #0a6bb8; }
-  .btn.blue-700:hover,
-  .fab.blue-700:hover {
+  .btn.blue-700[class^='-hover']:hover,
+  .fab.blue-700[class^='-hover']:hover {
     background-color: #bcdffb; }
 
 .btn.blue-text-700,
 .fab.blue-text-700 {
   color: #0a6bb8; }
-  .btn.blue-text-700:hover,
-  .fab.blue-text-700:hover {
+  .btn.blue-text-700[class^='-hover']:hover,
+  .fab.blue-text-700[class^='-hover']:hover {
     color: #bcdffb; }
 
 .btn.blue-text-hover-700:hover,
@@ -3119,15 +3155,15 @@ p:first-child {
 .btn.blue-800,
 .fab.blue-800 {
   background-color: #085592; }
-  .btn.blue-800:hover,
-  .fab.blue-800:hover {
+  .btn.blue-800[class^='-hover']:hover,
+  .fab.blue-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-text-800,
 .fab.blue-text-800 {
   color: #085592; }
-  .btn.blue-text-800:hover,
-  .fab.blue-text-800:hover {
+  .btn.blue-text-800[class^='-hover']:hover,
+  .fab.blue-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-text-hover-800:hover,
@@ -3149,15 +3185,15 @@ p:first-child {
 .btn.blue-900,
 .fab.blue-900 {
   background-color: #063e6b; }
-  .btn.blue-900:hover,
-  .fab.blue-900:hover {
+  .btn.blue-900[class^='-hover']:hover,
+  .fab.blue-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-text-900,
 .fab.blue-text-900 {
   color: #063e6b; }
-  .btn.blue-text-900:hover,
-  .fab.blue-text-900:hover {
+  .btn.blue-text-900[class^='-hover']:hover,
+  .fab.blue-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-text-hover-900:hover,
@@ -3179,15 +3215,15 @@ p:first-child {
 .btn.deep-sky-blue-50,
 .fab.deep-sky-blue-50 {
   background-color: #ccf2ff; }
-  .btn.deep-sky-blue-50:hover,
-  .fab.deep-sky-blue-50:hover {
+  .btn.deep-sky-blue-50[class^='-hover']:hover,
+  .fab.deep-sky-blue-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-sky-blue-text-50,
 .fab.deep-sky-blue-text-50 {
   color: #ccf2ff; }
-  .btn.deep-sky-blue-text-50:hover,
-  .fab.deep-sky-blue-text-50:hover {
+  .btn.deep-sky-blue-text-50[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-sky-blue-text-hover-50:hover,
@@ -3209,15 +3245,15 @@ p:first-child {
 .btn.deep-sky-blue-100,
 .fab.deep-sky-blue-100 {
   background-color: #a3e8ff; }
-  .btn.deep-sky-blue-100:hover,
-  .fab.deep-sky-blue-100:hover {
+  .btn.deep-sky-blue-100[class^='-hover']:hover,
+  .fab.deep-sky-blue-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-sky-blue-text-100,
 .fab.deep-sky-blue-text-100 {
   color: #a3e8ff; }
-  .btn.deep-sky-blue-text-100:hover,
-  .fab.deep-sky-blue-text-100:hover {
+  .btn.deep-sky-blue-text-100[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-sky-blue-text-hover-100:hover,
@@ -3239,15 +3275,15 @@ p:first-child {
 .btn.deep-sky-blue-200,
 .fab.deep-sky-blue-200 {
   background-color: #7adeff; }
-  .btn.deep-sky-blue-200:hover,
-  .fab.deep-sky-blue-200:hover {
+  .btn.deep-sky-blue-200[class^='-hover']:hover,
+  .fab.deep-sky-blue-200[class^='-hover']:hover {
     background-color: #f5fcff; }
 
 .btn.deep-sky-blue-text-200,
 .fab.deep-sky-blue-text-200 {
   color: #7adeff; }
-  .btn.deep-sky-blue-text-200:hover,
-  .fab.deep-sky-blue-text-200:hover {
+  .btn.deep-sky-blue-text-200[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-200[class^='-hover']:hover {
     color: #f5fcff; }
 
 .btn.deep-sky-blue-text-hover-200:hover,
@@ -3269,15 +3305,15 @@ p:first-child {
 .btn.deep-sky-blue-300,
 .fab.deep-sky-blue-300 {
   background-color: #52d3ff; }
-  .btn.deep-sky-blue-300:hover,
-  .fab.deep-sky-blue-300:hover {
+  .btn.deep-sky-blue-300[class^='-hover']:hover,
+  .fab.deep-sky-blue-300[class^='-hover']:hover {
     background-color: #a3e8ff; }
 
 .btn.deep-sky-blue-text-300,
 .fab.deep-sky-blue-text-300 {
   color: #52d3ff; }
-  .btn.deep-sky-blue-text-300:hover,
-  .fab.deep-sky-blue-text-300:hover {
+  .btn.deep-sky-blue-text-300[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-300[class^='-hover']:hover {
     color: #a3e8ff; }
 
 .btn.deep-sky-blue-text-hover-300:hover,
@@ -3299,15 +3335,15 @@ p:first-child {
 .btn.deep-sky-blue-400,
 .fab.deep-sky-blue-400 {
   background-color: #29c9ff; }
-  .btn.deep-sky-blue-400:hover,
-  .fab.deep-sky-blue-400:hover {
+  .btn.deep-sky-blue-400[class^='-hover']:hover,
+  .fab.deep-sky-blue-400[class^='-hover']:hover {
     background-color: #52d3ff; }
 
 .btn.deep-sky-blue-text-400,
 .fab.deep-sky-blue-text-400 {
   color: #29c9ff; }
-  .btn.deep-sky-blue-text-400:hover,
-  .fab.deep-sky-blue-text-400:hover {
+  .btn.deep-sky-blue-text-400[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-400[class^='-hover']:hover {
     color: #52d3ff; }
 
 .btn.deep-sky-blue-text-hover-400:hover,
@@ -3329,8 +3365,8 @@ p:first-child {
 .btn.deep-sky-blue,
 .fab.deep-sky-blue {
   background-color: #00bfff; }
-  .btn.deep-sky-blue:hover,
-  .fab.deep-sky-blue:hover {
+  .btn.deep-sky-blue[class^='-hover']:hover,
+  .fab.deep-sky-blue[class^='-hover']:hover {
     background-color: #52d3ff; }
 
 .btn.deep-sky-blue-text,
@@ -3349,6 +3385,10 @@ p:first-child {
 .fab.deep-sky-blue-text-hover:hover,
 .deep-sky-blue-text-hover:hover {
   color: #00bfff; }
+  .btn.deep-sky-blue-text-hover:hover[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-hover:hover[class^='-hover']:hover,
+  .deep-sky-blue-text-hover:hover[class^='-hover']:hover {
+    color: #0082ad; }
 
 .deep-sky-blue-600 {
   background-color: #29c9ff; }
@@ -3359,15 +3399,15 @@ p:first-child {
 .btn.deep-sky-blue-600,
 .fab.deep-sky-blue-600 {
   background-color: #00a0d6; }
-  .btn.deep-sky-blue-600:hover,
-  .fab.deep-sky-blue-600:hover {
+  .btn.deep-sky-blue-600[class^='-hover']:hover,
+  .fab.deep-sky-blue-600[class^='-hover']:hover {
     background-color: #52d3ff; }
 
 .btn.deep-sky-blue-text-600,
 .fab.deep-sky-blue-text-600 {
   color: #00a0d6; }
-  .btn.deep-sky-blue-text-600:hover,
-  .fab.deep-sky-blue-text-600:hover {
+  .btn.deep-sky-blue-text-600[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-600[class^='-hover']:hover {
     color: #52d3ff; }
 
 .btn.deep-sky-blue-text-hover-600:hover,
@@ -3389,15 +3429,15 @@ p:first-child {
 .btn.deep-sky-blue-700,
 .fab.deep-sky-blue-700 {
   background-color: #0082ad; }
-  .btn.deep-sky-blue-700:hover,
-  .fab.deep-sky-blue-700:hover {
+  .btn.deep-sky-blue-700[class^='-hover']:hover,
+  .fab.deep-sky-blue-700[class^='-hover']:hover {
     background-color: #a3e8ff; }
 
 .btn.deep-sky-blue-text-700,
 .fab.deep-sky-blue-text-700 {
   color: #0082ad; }
-  .btn.deep-sky-blue-text-700:hover,
-  .fab.deep-sky-blue-text-700:hover {
+  .btn.deep-sky-blue-text-700[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-700[class^='-hover']:hover {
     color: #a3e8ff; }
 
 .btn.deep-sky-blue-text-hover-700:hover,
@@ -3419,15 +3459,15 @@ p:first-child {
 .btn.deep-sky-blue-800,
 .fab.deep-sky-blue-800 {
   background-color: #006385; }
-  .btn.deep-sky-blue-800:hover,
-  .fab.deep-sky-blue-800:hover {
+  .btn.deep-sky-blue-800[class^='-hover']:hover,
+  .fab.deep-sky-blue-800[class^='-hover']:hover {
     background-color: #f5fcff; }
 
 .btn.deep-sky-blue-text-800,
 .fab.deep-sky-blue-text-800 {
   color: #006385; }
-  .btn.deep-sky-blue-text-800:hover,
-  .fab.deep-sky-blue-text-800:hover {
+  .btn.deep-sky-blue-text-800[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-800[class^='-hover']:hover {
     color: #f5fcff; }
 
 .btn.deep-sky-blue-text-hover-800:hover,
@@ -3449,15 +3489,15 @@ p:first-child {
 .btn.deep-sky-blue-900,
 .fab.deep-sky-blue-900 {
   background-color: #00455c; }
-  .btn.deep-sky-blue-900:hover,
-  .fab.deep-sky-blue-900:hover {
+  .btn.deep-sky-blue-900[class^='-hover']:hover,
+  .fab.deep-sky-blue-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-sky-blue-text-900,
 .fab.deep-sky-blue-text-900 {
   color: #00455c; }
-  .btn.deep-sky-blue-text-900:hover,
-  .fab.deep-sky-blue-text-900:hover {
+  .btn.deep-sky-blue-text-900[class^='-hover']:hover,
+  .fab.deep-sky-blue-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-sky-blue-text-hover-900:hover,
@@ -3479,15 +3519,15 @@ p:first-child {
 .btn.dodger-blue-50,
 .fab.dodger-blue-50 {
   background-color: #eaf5ff; }
-  .btn.dodger-blue-50:hover,
-  .fab.dodger-blue-50:hover {
+  .btn.dodger-blue-50[class^='-hover']:hover,
+  .fab.dodger-blue-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.dodger-blue-text-50,
 .fab.dodger-blue-text-50 {
   color: #eaf5ff; }
-  .btn.dodger-blue-text-50:hover,
-  .fab.dodger-blue-text-50:hover {
+  .btn.dodger-blue-text-50[class^='-hover']:hover,
+  .fab.dodger-blue-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.dodger-blue-text-hover-50:hover,
@@ -3515,15 +3555,15 @@ p:first-child {
 .btn.dodger-blue-100,
 .fab.dodger-blue-100 {
   background-color: #c1e1ff; }
-  .btn.dodger-blue-100:hover,
-  .fab.dodger-blue-100:hover {
+  .btn.dodger-blue-100[class^='-hover']:hover,
+  .fab.dodger-blue-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.dodger-blue-text-100,
 .fab.dodger-blue-text-100 {
   color: #c1e1ff; }
-  .btn.dodger-blue-text-100:hover,
-  .fab.dodger-blue-text-100:hover {
+  .btn.dodger-blue-text-100[class^='-hover']:hover,
+  .fab.dodger-blue-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.dodger-blue-text-hover-100:hover,
@@ -3551,15 +3591,15 @@ p:first-child {
 .btn.dodger-blue-200,
 .fab.dodger-blue-200 {
   background-color: #98ccff; }
-  .btn.dodger-blue-200:hover,
-  .fab.dodger-blue-200:hover {
+  .btn.dodger-blue-200[class^='-hover']:hover,
+  .fab.dodger-blue-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.dodger-blue-text-200,
 .fab.dodger-blue-text-200 {
   color: #98ccff; }
-  .btn.dodger-blue-text-200:hover,
-  .fab.dodger-blue-text-200:hover {
+  .btn.dodger-blue-text-200[class^='-hover']:hover,
+  .fab.dodger-blue-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.dodger-blue-text-hover-200:hover,
@@ -3587,15 +3627,15 @@ p:first-child {
 .btn.dodger-blue-300,
 .fab.dodger-blue-300 {
   background-color: #70b8ff; }
-  .btn.dodger-blue-300:hover,
-  .fab.dodger-blue-300:hover {
+  .btn.dodger-blue-300[class^='-hover']:hover,
+  .fab.dodger-blue-300[class^='-hover']:hover {
     background-color: #c1e1ff; }
 
 .btn.dodger-blue-text-300,
 .fab.dodger-blue-text-300 {
   color: #70b8ff; }
-  .btn.dodger-blue-text-300:hover,
-  .fab.dodger-blue-text-300:hover {
+  .btn.dodger-blue-text-300[class^='-hover']:hover,
+  .fab.dodger-blue-text-300[class^='-hover']:hover {
     color: #c1e1ff; }
 
 .btn.dodger-blue-text-hover-300:hover,
@@ -3623,15 +3663,15 @@ p:first-child {
 .btn.dodger-blue-400,
 .fab.dodger-blue-400 {
   background-color: #47a4ff; }
-  .btn.dodger-blue-400:hover,
-  .fab.dodger-blue-400:hover {
+  .btn.dodger-blue-400[class^='-hover']:hover,
+  .fab.dodger-blue-400[class^='-hover']:hover {
     background-color: #70b8ff; }
 
 .btn.dodger-blue-text-400,
 .fab.dodger-blue-text-400 {
   color: #47a4ff; }
-  .btn.dodger-blue-text-400:hover,
-  .fab.dodger-blue-text-400:hover {
+  .btn.dodger-blue-text-400[class^='-hover']:hover,
+  .fab.dodger-blue-text-400[class^='-hover']:hover {
     color: #70b8ff; }
 
 .btn.dodger-blue-text-hover-400:hover,
@@ -3659,8 +3699,8 @@ p:first-child {
 .btn.dodger-blue,
 .fab.dodger-blue {
   background-color: #1e90ff; }
-  .btn.dodger-blue:hover,
-  .fab.dodger-blue:hover {
+  .btn.dodger-blue[class^='-hover']:hover,
+  .fab.dodger-blue[class^='-hover']:hover {
     background-color: #70b8ff; }
 
 .btn.dodger-blue-text,
@@ -3679,6 +3719,10 @@ p:first-child {
 .fab.dodger-blue-text-hover:hover,
 .dodger-blue-text-hover:hover {
   color: #1e90ff; }
+  .btn.dodger-blue-text-hover:hover[class^='-hover']:hover,
+  .fab.dodger-blue-text-hover:hover[class^='-hover']:hover,
+  .dodger-blue-text-hover:hover[class^='-hover']:hover {
+    color: #0067cb; }
 
 .primary-color {
   background-color: #1e90ff; }
@@ -3699,15 +3743,15 @@ p:first-child {
 .btn.dodger-blue-600,
 .fab.dodger-blue-600 {
   background-color: #007cf4; }
-  .btn.dodger-blue-600:hover,
-  .fab.dodger-blue-600:hover {
+  .btn.dodger-blue-600[class^='-hover']:hover,
+  .fab.dodger-blue-600[class^='-hover']:hover {
     background-color: #70b8ff; }
 
 .btn.dodger-blue-text-600,
 .fab.dodger-blue-text-600 {
   color: #007cf4; }
-  .btn.dodger-blue-text-600:hover,
-  .fab.dodger-blue-text-600:hover {
+  .btn.dodger-blue-text-600[class^='-hover']:hover,
+  .fab.dodger-blue-text-600[class^='-hover']:hover {
     color: #70b8ff; }
 
 .btn.dodger-blue-text-hover-600:hover,
@@ -3735,15 +3779,15 @@ p:first-child {
 .btn.dodger-blue-700,
 .fab.dodger-blue-700 {
   background-color: #0067cb; }
-  .btn.dodger-blue-700:hover,
-  .fab.dodger-blue-700:hover {
+  .btn.dodger-blue-700[class^='-hover']:hover,
+  .fab.dodger-blue-700[class^='-hover']:hover {
     background-color: #c1e1ff; }
 
 .btn.dodger-blue-text-700,
 .fab.dodger-blue-text-700 {
   color: #0067cb; }
-  .btn.dodger-blue-text-700:hover,
-  .fab.dodger-blue-text-700:hover {
+  .btn.dodger-blue-text-700[class^='-hover']:hover,
+  .fab.dodger-blue-text-700[class^='-hover']:hover {
     color: #c1e1ff; }
 
 .btn.dodger-blue-text-hover-700:hover,
@@ -3771,15 +3815,15 @@ p:first-child {
 .btn.dodger-blue-800,
 .fab.dodger-blue-800 {
   background-color: #0052a3; }
-  .btn.dodger-blue-800:hover,
-  .fab.dodger-blue-800:hover {
+  .btn.dodger-blue-800[class^='-hover']:hover,
+  .fab.dodger-blue-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.dodger-blue-text-800,
 .fab.dodger-blue-text-800 {
   color: #0052a3; }
-  .btn.dodger-blue-text-800:hover,
-  .fab.dodger-blue-text-800:hover {
+  .btn.dodger-blue-text-800[class^='-hover']:hover,
+  .fab.dodger-blue-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.dodger-blue-text-hover-800:hover,
@@ -3807,15 +3851,15 @@ p:first-child {
 .btn.dodger-blue-900,
 .fab.dodger-blue-900 {
   background-color: #003e7a; }
-  .btn.dodger-blue-900:hover,
-  .fab.dodger-blue-900:hover {
+  .btn.dodger-blue-900[class^='-hover']:hover,
+  .fab.dodger-blue-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.dodger-blue-text-900,
 .fab.dodger-blue-text-900 {
   color: #003e7a; }
-  .btn.dodger-blue-text-900:hover,
-  .fab.dodger-blue-text-900:hover {
+  .btn.dodger-blue-text-900[class^='-hover']:hover,
+  .fab.dodger-blue-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.dodger-blue-text-hover-900:hover,
@@ -3843,15 +3887,15 @@ p:first-child {
 .btn.light-blue-50,
 .fab.light-blue-50 {
   background-color: #c5ecfe; }
-  .btn.light-blue-50:hover,
-  .fab.light-blue-50:hover {
+  .btn.light-blue-50[class^='-hover']:hover,
+  .fab.light-blue-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-blue-text-50,
 .fab.light-blue-text-50 {
   color: #c5ecfe; }
-  .btn.light-blue-text-50:hover,
-  .fab.light-blue-text-50:hover {
+  .btn.light-blue-text-50[class^='-hover']:hover,
+  .fab.light-blue-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.light-blue-text-hover-50:hover,
@@ -3873,15 +3917,15 @@ p:first-child {
 .btn.light-blue-100,
 .fab.light-blue-100 {
   background-color: #9cdffe; }
-  .btn.light-blue-100:hover,
-  .fab.light-blue-100:hover {
+  .btn.light-blue-100[class^='-hover']:hover,
+  .fab.light-blue-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-blue-text-100,
 .fab.light-blue-text-100 {
   color: #9cdffe; }
-  .btn.light-blue-text-100:hover,
-  .fab.light-blue-text-100:hover {
+  .btn.light-blue-text-100[class^='-hover']:hover,
+  .fab.light-blue-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.light-blue-text-hover-100:hover,
@@ -3903,15 +3947,15 @@ p:first-child {
 .btn.light-blue-200,
 .fab.light-blue-200 {
   background-color: #74d3fd; }
-  .btn.light-blue-200:hover,
-  .fab.light-blue-200:hover {
+  .btn.light-blue-200[class^='-hover']:hover,
+  .fab.light-blue-200[class^='-hover']:hover {
     background-color: #edf9ff; }
 
 .btn.light-blue-text-200,
 .fab.light-blue-text-200 {
   color: #74d3fd; }
-  .btn.light-blue-text-200:hover,
-  .fab.light-blue-text-200:hover {
+  .btn.light-blue-text-200[class^='-hover']:hover,
+  .fab.light-blue-text-200[class^='-hover']:hover {
     color: #edf9ff; }
 
 .btn.light-blue-text-hover-200:hover,
@@ -3933,15 +3977,15 @@ p:first-child {
 .btn.light-blue-300,
 .fab.light-blue-300 {
   background-color: #4cc6fd; }
-  .btn.light-blue-300:hover,
-  .fab.light-blue-300:hover {
+  .btn.light-blue-300[class^='-hover']:hover,
+  .fab.light-blue-300[class^='-hover']:hover {
     background-color: #9cdffe; }
 
 .btn.light-blue-text-300,
 .fab.light-blue-text-300 {
   color: #4cc6fd; }
-  .btn.light-blue-text-300:hover,
-  .fab.light-blue-text-300:hover {
+  .btn.light-blue-text-300[class^='-hover']:hover,
+  .fab.light-blue-text-300[class^='-hover']:hover {
     color: #9cdffe; }
 
 .btn.light-blue-text-hover-300:hover,
@@ -3963,15 +4007,15 @@ p:first-child {
 .btn.light-blue-400,
 .fab.light-blue-400 {
   background-color: #23b9fc; }
-  .btn.light-blue-400:hover,
-  .fab.light-blue-400:hover {
+  .btn.light-blue-400[class^='-hover']:hover,
+  .fab.light-blue-400[class^='-hover']:hover {
     background-color: #4cc6fd; }
 
 .btn.light-blue-text-400,
 .fab.light-blue-text-400 {
   color: #23b9fc; }
-  .btn.light-blue-text-400:hover,
-  .fab.light-blue-text-400:hover {
+  .btn.light-blue-text-400[class^='-hover']:hover,
+  .fab.light-blue-text-400[class^='-hover']:hover {
     color: #4cc6fd; }
 
 .btn.light-blue-text-hover-400:hover,
@@ -3993,8 +4037,8 @@ p:first-child {
 .btn.light-blue,
 .fab.light-blue {
   background-color: #03a9f4; }
-  .btn.light-blue:hover,
-  .fab.light-blue:hover {
+  .btn.light-blue[class^='-hover']:hover,
+  .fab.light-blue[class^='-hover']:hover {
     background-color: #4cc6fd; }
 
 .btn.light-blue-text,
@@ -4013,6 +4057,10 @@ p:first-child {
 .fab.light-blue-text-hover:hover,
 .light-blue-text-hover:hover {
   color: #03a9f4; }
+  .btn.light-blue-text-hover:hover[class^='-hover']:hover,
+  .fab.light-blue-text-hover:hover[class^='-hover']:hover,
+  .light-blue-text-hover:hover[class^='-hover']:hover {
+    color: #0271a3; }
 
 .light-blue-600 {
   background-color: #23b9fc; }
@@ -4023,15 +4071,15 @@ p:first-child {
 .btn.light-blue-600,
 .fab.light-blue-600 {
   background-color: #038dcc; }
-  .btn.light-blue-600:hover,
-  .fab.light-blue-600:hover {
+  .btn.light-blue-600[class^='-hover']:hover,
+  .fab.light-blue-600[class^='-hover']:hover {
     background-color: #4cc6fd; }
 
 .btn.light-blue-text-600,
 .fab.light-blue-text-600 {
   color: #038dcc; }
-  .btn.light-blue-text-600:hover,
-  .fab.light-blue-text-600:hover {
+  .btn.light-blue-text-600[class^='-hover']:hover,
+  .fab.light-blue-text-600[class^='-hover']:hover {
     color: #4cc6fd; }
 
 .btn.light-blue-text-hover-600:hover,
@@ -4053,15 +4101,15 @@ p:first-child {
 .btn.light-blue-700,
 .fab.light-blue-700 {
   background-color: #0271a3; }
-  .btn.light-blue-700:hover,
-  .fab.light-blue-700:hover {
+  .btn.light-blue-700[class^='-hover']:hover,
+  .fab.light-blue-700[class^='-hover']:hover {
     background-color: #9cdffe; }
 
 .btn.light-blue-text-700,
 .fab.light-blue-text-700 {
   color: #0271a3; }
-  .btn.light-blue-text-700:hover,
-  .fab.light-blue-text-700:hover {
+  .btn.light-blue-text-700[class^='-hover']:hover,
+  .fab.light-blue-text-700[class^='-hover']:hover {
     color: #9cdffe; }
 
 .btn.light-blue-text-hover-700:hover,
@@ -4083,15 +4131,15 @@ p:first-child {
 .btn.light-blue-800,
 .fab.light-blue-800 {
   background-color: #02557b; }
-  .btn.light-blue-800:hover,
-  .fab.light-blue-800:hover {
+  .btn.light-blue-800[class^='-hover']:hover,
+  .fab.light-blue-800[class^='-hover']:hover {
     background-color: #edf9ff; }
 
 .btn.light-blue-text-800,
 .fab.light-blue-text-800 {
   color: #02557b; }
-  .btn.light-blue-text-800:hover,
-  .fab.light-blue-text-800:hover {
+  .btn.light-blue-text-800[class^='-hover']:hover,
+  .fab.light-blue-text-800[class^='-hover']:hover {
     color: #edf9ff; }
 
 .btn.light-blue-text-hover-800:hover,
@@ -4113,15 +4161,15 @@ p:first-child {
 .btn.light-blue-900,
 .fab.light-blue-900 {
   background-color: #013953; }
-  .btn.light-blue-900:hover,
-  .fab.light-blue-900:hover {
+  .btn.light-blue-900[class^='-hover']:hover,
+  .fab.light-blue-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-blue-text-900,
 .fab.light-blue-text-900 {
   color: #013953; }
-  .btn.light-blue-text-900:hover,
-  .fab.light-blue-text-900:hover {
+  .btn.light-blue-text-900[class^='-hover']:hover,
+  .fab.light-blue-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.light-blue-text-hover-900:hover,
@@ -4143,15 +4191,15 @@ p:first-child {
 .btn.sky-blue-50,
 .fab.sky-blue-50 {
   background-color: white; }
-  .btn.sky-blue-50:hover,
-  .fab.sky-blue-50:hover {
+  .btn.sky-blue-50[class^='-hover']:hover,
+  .fab.sky-blue-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.sky-blue-text-50,
 .fab.sky-blue-text-50 {
   color: white; }
-  .btn.sky-blue-text-50:hover,
-  .fab.sky-blue-text-50:hover {
+  .btn.sky-blue-text-50[class^='-hover']:hover,
+  .fab.sky-blue-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.sky-blue-text-hover-50:hover,
@@ -4173,15 +4221,15 @@ p:first-child {
 .btn.sky-blue-100,
 .fab.sky-blue-100 {
   background-color: #f0f9fc; }
-  .btn.sky-blue-100:hover,
-  .fab.sky-blue-100:hover {
+  .btn.sky-blue-100[class^='-hover']:hover,
+  .fab.sky-blue-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.sky-blue-text-100,
 .fab.sky-blue-text-100 {
   color: #f0f9fc; }
-  .btn.sky-blue-text-100:hover,
-  .fab.sky-blue-text-100:hover {
+  .btn.sky-blue-text-100[class^='-hover']:hover,
+  .fab.sky-blue-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.sky-blue-text-hover-100:hover,
@@ -4203,15 +4251,15 @@ p:first-child {
 .btn.sky-blue-200,
 .fab.sky-blue-200 {
   background-color: #cdebf7; }
-  .btn.sky-blue-200:hover,
-  .fab.sky-blue-200:hover {
+  .btn.sky-blue-200[class^='-hover']:hover,
+  .fab.sky-blue-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.sky-blue-text-200,
 .fab.sky-blue-text-200 {
   color: #cdebf7; }
-  .btn.sky-blue-text-200:hover,
-  .fab.sky-blue-text-200:hover {
+  .btn.sky-blue-text-200[class^='-hover']:hover,
+  .fab.sky-blue-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.sky-blue-text-hover-200:hover,
@@ -4233,15 +4281,15 @@ p:first-child {
 .btn.sky-blue-300,
 .fab.sky-blue-300 {
   background-color: #aadcf1; }
-  .btn.sky-blue-300:hover,
-  .fab.sky-blue-300:hover {
+  .btn.sky-blue-300[class^='-hover']:hover,
+  .fab.sky-blue-300[class^='-hover']:hover {
     background-color: #f0f9fc; }
 
 .btn.sky-blue-text-300,
 .fab.sky-blue-text-300 {
   color: #aadcf1; }
-  .btn.sky-blue-text-300:hover,
-  .fab.sky-blue-text-300:hover {
+  .btn.sky-blue-text-300[class^='-hover']:hover,
+  .fab.sky-blue-text-300[class^='-hover']:hover {
     color: #f0f9fc; }
 
 .btn.sky-blue-text-hover-300:hover,
@@ -4263,15 +4311,15 @@ p:first-child {
 .btn.sky-blue-400,
 .fab.sky-blue-400 {
   background-color: skyblue; }
-  .btn.sky-blue-400:hover,
-  .fab.sky-blue-400:hover {
+  .btn.sky-blue-400[class^='-hover']:hover,
+  .fab.sky-blue-400[class^='-hover']:hover {
     background-color: #aadcf1; }
 
 .btn.sky-blue-text-400,
 .fab.sky-blue-text-400 {
   color: skyblue; }
-  .btn.sky-blue-text-400:hover,
-  .fab.sky-blue-text-400:hover {
+  .btn.sky-blue-text-400[class^='-hover']:hover,
+  .fab.sky-blue-text-400[class^='-hover']:hover {
     color: #aadcf1; }
 
 .btn.sky-blue-text-hover-400:hover,
@@ -4293,8 +4341,8 @@ p:first-child {
 .btn.sky-blue,
 .fab.sky-blue {
   background-color: #64c0e5; }
-  .btn.sky-blue:hover,
-  .fab.sky-blue:hover {
+  .btn.sky-blue[class^='-hover']:hover,
+  .fab.sky-blue[class^='-hover']:hover {
     background-color: #aadcf1; }
 
 .btn.sky-blue-text,
@@ -4313,6 +4361,10 @@ p:first-child {
 .fab.sky-blue-text-hover:hover,
 .sky-blue-text-hover:hover {
   color: #64c0e5; }
+  .btn.sky-blue-text-hover:hover[class^='-hover']:hover,
+  .fab.sky-blue-text-hover:hover[class^='-hover']:hover,
+  .sky-blue-text-hover:hover[class^='-hover']:hover {
+    color: #24a1d4; }
 
 .sky-blue-600 {
   background-color: skyblue; }
@@ -4323,15 +4375,15 @@ p:first-child {
 .btn.sky-blue-600,
 .fab.sky-blue-600 {
   background-color: #41b2df; }
-  .btn.sky-blue-600:hover,
-  .fab.sky-blue-600:hover {
+  .btn.sky-blue-600[class^='-hover']:hover,
+  .fab.sky-blue-600[class^='-hover']:hover {
     background-color: #aadcf1; }
 
 .btn.sky-blue-text-600,
 .fab.sky-blue-text-600 {
   color: #41b2df; }
-  .btn.sky-blue-text-600:hover,
-  .fab.sky-blue-text-600:hover {
+  .btn.sky-blue-text-600[class^='-hover']:hover,
+  .fab.sky-blue-text-600[class^='-hover']:hover {
     color: #aadcf1; }
 
 .btn.sky-blue-text-hover-600:hover,
@@ -4353,15 +4405,15 @@ p:first-child {
 .btn.sky-blue-700,
 .fab.sky-blue-700 {
   background-color: #24a1d4; }
-  .btn.sky-blue-700:hover,
-  .fab.sky-blue-700:hover {
+  .btn.sky-blue-700[class^='-hover']:hover,
+  .fab.sky-blue-700[class^='-hover']:hover {
     background-color: #f0f9fc; }
 
 .btn.sky-blue-text-700,
 .fab.sky-blue-text-700 {
   color: #24a1d4; }
-  .btn.sky-blue-text-700:hover,
-  .fab.sky-blue-text-700:hover {
+  .btn.sky-blue-text-700[class^='-hover']:hover,
+  .fab.sky-blue-text-700[class^='-hover']:hover {
     color: #f0f9fc; }
 
 .btn.sky-blue-text-hover-700:hover,
@@ -4383,15 +4435,15 @@ p:first-child {
 .btn.sky-blue-800,
 .fab.sky-blue-800 {
   background-color: #1e87b1; }
-  .btn.sky-blue-800:hover,
-  .fab.sky-blue-800:hover {
+  .btn.sky-blue-800[class^='-hover']:hover,
+  .fab.sky-blue-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.sky-blue-text-800,
 .fab.sky-blue-text-800 {
   color: #1e87b1; }
-  .btn.sky-blue-text-800:hover,
-  .fab.sky-blue-text-800:hover {
+  .btn.sky-blue-text-800[class^='-hover']:hover,
+  .fab.sky-blue-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.sky-blue-text-hover-800:hover,
@@ -4413,15 +4465,15 @@ p:first-child {
 .btn.sky-blue-900,
 .fab.sky-blue-900 {
   background-color: #186c8e; }
-  .btn.sky-blue-900:hover,
-  .fab.sky-blue-900:hover {
+  .btn.sky-blue-900[class^='-hover']:hover,
+  .fab.sky-blue-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.sky-blue-text-900,
 .fab.sky-blue-text-900 {
   color: #186c8e; }
-  .btn.sky-blue-text-900:hover,
-  .fab.sky-blue-text-900:hover {
+  .btn.sky-blue-text-900[class^='-hover']:hover,
+  .fab.sky-blue-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.sky-blue-text-hover-900:hover,
@@ -4443,15 +4495,15 @@ p:first-child {
 .btn.cyan-50,
 .fab.cyan-50 {
   background-color: #a1f4ff; }
-  .btn.cyan-50:hover,
-  .fab.cyan-50:hover {
+  .btn.cyan-50[class^='-hover']:hover,
+  .fab.cyan-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.cyan-text-50,
 .fab.cyan-text-50 {
   color: #a1f4ff; }
-  .btn.cyan-text-50:hover,
-  .fab.cyan-text-50:hover {
+  .btn.cyan-text-50[class^='-hover']:hover,
+  .fab.cyan-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.cyan-text-hover-50:hover,
@@ -4473,15 +4525,15 @@ p:first-child {
 .btn.cyan-100,
 .fab.cyan-100 {
   background-color: #78f0ff; }
-  .btn.cyan-100:hover,
-  .fab.cyan-100:hover {
+  .btn.cyan-100[class^='-hover']:hover,
+  .fab.cyan-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.cyan-text-100,
 .fab.cyan-text-100 {
   color: #78f0ff; }
-  .btn.cyan-text-100:hover,
-  .fab.cyan-text-100:hover {
+  .btn.cyan-text-100[class^='-hover']:hover,
+  .fab.cyan-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.cyan-text-hover-100:hover,
@@ -4503,15 +4555,15 @@ p:first-child {
 .btn.cyan-200,
 .fab.cyan-200 {
   background-color: #4febff; }
-  .btn.cyan-200:hover,
-  .fab.cyan-200:hover {
+  .btn.cyan-200[class^='-hover']:hover,
+  .fab.cyan-200[class^='-hover']:hover {
     background-color: #caf9ff; }
 
 .btn.cyan-text-200,
 .fab.cyan-text-200 {
   color: #4febff; }
-  .btn.cyan-text-200:hover,
-  .fab.cyan-text-200:hover {
+  .btn.cyan-text-200[class^='-hover']:hover,
+  .fab.cyan-text-200[class^='-hover']:hover {
     color: #caf9ff; }
 
 .btn.cyan-text-hover-200:hover,
@@ -4533,15 +4585,15 @@ p:first-child {
 .btn.cyan-300,
 .fab.cyan-300 {
   background-color: #27e7ff; }
-  .btn.cyan-300:hover,
-  .fab.cyan-300:hover {
+  .btn.cyan-300[class^='-hover']:hover,
+  .fab.cyan-300[class^='-hover']:hover {
     background-color: #78f0ff; }
 
 .btn.cyan-text-300,
 .fab.cyan-text-300 {
   color: #27e7ff; }
-  .btn.cyan-text-300:hover,
-  .fab.cyan-text-300:hover {
+  .btn.cyan-text-300[class^='-hover']:hover,
+  .fab.cyan-text-300[class^='-hover']:hover {
     color: #78f0ff; }
 
 .btn.cyan-text-hover-300:hover,
@@ -4563,15 +4615,15 @@ p:first-child {
 .btn.cyan-400,
 .fab.cyan-400 {
   background-color: #00e0fd; }
-  .btn.cyan-400:hover,
-  .fab.cyan-400:hover {
+  .btn.cyan-400[class^='-hover']:hover,
+  .fab.cyan-400[class^='-hover']:hover {
     background-color: #27e7ff; }
 
 .btn.cyan-text-400,
 .fab.cyan-text-400 {
   color: #00e0fd; }
-  .btn.cyan-text-400:hover,
-  .fab.cyan-text-400:hover {
+  .btn.cyan-text-400[class^='-hover']:hover,
+  .fab.cyan-text-400[class^='-hover']:hover {
     color: #27e7ff; }
 
 .btn.cyan-text-hover-400:hover,
@@ -4593,8 +4645,8 @@ p:first-child {
 .btn.cyan,
 .fab.cyan {
   background-color: #00bcd4; }
-  .btn.cyan:hover,
-  .fab.cyan:hover {
+  .btn.cyan[class^='-hover']:hover,
+  .fab.cyan[class^='-hover']:hover {
     background-color: #27e7ff; }
 
 .btn.cyan-text,
@@ -4613,6 +4665,10 @@ p:first-child {
 .fab.cyan-text-hover:hover,
 .cyan-text-hover:hover {
   color: #00bcd4; }
+  .btn.cyan-text-hover:hover[class^='-hover']:hover,
+  .fab.cyan-text-hover:hover[class^='-hover']:hover,
+  .cyan-text-hover:hover[class^='-hover']:hover {
+    color: #007482; }
 
 .cyan-600 {
   background-color: #00e0fd; }
@@ -4623,15 +4679,15 @@ p:first-child {
 .btn.cyan-600,
 .fab.cyan-600 {
   background-color: #0098ab; }
-  .btn.cyan-600:hover,
-  .fab.cyan-600:hover {
+  .btn.cyan-600[class^='-hover']:hover,
+  .fab.cyan-600[class^='-hover']:hover {
     background-color: #27e7ff; }
 
 .btn.cyan-text-600,
 .fab.cyan-text-600 {
   color: #0098ab; }
-  .btn.cyan-text-600:hover,
-  .fab.cyan-text-600:hover {
+  .btn.cyan-text-600[class^='-hover']:hover,
+  .fab.cyan-text-600[class^='-hover']:hover {
     color: #27e7ff; }
 
 .btn.cyan-text-hover-600:hover,
@@ -4653,15 +4709,15 @@ p:first-child {
 .btn.cyan-700,
 .fab.cyan-700 {
   background-color: #007482; }
-  .btn.cyan-700:hover,
-  .fab.cyan-700:hover {
+  .btn.cyan-700[class^='-hover']:hover,
+  .fab.cyan-700[class^='-hover']:hover {
     background-color: #78f0ff; }
 
 .btn.cyan-text-700,
 .fab.cyan-text-700 {
   color: #007482; }
-  .btn.cyan-text-700:hover,
-  .fab.cyan-text-700:hover {
+  .btn.cyan-text-700[class^='-hover']:hover,
+  .fab.cyan-text-700[class^='-hover']:hover {
     color: #78f0ff; }
 
 .btn.cyan-text-hover-700:hover,
@@ -4683,15 +4739,15 @@ p:first-child {
 .btn.cyan-800,
 .fab.cyan-800 {
   background-color: #004f5a; }
-  .btn.cyan-800:hover,
-  .fab.cyan-800:hover {
+  .btn.cyan-800[class^='-hover']:hover,
+  .fab.cyan-800[class^='-hover']:hover {
     background-color: #caf9ff; }
 
 .btn.cyan-text-800,
 .fab.cyan-text-800 {
   color: #004f5a; }
-  .btn.cyan-text-800:hover,
-  .fab.cyan-text-800:hover {
+  .btn.cyan-text-800[class^='-hover']:hover,
+  .fab.cyan-text-800[class^='-hover']:hover {
     color: #caf9ff; }
 
 .btn.cyan-text-hover-800:hover,
@@ -4713,15 +4769,15 @@ p:first-child {
 .btn.cyan-900,
 .fab.cyan-900 {
   background-color: #002b31; }
-  .btn.cyan-900:hover,
-  .fab.cyan-900:hover {
+  .btn.cyan-900[class^='-hover']:hover,
+  .fab.cyan-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.cyan-text-900,
 .fab.cyan-text-900 {
   color: #002b31; }
-  .btn.cyan-text-900:hover,
-  .fab.cyan-text-900:hover {
+  .btn.cyan-text-900[class^='-hover']:hover,
+  .fab.cyan-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.cyan-text-hover-900:hover,
@@ -4743,15 +4799,15 @@ p:first-child {
 .btn.teal-50,
 .fab.teal-50 {
   background-color: #8cfff4; }
-  .btn.teal-50:hover,
-  .fab.teal-50:hover {
+  .btn.teal-50[class^='-hover']:hover,
+  .fab.teal-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.teal-text-50,
 .fab.teal-text-50 {
   color: #8cfff4; }
-  .btn.teal-text-50:hover,
-  .fab.teal-text-50:hover {
+  .btn.teal-text-50[class^='-hover']:hover,
+  .fab.teal-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.teal-text-hover-50:hover,
@@ -4773,15 +4829,15 @@ p:first-child {
 .btn.teal-100,
 .fab.teal-100 {
   background-color: #63fff0; }
-  .btn.teal-100:hover,
-  .fab.teal-100:hover {
+  .btn.teal-100[class^='-hover']:hover,
+  .fab.teal-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.teal-text-100,
 .fab.teal-text-100 {
   color: #63fff0; }
-  .btn.teal-text-100:hover,
-  .fab.teal-text-100:hover {
+  .btn.teal-text-100[class^='-hover']:hover,
+  .fab.teal-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.teal-text-hover-100:hover,
@@ -4803,15 +4859,15 @@ p:first-child {
 .btn.teal-200,
 .fab.teal-200 {
   background-color: #3affec; }
-  .btn.teal-200:hover,
-  .fab.teal-200:hover {
+  .btn.teal-200[class^='-hover']:hover,
+  .fab.teal-200[class^='-hover']:hover {
     background-color: #b5fff8; }
 
 .btn.teal-text-200,
 .fab.teal-text-200 {
   color: #3affec; }
-  .btn.teal-text-200:hover,
-  .fab.teal-text-200:hover {
+  .btn.teal-text-200[class^='-hover']:hover,
+  .fab.teal-text-200[class^='-hover']:hover {
     color: #b5fff8; }
 
 .btn.teal-text-hover-200:hover,
@@ -4833,15 +4889,15 @@ p:first-child {
 .btn.teal-300,
 .fab.teal-300 {
   background-color: #12ffe9; }
-  .btn.teal-300:hover,
-  .fab.teal-300:hover {
+  .btn.teal-300[class^='-hover']:hover,
+  .fab.teal-300[class^='-hover']:hover {
     background-color: #63fff0; }
 
 .btn.teal-text-300,
 .fab.teal-text-300 {
   color: #12ffe9; }
-  .btn.teal-text-300:hover,
-  .fab.teal-text-300:hover {
+  .btn.teal-text-300[class^='-hover']:hover,
+  .fab.teal-text-300[class^='-hover']:hover {
     color: #63fff0; }
 
 .btn.teal-text-hover-300:hover,
@@ -4863,15 +4919,15 @@ p:first-child {
 .btn.teal-400,
 .fab.teal-400 {
   background-color: #00e8d2; }
-  .btn.teal-400:hover,
-  .fab.teal-400:hover {
+  .btn.teal-400[class^='-hover']:hover,
+  .fab.teal-400[class^='-hover']:hover {
     background-color: #12ffe9; }
 
 .btn.teal-text-400,
 .fab.teal-text-400 {
   color: #00e8d2; }
-  .btn.teal-text-400:hover,
-  .fab.teal-text-400:hover {
+  .btn.teal-text-400[class^='-hover']:hover,
+  .fab.teal-text-400[class^='-hover']:hover {
     color: #12ffe9; }
 
 .btn.teal-text-hover-400:hover,
@@ -4893,8 +4949,8 @@ p:first-child {
 .btn.teal,
 .fab.teal {
   background-color: #00bfad; }
-  .btn.teal:hover,
-  .fab.teal:hover {
+  .btn.teal[class^='-hover']:hover,
+  .fab.teal[class^='-hover']:hover {
     background-color: #12ffe9; }
 
 .btn.teal-text,
@@ -4913,6 +4969,10 @@ p:first-child {
 .fab.teal-text-hover:hover,
 .teal-text-hover:hover {
   color: #00bfad; }
+  .btn.teal-text-hover:hover[class^='-hover']:hover,
+  .fab.teal-text-hover:hover[class^='-hover']:hover,
+  .teal-text-hover:hover[class^='-hover']:hover {
+    color: #006d63; }
 
 .teal-600 {
   background-color: #00e8d2; }
@@ -4923,15 +4983,15 @@ p:first-child {
 .btn.teal-600,
 .fab.teal-600 {
   background-color: #009688; }
-  .btn.teal-600:hover,
-  .fab.teal-600:hover {
+  .btn.teal-600[class^='-hover']:hover,
+  .fab.teal-600[class^='-hover']:hover {
     background-color: #12ffe9; }
 
 .btn.teal-text-600,
 .fab.teal-text-600 {
   color: #009688; }
-  .btn.teal-text-600:hover,
-  .fab.teal-text-600:hover {
+  .btn.teal-text-600[class^='-hover']:hover,
+  .fab.teal-text-600[class^='-hover']:hover {
     color: #12ffe9; }
 
 .btn.teal-text-hover-600:hover,
@@ -4953,15 +5013,15 @@ p:first-child {
 .btn.teal-700,
 .fab.teal-700 {
   background-color: #006d63; }
-  .btn.teal-700:hover,
-  .fab.teal-700:hover {
+  .btn.teal-700[class^='-hover']:hover,
+  .fab.teal-700[class^='-hover']:hover {
     background-color: #63fff0; }
 
 .btn.teal-text-700,
 .fab.teal-text-700 {
   color: #006d63; }
-  .btn.teal-text-700:hover,
-  .fab.teal-text-700:hover {
+  .btn.teal-text-700[class^='-hover']:hover,
+  .fab.teal-text-700[class^='-hover']:hover {
     color: #63fff0; }
 
 .btn.teal-text-hover-700:hover,
@@ -4983,15 +5043,15 @@ p:first-child {
 .btn.teal-800,
 .fab.teal-800 {
   background-color: #00453e; }
-  .btn.teal-800:hover,
-  .fab.teal-800:hover {
+  .btn.teal-800[class^='-hover']:hover,
+  .fab.teal-800[class^='-hover']:hover {
     background-color: #b5fff8; }
 
 .btn.teal-text-800,
 .fab.teal-text-800 {
   color: #00453e; }
-  .btn.teal-text-800:hover,
-  .fab.teal-text-800:hover {
+  .btn.teal-text-800[class^='-hover']:hover,
+  .fab.teal-text-800[class^='-hover']:hover {
     color: #b5fff8; }
 
 .btn.teal-text-hover-800:hover,
@@ -5013,15 +5073,15 @@ p:first-child {
 .btn.teal-900,
 .fab.teal-900 {
   background-color: #001c19; }
-  .btn.teal-900:hover,
-  .fab.teal-900:hover {
+  .btn.teal-900[class^='-hover']:hover,
+  .fab.teal-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.teal-text-900,
 .fab.teal-text-900 {
   color: #001c19; }
-  .btn.teal-text-900:hover,
-  .fab.teal-text-900:hover {
+  .btn.teal-text-900[class^='-hover']:hover,
+  .fab.teal-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.teal-text-hover-900:hover,
@@ -5043,15 +5103,15 @@ p:first-child {
 .btn.green-50,
 .fab.green-50 {
   background-color: #d9eeda; }
-  .btn.green-50:hover,
-  .fab.green-50:hover {
+  .btn.green-50[class^='-hover']:hover,
+  .fab.green-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.green-text-50,
 .fab.green-text-50 {
   color: #d9eeda; }
-  .btn.green-text-50:hover,
-  .fab.green-text-50:hover {
+  .btn.green-text-50[class^='-hover']:hover,
+  .fab.green-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.green-text-hover-50:hover,
@@ -5073,15 +5133,15 @@ p:first-child {
 .btn.green-100,
 .fab.green-100 {
   background-color: #bce2be; }
-  .btn.green-100:hover,
-  .fab.green-100:hover {
+  .btn.green-100[class^='-hover']:hover,
+  .fab.green-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.green-text-100,
 .fab.green-text-100 {
   color: #bce2be; }
-  .btn.green-text-100:hover,
-  .fab.green-text-100:hover {
+  .btn.green-text-100[class^='-hover']:hover,
+  .fab.green-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.green-text-hover-100:hover,
@@ -5103,15 +5163,15 @@ p:first-child {
 .btn.green-200,
 .fab.green-200 {
   background-color: #a0d6a2; }
-  .btn.green-200:hover,
-  .fab.green-200:hover {
+  .btn.green-200[class^='-hover']:hover,
+  .fab.green-200[class^='-hover']:hover {
     background-color: #f5fbf5; }
 
 .btn.green-text-200,
 .fab.green-text-200 {
   color: #a0d6a2; }
-  .btn.green-text-200:hover,
-  .fab.green-text-200:hover {
+  .btn.green-text-200[class^='-hover']:hover,
+  .fab.green-text-200[class^='-hover']:hover {
     color: #f5fbf5; }
 
 .btn.green-text-hover-200:hover,
@@ -5133,15 +5193,15 @@ p:first-child {
 .btn.green-300,
 .fab.green-300 {
   background-color: #83c986; }
-  .btn.green-300:hover,
-  .fab.green-300:hover {
+  .btn.green-300[class^='-hover']:hover,
+  .fab.green-300[class^='-hover']:hover {
     background-color: #bce2be; }
 
 .btn.green-text-300,
 .fab.green-text-300 {
   color: #83c986; }
-  .btn.green-text-300:hover,
-  .fab.green-text-300:hover {
+  .btn.green-text-300[class^='-hover']:hover,
+  .fab.green-text-300[class^='-hover']:hover {
     color: #bce2be; }
 
 .btn.green-text-hover-300:hover,
@@ -5163,15 +5223,15 @@ p:first-child {
 .btn.green-400,
 .fab.green-400 {
   background-color: #67bd6a; }
-  .btn.green-400:hover,
-  .fab.green-400:hover {
+  .btn.green-400[class^='-hover']:hover,
+  .fab.green-400[class^='-hover']:hover {
     background-color: #83c986; }
 
 .btn.green-text-400,
 .fab.green-text-400 {
   color: #67bd6a; }
-  .btn.green-text-400:hover,
-  .fab.green-text-400:hover {
+  .btn.green-text-400[class^='-hover']:hover,
+  .fab.green-text-400[class^='-hover']:hover {
     color: #83c986; }
 
 .btn.green-text-hover-400:hover,
@@ -5193,8 +5253,8 @@ p:first-child {
 .btn.green,
 .fab.green {
   background-color: #4caf50; }
-  .btn.green:hover,
-  .fab.green:hover {
+  .btn.green[class^='-hover']:hover,
+  .fab.green[class^='-hover']:hover {
     background-color: #83c986; }
 
 .btn.green-text,
@@ -5213,6 +5273,10 @@ p:first-child {
 .fab.green-text-hover:hover,
 .green-text-hover:hover {
   color: #4caf50; }
+  .btn.green-text-hover:hover[class^='-hover']:hover,
+  .fab.green-text-hover:hover[class^='-hover']:hover,
+  .green-text-hover:hover[class^='-hover']:hover {
+    color: #337636; }
 
 .green-600 {
   background-color: #67bd6a; }
@@ -5223,15 +5287,15 @@ p:first-child {
 .btn.green-600,
 .fab.green-600 {
   background-color: #409343; }
-  .btn.green-600:hover,
-  .fab.green-600:hover {
+  .btn.green-600[class^='-hover']:hover,
+  .fab.green-600[class^='-hover']:hover {
     background-color: #83c986; }
 
 .btn.green-text-600,
 .fab.green-text-600 {
   color: #409343; }
-  .btn.green-text-600:hover,
-  .fab.green-text-600:hover {
+  .btn.green-text-600[class^='-hover']:hover,
+  .fab.green-text-600[class^='-hover']:hover {
     color: #83c986; }
 
 .btn.green-text-hover-600:hover,
@@ -5253,15 +5317,15 @@ p:first-child {
 .btn.green-700,
 .fab.green-700 {
   background-color: #337636; }
-  .btn.green-700:hover,
-  .fab.green-700:hover {
+  .btn.green-700[class^='-hover']:hover,
+  .fab.green-700[class^='-hover']:hover {
     background-color: #bce2be; }
 
 .btn.green-text-700,
 .fab.green-text-700 {
   color: #337636; }
-  .btn.green-text-700:hover,
-  .fab.green-text-700:hover {
+  .btn.green-text-700[class^='-hover']:hover,
+  .fab.green-text-700[class^='-hover']:hover {
     color: #bce2be; }
 
 .btn.green-text-hover-700:hover,
@@ -5283,15 +5347,15 @@ p:first-child {
 .btn.green-800,
 .fab.green-800 {
   background-color: #275a29; }
-  .btn.green-800:hover,
-  .fab.green-800:hover {
+  .btn.green-800[class^='-hover']:hover,
+  .fab.green-800[class^='-hover']:hover {
     background-color: #f5fbf5; }
 
 .btn.green-text-800,
 .fab.green-text-800 {
   color: #275a29; }
-  .btn.green-text-800:hover,
-  .fab.green-text-800:hover {
+  .btn.green-text-800[class^='-hover']:hover,
+  .fab.green-text-800[class^='-hover']:hover {
     color: #f5fbf5; }
 
 .btn.green-text-hover-800:hover,
@@ -5313,15 +5377,15 @@ p:first-child {
 .btn.green-900,
 .fab.green-900 {
   background-color: #1b3d1c; }
-  .btn.green-900:hover,
-  .fab.green-900:hover {
+  .btn.green-900[class^='-hover']:hover,
+  .fab.green-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.green-text-900,
 .fab.green-text-900 {
   color: #1b3d1c; }
-  .btn.green-text-900:hover,
-  .fab.green-text-900:hover {
+  .btn.green-text-900[class^='-hover']:hover,
+  .fab.green-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.green-text-hover-900:hover,
@@ -5343,15 +5407,15 @@ p:first-child {
 .btn.light-green-50,
 .fab.light-green-50 {
   background-color: #edf6e3; }
-  .btn.light-green-50:hover,
-  .fab.light-green-50:hover {
+  .btn.light-green-50[class^='-hover']:hover,
+  .fab.light-green-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-green-text-50,
 .fab.light-green-text-50 {
   color: #edf6e3; }
-  .btn.light-green-text-50:hover,
-  .fab.light-green-text-50:hover {
+  .btn.light-green-text-50[class^='-hover']:hover,
+  .fab.light-green-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.light-green-text-hover-50:hover,
@@ -5373,15 +5437,15 @@ p:first-child {
 .btn.light-green-100,
 .fab.light-green-100 {
   background-color: #daecc5; }
-  .btn.light-green-100:hover,
-  .fab.light-green-100:hover {
+  .btn.light-green-100[class^='-hover']:hover,
+  .fab.light-green-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-green-text-100,
 .fab.light-green-text-100 {
   color: #daecc5; }
-  .btn.light-green-text-100:hover,
-  .fab.light-green-text-100:hover {
+  .btn.light-green-text-100[class^='-hover']:hover,
+  .fab.light-green-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.light-green-text-hover-100:hover,
@@ -5403,15 +5467,15 @@ p:first-child {
 .btn.light-green-200,
 .fab.light-green-200 {
   background-color: #c6e1a6; }
-  .btn.light-green-200:hover,
-  .fab.light-green-200:hover {
+  .btn.light-green-200[class^='-hover']:hover,
+  .fab.light-green-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-green-text-200,
 .fab.light-green-text-200 {
   color: #c6e1a6; }
-  .btn.light-green-text-200:hover,
-  .fab.light-green-text-200:hover {
+  .btn.light-green-text-200[class^='-hover']:hover,
+  .fab.light-green-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.light-green-text-hover-200:hover,
@@ -5433,15 +5497,15 @@ p:first-child {
 .btn.light-green-300,
 .fab.light-green-300 {
   background-color: #b2d787; }
-  .btn.light-green-300:hover,
-  .fab.light-green-300:hover {
+  .btn.light-green-300[class^='-hover']:hover,
+  .fab.light-green-300[class^='-hover']:hover {
     background-color: #daecc5; }
 
 .btn.light-green-text-300,
 .fab.light-green-text-300 {
   color: #b2d787; }
-  .btn.light-green-text-300:hover,
-  .fab.light-green-text-300:hover {
+  .btn.light-green-text-300[class^='-hover']:hover,
+  .fab.light-green-text-300[class^='-hover']:hover {
     color: #daecc5; }
 
 .btn.light-green-text-hover-300:hover,
@@ -5463,15 +5527,15 @@ p:first-child {
 .btn.light-green-400,
 .fab.light-green-400 {
   background-color: #9fcd69; }
-  .btn.light-green-400:hover,
-  .fab.light-green-400:hover {
+  .btn.light-green-400[class^='-hover']:hover,
+  .fab.light-green-400[class^='-hover']:hover {
     background-color: #b2d787; }
 
 .btn.light-green-text-400,
 .fab.light-green-text-400 {
   color: #9fcd69; }
-  .btn.light-green-text-400:hover,
-  .fab.light-green-text-400:hover {
+  .btn.light-green-text-400[class^='-hover']:hover,
+  .fab.light-green-text-400[class^='-hover']:hover {
     color: #b2d787; }
 
 .btn.light-green-text-hover-400:hover,
@@ -5493,8 +5557,8 @@ p:first-child {
 .btn.light-green,
 .fab.light-green {
   background-color: #8bc34a; }
-  .btn.light-green:hover,
-  .fab.light-green:hover {
+  .btn.light-green[class^='-hover']:hover,
+  .fab.light-green[class^='-hover']:hover {
     background-color: #b2d787; }
 
 .btn.light-green-text,
@@ -5513,6 +5577,10 @@ p:first-child {
 .fab.light-green-text-hover:hover,
 .light-green-text-hover:hover {
   color: #8bc34a; }
+  .btn.light-green-text-hover:hover[class^='-hover']:hover,
+  .fab.light-green-text-hover:hover[class^='-hover']:hover,
+  .light-green-text-hover:hover[class^='-hover']:hover {
+    color: #618d2f; }
 
 .light-green-600 {
   background-color: #9fcd69; }
@@ -5523,15 +5591,15 @@ p:first-child {
 .btn.light-green-600,
 .fab.light-green-600 {
   background-color: #76ab39; }
-  .btn.light-green-600:hover,
-  .fab.light-green-600:hover {
+  .btn.light-green-600[class^='-hover']:hover,
+  .fab.light-green-600[class^='-hover']:hover {
     background-color: #b2d787; }
 
 .btn.light-green-text-600,
 .fab.light-green-text-600 {
   color: #76ab39; }
-  .btn.light-green-text-600:hover,
-  .fab.light-green-text-600:hover {
+  .btn.light-green-text-600[class^='-hover']:hover,
+  .fab.light-green-text-600[class^='-hover']:hover {
     color: #b2d787; }
 
 .btn.light-green-text-hover-600:hover,
@@ -5553,15 +5621,15 @@ p:first-child {
 .btn.light-green-700,
 .fab.light-green-700 {
   background-color: #618d2f; }
-  .btn.light-green-700:hover,
-  .fab.light-green-700:hover {
+  .btn.light-green-700[class^='-hover']:hover,
+  .fab.light-green-700[class^='-hover']:hover {
     background-color: #daecc5; }
 
 .btn.light-green-text-700,
 .fab.light-green-text-700 {
   color: #618d2f; }
-  .btn.light-green-text-700:hover,
-  .fab.light-green-text-700:hover {
+  .btn.light-green-text-700[class^='-hover']:hover,
+  .fab.light-green-text-700[class^='-hover']:hover {
     color: #daecc5; }
 
 .btn.light-green-text-hover-700:hover,
@@ -5583,15 +5651,15 @@ p:first-child {
 .btn.light-green-800,
 .fab.light-green-800 {
   background-color: #4c6e24; }
-  .btn.light-green-800:hover,
-  .fab.light-green-800:hover {
+  .btn.light-green-800[class^='-hover']:hover,
+  .fab.light-green-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-green-text-800,
 .fab.light-green-text-800 {
   color: #4c6e24; }
-  .btn.light-green-text-800:hover,
-  .fab.light-green-text-800:hover {
+  .btn.light-green-text-800[class^='-hover']:hover,
+  .fab.light-green-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.light-green-text-hover-800:hover,
@@ -5613,15 +5681,15 @@ p:first-child {
 .btn.light-green-900,
 .fab.light-green-900 {
   background-color: #374f1a; }
-  .btn.light-green-900:hover,
-  .fab.light-green-900:hover {
+  .btn.light-green-900[class^='-hover']:hover,
+  .fab.light-green-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.light-green-text-900,
 .fab.light-green-text-900 {
   color: #374f1a; }
-  .btn.light-green-text-900:hover,
-  .fab.light-green-text-900:hover {
+  .btn.light-green-text-900[class^='-hover']:hover,
+  .fab.light-green-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.light-green-text-hover-900:hover,
@@ -5643,15 +5711,15 @@ p:first-child {
 .btn.lime-50,
 .fab.lime-50 {
   background-color: #d6f5d6; }
-  .btn.lime-50:hover,
-  .fab.lime-50:hover {
+  .btn.lime-50[class^='-hover']:hover,
+  .fab.lime-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.lime-text-50,
 .fab.lime-text-50 {
   color: #d6f5d6; }
-  .btn.lime-text-50:hover,
-  .fab.lime-text-50:hover {
+  .btn.lime-text-50[class^='-hover']:hover,
+  .fab.lime-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.lime-text-hover-50:hover,
@@ -5673,15 +5741,15 @@ p:first-child {
 .btn.lime-100,
 .fab.lime-100 {
   background-color: #b5edb5; }
-  .btn.lime-100:hover,
-  .fab.lime-100:hover {
+  .btn.lime-100[class^='-hover']:hover,
+  .fab.lime-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.lime-text-100,
 .fab.lime-text-100 {
   color: #b5edb5; }
-  .btn.lime-text-100:hover,
-  .fab.lime-text-100:hover {
+  .btn.lime-text-100[class^='-hover']:hover,
+  .fab.lime-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.lime-text-hover-100:hover,
@@ -5703,15 +5771,15 @@ p:first-child {
 .btn.lime-200,
 .fab.lime-200 {
   background-color: #94e594; }
-  .btn.lime-200:hover,
-  .fab.lime-200:hover {
+  .btn.lime-200[class^='-hover']:hover,
+  .fab.lime-200[class^='-hover']:hover {
     background-color: #f7fdf7; }
 
 .btn.lime-text-200,
 .fab.lime-text-200 {
   color: #94e594; }
-  .btn.lime-text-200:hover,
-  .fab.lime-text-200:hover {
+  .btn.lime-text-200[class^='-hover']:hover,
+  .fab.lime-text-200[class^='-hover']:hover {
     color: #f7fdf7; }
 
 .btn.lime-text-hover-200:hover,
@@ -5733,15 +5801,15 @@ p:first-child {
 .btn.lime-300,
 .fab.lime-300 {
   background-color: #74dd74; }
-  .btn.lime-300:hover,
-  .fab.lime-300:hover {
+  .btn.lime-300[class^='-hover']:hover,
+  .fab.lime-300[class^='-hover']:hover {
     background-color: #b5edb5; }
 
 .btn.lime-text-300,
 .fab.lime-text-300 {
   color: #74dd74; }
-  .btn.lime-text-300:hover,
-  .fab.lime-text-300:hover {
+  .btn.lime-text-300[class^='-hover']:hover,
+  .fab.lime-text-300[class^='-hover']:hover {
     color: #b5edb5; }
 
 .btn.lime-text-hover-300:hover,
@@ -5763,15 +5831,15 @@ p:first-child {
 .btn.lime-400,
 .fab.lime-400 {
   background-color: #53d553; }
-  .btn.lime-400:hover,
-  .fab.lime-400:hover {
+  .btn.lime-400[class^='-hover']:hover,
+  .fab.lime-400[class^='-hover']:hover {
     background-color: #74dd74; }
 
 .btn.lime-text-400,
 .fab.lime-text-400 {
   color: #53d553; }
-  .btn.lime-text-400:hover,
-  .fab.lime-text-400:hover {
+  .btn.lime-text-400[class^='-hover']:hover,
+  .fab.lime-text-400[class^='-hover']:hover {
     color: #74dd74; }
 
 .btn.lime-text-hover-400:hover,
@@ -5793,8 +5861,8 @@ p:first-child {
 .btn.lime,
 .fab.lime {
   background-color: #32cd32; }
-  .btn.lime:hover,
-  .fab.lime:hover {
+  .btn.lime[class^='-hover']:hover,
+  .fab.lime[class^='-hover']:hover {
     background-color: #74dd74; }
 
 .btn.lime-text,
@@ -5813,6 +5881,10 @@ p:first-child {
 .fab.lime-text-hover:hover,
 .lime-text-hover:hover {
   color: #32cd32; }
+  .btn.lime-text-hover:hover[class^='-hover']:hover,
+  .fab.lime-text-hover:hover[class^='-hover']:hover,
+  .lime-text-hover:hover[class^='-hover']:hover {
+    color: forestgreen; }
 
 .lime-600 {
   background-color: #53d553; }
@@ -5823,15 +5895,15 @@ p:first-child {
 .btn.lime-600,
 .fab.lime-600 {
   background-color: #2aac2a; }
-  .btn.lime-600:hover,
-  .fab.lime-600:hover {
+  .btn.lime-600[class^='-hover']:hover,
+  .fab.lime-600[class^='-hover']:hover {
     background-color: #74dd74; }
 
 .btn.lime-text-600,
 .fab.lime-text-600 {
   color: #2aac2a; }
-  .btn.lime-text-600:hover,
-  .fab.lime-text-600:hover {
+  .btn.lime-text-600[class^='-hover']:hover,
+  .fab.lime-text-600[class^='-hover']:hover {
     color: #74dd74; }
 
 .btn.lime-text-hover-600:hover,
@@ -5853,15 +5925,15 @@ p:first-child {
 .btn.lime-700,
 .fab.lime-700 {
   background-color: forestgreen; }
-  .btn.lime-700:hover,
-  .fab.lime-700:hover {
+  .btn.lime-700[class^='-hover']:hover,
+  .fab.lime-700[class^='-hover']:hover {
     background-color: #b5edb5; }
 
 .btn.lime-text-700,
 .fab.lime-text-700 {
   color: forestgreen; }
-  .btn.lime-text-700:hover,
-  .fab.lime-text-700:hover {
+  .btn.lime-text-700[class^='-hover']:hover,
+  .fab.lime-text-700[class^='-hover']:hover {
     color: #b5edb5; }
 
 .btn.lime-text-hover-700:hover,
@@ -5883,15 +5955,15 @@ p:first-child {
 .btn.lime-800,
 .fab.lime-800 {
   background-color: #1a6b1a; }
-  .btn.lime-800:hover,
-  .fab.lime-800:hover {
+  .btn.lime-800[class^='-hover']:hover,
+  .fab.lime-800[class^='-hover']:hover {
     background-color: #f7fdf7; }
 
 .btn.lime-text-800,
 .fab.lime-text-800 {
   color: #1a6b1a; }
-  .btn.lime-text-800:hover,
-  .fab.lime-text-800:hover {
+  .btn.lime-text-800[class^='-hover']:hover,
+  .fab.lime-text-800[class^='-hover']:hover {
     color: #f7fdf7; }
 
 .btn.lime-text-hover-800:hover,
@@ -5913,15 +5985,15 @@ p:first-child {
 .btn.lime-900,
 .fab.lime-900 {
   background-color: #124a12; }
-  .btn.lime-900:hover,
-  .fab.lime-900:hover {
+  .btn.lime-900[class^='-hover']:hover,
+  .fab.lime-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.lime-text-900,
 .fab.lime-text-900 {
   color: #124a12; }
-  .btn.lime-text-900:hover,
-  .fab.lime-text-900:hover {
+  .btn.lime-text-900[class^='-hover']:hover,
+  .fab.lime-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.lime-text-hover-900:hover,
@@ -5943,15 +6015,15 @@ p:first-child {
 .btn.olive-50,
 .fab.olive-50 {
   background-color: #f9fbe6; }
-  .btn.olive-50:hover,
-  .fab.olive-50:hover {
+  .btn.olive-50[class^='-hover']:hover,
+  .fab.olive-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.olive-text-50,
 .fab.olive-text-50 {
   color: #f9fbe6; }
-  .btn.olive-text-50:hover,
-  .fab.olive-text-50:hover {
+  .btn.olive-text-50[class^='-hover']:hover,
+  .fab.olive-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.olive-text-hover-50:hover,
@@ -5973,15 +6045,15 @@ p:first-child {
 .btn.olive-100,
 .fab.olive-100 {
   background-color: #f0f5c4; }
-  .btn.olive-100:hover,
-  .fab.olive-100:hover {
+  .btn.olive-100[class^='-hover']:hover,
+  .fab.olive-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.olive-text-100,
 .fab.olive-text-100 {
   color: #f0f5c4; }
-  .btn.olive-text-100:hover,
-  .fab.olive-text-100:hover {
+  .btn.olive-text-100[class^='-hover']:hover,
+  .fab.olive-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.olive-text-hover-100:hover,
@@ -6003,15 +6075,15 @@ p:first-child {
 .btn.olive-200,
 .fab.olive-200 {
   background-color: #e7eea1; }
-  .btn.olive-200:hover,
-  .fab.olive-200:hover {
+  .btn.olive-200[class^='-hover']:hover,
+  .fab.olive-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.olive-text-200,
 .fab.olive-text-200 {
   color: #e7eea1; }
-  .btn.olive-text-200:hover,
-  .fab.olive-text-200:hover {
+  .btn.olive-text-200[class^='-hover']:hover,
+  .fab.olive-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.olive-text-hover-200:hover,
@@ -6033,15 +6105,15 @@ p:first-child {
 .btn.olive-300,
 .fab.olive-300 {
   background-color: #dfe87e; }
-  .btn.olive-300:hover,
-  .fab.olive-300:hover {
+  .btn.olive-300[class^='-hover']:hover,
+  .fab.olive-300[class^='-hover']:hover {
     background-color: #f0f5c4; }
 
 .btn.olive-text-300,
 .fab.olive-text-300 {
   color: #dfe87e; }
-  .btn.olive-text-300:hover,
-  .fab.olive-text-300:hover {
+  .btn.olive-text-300[class^='-hover']:hover,
+  .fab.olive-text-300[class^='-hover']:hover {
     color: #f0f5c4; }
 
 .btn.olive-text-hover-300:hover,
@@ -6063,15 +6135,15 @@ p:first-child {
 .btn.olive-400,
 .fab.olive-400 {
   background-color: #d6e25c; }
-  .btn.olive-400:hover,
-  .fab.olive-400:hover {
+  .btn.olive-400[class^='-hover']:hover,
+  .fab.olive-400[class^='-hover']:hover {
     background-color: #dfe87e; }
 
 .btn.olive-text-400,
 .fab.olive-text-400 {
   color: #d6e25c; }
-  .btn.olive-text-400:hover,
-  .fab.olive-text-400:hover {
+  .btn.olive-text-400[class^='-hover']:hover,
+  .fab.olive-text-400[class^='-hover']:hover {
     color: #dfe87e; }
 
 .btn.olive-text-hover-400:hover,
@@ -6093,8 +6165,8 @@ p:first-child {
 .btn.olive,
 .fab.olive {
   background-color: #cddc39; }
-  .btn.olive:hover,
-  .fab.olive:hover {
+  .btn.olive[class^='-hover']:hover,
+  .fab.olive[class^='-hover']:hover {
     background-color: #dfe87e; }
 
 .btn.olive-text,
@@ -6113,6 +6185,10 @@ p:first-child {
 .fab.olive-text-hover:hover,
 .olive-text-hover:hover {
   color: #cddc39; }
+  .btn.olive-text-hover:hover[class^='-hover']:hover,
+  .fab.olive-text-hover:hover[class^='-hover']:hover,
+  .olive-text-hover:hover[class^='-hover']:hover {
+    color: #99a61d; }
 
 .olive-600 {
   background-color: #d6e25c; }
@@ -6123,15 +6199,15 @@ p:first-child {
 .btn.olive-600,
 .fab.olive-600 {
   background-color: #bac923; }
-  .btn.olive-600:hover,
-  .fab.olive-600:hover {
+  .btn.olive-600[class^='-hover']:hover,
+  .fab.olive-600[class^='-hover']:hover {
     background-color: #dfe87e; }
 
 .btn.olive-text-600,
 .fab.olive-text-600 {
   color: #bac923; }
-  .btn.olive-text-600:hover,
-  .fab.olive-text-600:hover {
+  .btn.olive-text-600[class^='-hover']:hover,
+  .fab.olive-text-600[class^='-hover']:hover {
     color: #dfe87e; }
 
 .btn.olive-text-hover-600:hover,
@@ -6153,15 +6229,15 @@ p:first-child {
 .btn.olive-700,
 .fab.olive-700 {
   background-color: #99a61d; }
-  .btn.olive-700:hover,
-  .fab.olive-700:hover {
+  .btn.olive-700[class^='-hover']:hover,
+  .fab.olive-700[class^='-hover']:hover {
     background-color: #f0f5c4; }
 
 .btn.olive-text-700,
 .fab.olive-text-700 {
   color: #99a61d; }
-  .btn.olive-text-700:hover,
-  .fab.olive-text-700:hover {
+  .btn.olive-text-700[class^='-hover']:hover,
+  .fab.olive-text-700[class^='-hover']:hover {
     color: #f0f5c4; }
 
 .btn.olive-text-hover-700:hover,
@@ -6183,15 +6259,15 @@ p:first-child {
 .btn.olive-800,
 .fab.olive-800 {
   background-color: #798317; }
-  .btn.olive-800:hover,
-  .fab.olive-800:hover {
+  .btn.olive-800[class^='-hover']:hover,
+  .fab.olive-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.olive-text-800,
 .fab.olive-text-800 {
   color: #798317; }
-  .btn.olive-text-800:hover,
-  .fab.olive-text-800:hover {
+  .btn.olive-text-800[class^='-hover']:hover,
+  .fab.olive-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.olive-text-hover-800:hover,
@@ -6213,15 +6289,15 @@ p:first-child {
 .btn.olive-900,
 .fab.olive-900 {
   background-color: #596111; }
-  .btn.olive-900:hover,
-  .fab.olive-900:hover {
+  .btn.olive-900[class^='-hover']:hover,
+  .fab.olive-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.olive-text-900,
 .fab.olive-text-900 {
   color: #596111; }
-  .btn.olive-text-900:hover,
-  .fab.olive-text-900:hover {
+  .btn.olive-text-900[class^='-hover']:hover,
+  .fab.olive-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.olive-text-hover-900:hover,
@@ -6243,15 +6319,15 @@ p:first-child {
 .btn.yellow-50,
 .fab.yellow-50 {
   background-color: white; }
-  .btn.yellow-50:hover,
-  .fab.yellow-50:hover {
+  .btn.yellow-50[class^='-hover']:hover,
+  .fab.yellow-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.yellow-text-50,
 .fab.yellow-text-50 {
   color: white; }
-  .btn.yellow-text-50:hover,
-  .fab.yellow-text-50:hover {
+  .btn.yellow-text-50[class^='-hover']:hover,
+  .fab.yellow-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.yellow-text-hover-50:hover,
@@ -6273,15 +6349,15 @@ p:first-child {
 .btn.yellow-100,
 .fab.yellow-100 {
   background-color: #fffcde; }
-  .btn.yellow-100:hover,
-  .fab.yellow-100:hover {
+  .btn.yellow-100[class^='-hover']:hover,
+  .fab.yellow-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.yellow-text-100,
 .fab.yellow-text-100 {
   color: #fffcde; }
-  .btn.yellow-text-100:hover,
-  .fab.yellow-text-100:hover {
+  .btn.yellow-text-100[class^='-hover']:hover,
+  .fab.yellow-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.yellow-text-hover-100:hover,
@@ -6303,15 +6379,15 @@ p:first-child {
 .btn.yellow-200,
 .fab.yellow-200 {
   background-color: #fff7b5; }
-  .btn.yellow-200:hover,
-  .fab.yellow-200:hover {
+  .btn.yellow-200[class^='-hover']:hover,
+  .fab.yellow-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.yellow-text-200,
 .fab.yellow-text-200 {
   color: #fff7b5; }
-  .btn.yellow-text-200:hover,
-  .fab.yellow-text-200:hover {
+  .btn.yellow-text-200[class^='-hover']:hover,
+  .fab.yellow-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.yellow-text-hover-200:hover,
@@ -6333,15 +6409,15 @@ p:first-child {
 .btn.yellow-300,
 .fab.yellow-300 {
   background-color: #fff38d; }
-  .btn.yellow-300:hover,
-  .fab.yellow-300:hover {
+  .btn.yellow-300[class^='-hover']:hover,
+  .fab.yellow-300[class^='-hover']:hover {
     background-color: #fffcde; }
 
 .btn.yellow-text-300,
 .fab.yellow-text-300 {
   color: #fff38d; }
-  .btn.yellow-text-300:hover,
-  .fab.yellow-text-300:hover {
+  .btn.yellow-text-300[class^='-hover']:hover,
+  .fab.yellow-text-300[class^='-hover']:hover {
     color: #fffcde; }
 
 .btn.yellow-text-hover-300:hover,
@@ -6363,15 +6439,15 @@ p:first-child {
 .btn.yellow-400,
 .fab.yellow-400 {
   background-color: #ffef64; }
-  .btn.yellow-400:hover,
-  .fab.yellow-400:hover {
+  .btn.yellow-400[class^='-hover']:hover,
+  .fab.yellow-400[class^='-hover']:hover {
     background-color: #fff38d; }
 
 .btn.yellow-text-400,
 .fab.yellow-text-400 {
   color: #ffef64; }
-  .btn.yellow-text-400:hover,
-  .fab.yellow-text-400:hover {
+  .btn.yellow-text-400[class^='-hover']:hover,
+  .fab.yellow-text-400[class^='-hover']:hover {
     color: #fff38d; }
 
 .btn.yellow-text-hover-400:hover,
@@ -6393,8 +6469,8 @@ p:first-child {
 .btn.yellow,
 .fab.yellow {
   background-color: #ffeb3b; }
-  .btn.yellow:hover,
-  .fab.yellow:hover {
+  .btn.yellow[class^='-hover']:hover,
+  .fab.yellow[class^='-hover']:hover {
     background-color: #fff38d; }
 
 .btn.yellow-text,
@@ -6413,6 +6489,10 @@ p:first-child {
 .fab.yellow-text-hover:hover,
 .yellow-text-hover:hover {
   color: #ffeb3b; }
+  .btn.yellow-text-hover:hover[class^='-hover']:hover,
+  .fab.yellow-text-hover:hover[class^='-hover']:hover,
+  .yellow-text-hover:hover[class^='-hover']:hover {
+    color: #e8d100; }
 
 .yellow-600 {
   background-color: #ffef64; }
@@ -6423,15 +6503,15 @@ p:first-child {
 .btn.yellow-600,
 .fab.yellow-600 {
   background-color: #ffe712; }
-  .btn.yellow-600:hover,
-  .fab.yellow-600:hover {
+  .btn.yellow-600[class^='-hover']:hover,
+  .fab.yellow-600[class^='-hover']:hover {
     background-color: #fff38d; }
 
 .btn.yellow-text-600,
 .fab.yellow-text-600 {
   color: #ffe712; }
-  .btn.yellow-text-600:hover,
-  .fab.yellow-text-600:hover {
+  .btn.yellow-text-600[class^='-hover']:hover,
+  .fab.yellow-text-600[class^='-hover']:hover {
     color: #fff38d; }
 
 .btn.yellow-text-hover-600:hover,
@@ -6453,15 +6533,15 @@ p:first-child {
 .btn.yellow-700,
 .fab.yellow-700 {
   background-color: #e8d100; }
-  .btn.yellow-700:hover,
-  .fab.yellow-700:hover {
+  .btn.yellow-700[class^='-hover']:hover,
+  .fab.yellow-700[class^='-hover']:hover {
     background-color: #fffcde; }
 
 .btn.yellow-text-700,
 .fab.yellow-text-700 {
   color: #e8d100; }
-  .btn.yellow-text-700:hover,
-  .fab.yellow-text-700:hover {
+  .btn.yellow-text-700[class^='-hover']:hover,
+  .fab.yellow-text-700[class^='-hover']:hover {
     color: #fffcde; }
 
 .btn.yellow-text-hover-700:hover,
@@ -6483,15 +6563,15 @@ p:first-child {
 .btn.yellow-800,
 .fab.yellow-800 {
   background-color: #c0ac00; }
-  .btn.yellow-800:hover,
-  .fab.yellow-800:hover {
+  .btn.yellow-800[class^='-hover']:hover,
+  .fab.yellow-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.yellow-text-800,
 .fab.yellow-text-800 {
   color: #c0ac00; }
-  .btn.yellow-text-800:hover,
-  .fab.yellow-text-800:hover {
+  .btn.yellow-text-800[class^='-hover']:hover,
+  .fab.yellow-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.yellow-text-hover-800:hover,
@@ -6513,15 +6593,15 @@ p:first-child {
 .btn.yellow-900,
 .fab.yellow-900 {
   background-color: #978700; }
-  .btn.yellow-900:hover,
-  .fab.yellow-900:hover {
+  .btn.yellow-900[class^='-hover']:hover,
+  .fab.yellow-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.yellow-text-900,
 .fab.yellow-text-900 {
   color: #978700; }
-  .btn.yellow-text-900:hover,
-  .fab.yellow-text-900:hover {
+  .btn.yellow-text-900[class^='-hover']:hover,
+  .fab.yellow-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.yellow-text-hover-900:hover,
@@ -6543,15 +6623,15 @@ p:first-child {
 .btn.gold-50,
 .fab.gold-50 {
   background-color: #fff7cc; }
-  .btn.gold-50:hover,
-  .fab.gold-50:hover {
+  .btn.gold-50[class^='-hover']:hover,
+  .fab.gold-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.gold-text-50,
 .fab.gold-text-50 {
   color: #fff7cc; }
-  .btn.gold-text-50:hover,
-  .fab.gold-text-50:hover {
+  .btn.gold-text-50[class^='-hover']:hover,
+  .fab.gold-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.gold-text-hover-50:hover,
@@ -6573,15 +6653,15 @@ p:first-child {
 .btn.gold-100,
 .fab.gold-100 {
   background-color: #fff1a3; }
-  .btn.gold-100:hover,
-  .fab.gold-100:hover {
+  .btn.gold-100[class^='-hover']:hover,
+  .fab.gold-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.gold-text-100,
 .fab.gold-text-100 {
   color: #fff1a3; }
-  .btn.gold-text-100:hover,
-  .fab.gold-text-100:hover {
+  .btn.gold-text-100[class^='-hover']:hover,
+  .fab.gold-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.gold-text-hover-100:hover,
@@ -6603,15 +6683,15 @@ p:first-child {
 .btn.gold-200,
 .fab.gold-200 {
   background-color: #ffea7a; }
-  .btn.gold-200:hover,
-  .fab.gold-200:hover {
+  .btn.gold-200[class^='-hover']:hover,
+  .fab.gold-200[class^='-hover']:hover {
     background-color: #fffdf5; }
 
 .btn.gold-text-200,
 .fab.gold-text-200 {
   color: #ffea7a; }
-  .btn.gold-text-200:hover,
-  .fab.gold-text-200:hover {
+  .btn.gold-text-200[class^='-hover']:hover,
+  .fab.gold-text-200[class^='-hover']:hover {
     color: #fffdf5; }
 
 .btn.gold-text-hover-200:hover,
@@ -6633,15 +6713,15 @@ p:first-child {
 .btn.gold-300,
 .fab.gold-300 {
   background-color: #ffe452; }
-  .btn.gold-300:hover,
-  .fab.gold-300:hover {
+  .btn.gold-300[class^='-hover']:hover,
+  .fab.gold-300[class^='-hover']:hover {
     background-color: #fff1a3; }
 
 .btn.gold-text-300,
 .fab.gold-text-300 {
   color: #ffe452; }
-  .btn.gold-text-300:hover,
-  .fab.gold-text-300:hover {
+  .btn.gold-text-300[class^='-hover']:hover,
+  .fab.gold-text-300[class^='-hover']:hover {
     color: #fff1a3; }
 
 .btn.gold-text-hover-300:hover,
@@ -6663,15 +6743,15 @@ p:first-child {
 .btn.gold-400,
 .fab.gold-400 {
   background-color: #ffdd29; }
-  .btn.gold-400:hover,
-  .fab.gold-400:hover {
+  .btn.gold-400[class^='-hover']:hover,
+  .fab.gold-400[class^='-hover']:hover {
     background-color: #ffe452; }
 
 .btn.gold-text-400,
 .fab.gold-text-400 {
   color: #ffdd29; }
-  .btn.gold-text-400:hover,
-  .fab.gold-text-400:hover {
+  .btn.gold-text-400[class^='-hover']:hover,
+  .fab.gold-text-400[class^='-hover']:hover {
     color: #ffe452; }
 
 .btn.gold-text-hover-400:hover,
@@ -6693,8 +6773,8 @@ p:first-child {
 .btn.gold,
 .fab.gold {
   background-color: #ffd700; }
-  .btn.gold:hover,
-  .fab.gold:hover {
+  .btn.gold[class^='-hover']:hover,
+  .fab.gold[class^='-hover']:hover {
     background-color: #ffe452; }
 
 .btn.gold-text,
@@ -6713,6 +6793,10 @@ p:first-child {
 .fab.gold-text-hover:hover,
 .gold-text-hover:hover {
   color: #ffd700; }
+  .btn.gold-text-hover:hover[class^='-hover']:hover,
+  .fab.gold-text-hover:hover[class^='-hover']:hover,
+  .gold-text-hover:hover[class^='-hover']:hover {
+    color: #ad9200; }
 
 .gold-600 {
   background-color: #ffdd29; }
@@ -6723,15 +6807,15 @@ p:first-child {
 .btn.gold-600,
 .fab.gold-600 {
   background-color: #d6b500; }
-  .btn.gold-600:hover,
-  .fab.gold-600:hover {
+  .btn.gold-600[class^='-hover']:hover,
+  .fab.gold-600[class^='-hover']:hover {
     background-color: #ffe452; }
 
 .btn.gold-text-600,
 .fab.gold-text-600 {
   color: #d6b500; }
-  .btn.gold-text-600:hover,
-  .fab.gold-text-600:hover {
+  .btn.gold-text-600[class^='-hover']:hover,
+  .fab.gold-text-600[class^='-hover']:hover {
     color: #ffe452; }
 
 .btn.gold-text-hover-600:hover,
@@ -6753,15 +6837,15 @@ p:first-child {
 .btn.gold-700,
 .fab.gold-700 {
   background-color: #ad9200; }
-  .btn.gold-700:hover,
-  .fab.gold-700:hover {
+  .btn.gold-700[class^='-hover']:hover,
+  .fab.gold-700[class^='-hover']:hover {
     background-color: #fff1a3; }
 
 .btn.gold-text-700,
 .fab.gold-text-700 {
   color: #ad9200; }
-  .btn.gold-text-700:hover,
-  .fab.gold-text-700:hover {
+  .btn.gold-text-700[class^='-hover']:hover,
+  .fab.gold-text-700[class^='-hover']:hover {
     color: #fff1a3; }
 
 .btn.gold-text-hover-700:hover,
@@ -6783,15 +6867,15 @@ p:first-child {
 .btn.gold-800,
 .fab.gold-800 {
   background-color: #857000; }
-  .btn.gold-800:hover,
-  .fab.gold-800:hover {
+  .btn.gold-800[class^='-hover']:hover,
+  .fab.gold-800[class^='-hover']:hover {
     background-color: #fffdf5; }
 
 .btn.gold-text-800,
 .fab.gold-text-800 {
   color: #857000; }
-  .btn.gold-text-800:hover,
-  .fab.gold-text-800:hover {
+  .btn.gold-text-800[class^='-hover']:hover,
+  .fab.gold-text-800[class^='-hover']:hover {
     color: #fffdf5; }
 
 .btn.gold-text-hover-800:hover,
@@ -6813,15 +6897,15 @@ p:first-child {
 .btn.gold-900,
 .fab.gold-900 {
   background-color: #5c4d00; }
-  .btn.gold-900:hover,
-  .fab.gold-900:hover {
+  .btn.gold-900[class^='-hover']:hover,
+  .fab.gold-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.gold-text-900,
 .fab.gold-text-900 {
   color: #5c4d00; }
-  .btn.gold-text-900:hover,
-  .fab.gold-text-900:hover {
+  .btn.gold-text-900[class^='-hover']:hover,
+  .fab.gold-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.gold-text-hover-900:hover,
@@ -6843,15 +6927,15 @@ p:first-child {
 .btn.amber-50,
 .fab.amber-50 {
   background-color: #fff4d3; }
-  .btn.amber-50:hover,
-  .fab.amber-50:hover {
+  .btn.amber-50[class^='-hover']:hover,
+  .fab.amber-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.amber-text-50,
 .fab.amber-text-50 {
   color: #fff4d3; }
-  .btn.amber-text-50:hover,
-  .fab.amber-text-50:hover {
+  .btn.amber-text-50[class^='-hover']:hover,
+  .fab.amber-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.amber-text-hover-50:hover,
@@ -6873,15 +6957,15 @@ p:first-child {
 .btn.amber-100,
 .fab.amber-100 {
   background-color: #ffeaaa; }
-  .btn.amber-100:hover,
-  .fab.amber-100:hover {
+  .btn.amber-100[class^='-hover']:hover,
+  .fab.amber-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.amber-text-100,
 .fab.amber-text-100 {
   color: #ffeaaa; }
-  .btn.amber-text-100:hover,
-  .fab.amber-text-100:hover {
+  .btn.amber-text-100[class^='-hover']:hover,
+  .fab.amber-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.amber-text-hover-100:hover,
@@ -6903,15 +6987,15 @@ p:first-child {
 .btn.amber-200,
 .fab.amber-200 {
   background-color: #ffe081; }
-  .btn.amber-200:hover,
-  .fab.amber-200:hover {
+  .btn.amber-200[class^='-hover']:hover,
+  .fab.amber-200[class^='-hover']:hover {
     background-color: #fffefc; }
 
 .btn.amber-text-200,
 .fab.amber-text-200 {
   color: #ffe081; }
-  .btn.amber-text-200:hover,
-  .fab.amber-text-200:hover {
+  .btn.amber-text-200[class^='-hover']:hover,
+  .fab.amber-text-200[class^='-hover']:hover {
     color: #fffefc; }
 
 .btn.amber-text-hover-200:hover,
@@ -6933,15 +7017,15 @@ p:first-child {
 .btn.amber-300,
 .fab.amber-300 {
   background-color: #ffd559; }
-  .btn.amber-300:hover,
-  .fab.amber-300:hover {
+  .btn.amber-300[class^='-hover']:hover,
+  .fab.amber-300[class^='-hover']:hover {
     background-color: #ffeaaa; }
 
 .btn.amber-text-300,
 .fab.amber-text-300 {
   color: #ffd559; }
-  .btn.amber-text-300:hover,
-  .fab.amber-text-300:hover {
+  .btn.amber-text-300[class^='-hover']:hover,
+  .fab.amber-text-300[class^='-hover']:hover {
     color: #ffeaaa; }
 
 .btn.amber-text-hover-300:hover,
@@ -6963,15 +7047,15 @@ p:first-child {
 .btn.amber-400,
 .fab.amber-400 {
   background-color: #ffcb30; }
-  .btn.amber-400:hover,
-  .fab.amber-400:hover {
+  .btn.amber-400[class^='-hover']:hover,
+  .fab.amber-400[class^='-hover']:hover {
     background-color: #ffd559; }
 
 .btn.amber-text-400,
 .fab.amber-text-400 {
   color: #ffcb30; }
-  .btn.amber-text-400:hover,
-  .fab.amber-text-400:hover {
+  .btn.amber-text-400[class^='-hover']:hover,
+  .fab.amber-text-400[class^='-hover']:hover {
     color: #ffd559; }
 
 .btn.amber-text-hover-400:hover,
@@ -6993,8 +7077,8 @@ p:first-child {
 .btn.amber,
 .fab.amber {
   background-color: #ffc107; }
-  .btn.amber:hover,
-  .fab.amber:hover {
+  .btn.amber[class^='-hover']:hover,
+  .fab.amber[class^='-hover']:hover {
     background-color: #ffd559; }
 
 .btn.amber-text,
@@ -7013,6 +7097,10 @@ p:first-child {
 .fab.amber-text-hover:hover,
 .amber-text-hover:hover {
   color: #ffc107; }
+  .btn.amber-text-hover:hover[class^='-hover']:hover,
+  .fab.amber-text-hover:hover[class^='-hover']:hover,
+  .amber-text-hover:hover[class^='-hover']:hover {
+    color: #b48700; }
 
 .amber-600 {
   background-color: #ffcb30; }
@@ -7023,15 +7111,15 @@ p:first-child {
 .btn.amber-600,
 .fab.amber-600 {
   background-color: #dda600; }
-  .btn.amber-600:hover,
-  .fab.amber-600:hover {
+  .btn.amber-600[class^='-hover']:hover,
+  .fab.amber-600[class^='-hover']:hover {
     background-color: #ffd559; }
 
 .btn.amber-text-600,
 .fab.amber-text-600 {
   color: #dda600; }
-  .btn.amber-text-600:hover,
-  .fab.amber-text-600:hover {
+  .btn.amber-text-600[class^='-hover']:hover,
+  .fab.amber-text-600[class^='-hover']:hover {
     color: #ffd559; }
 
 .btn.amber-text-hover-600:hover,
@@ -7053,15 +7141,15 @@ p:first-child {
 .btn.amber-700,
 .fab.amber-700 {
   background-color: #b48700; }
-  .btn.amber-700:hover,
-  .fab.amber-700:hover {
+  .btn.amber-700[class^='-hover']:hover,
+  .fab.amber-700[class^='-hover']:hover {
     background-color: #ffeaaa; }
 
 .btn.amber-text-700,
 .fab.amber-text-700 {
   color: #b48700; }
-  .btn.amber-text-700:hover,
-  .fab.amber-text-700:hover {
+  .btn.amber-text-700[class^='-hover']:hover,
+  .fab.amber-text-700[class^='-hover']:hover {
     color: #ffeaaa; }
 
 .btn.amber-text-hover-700:hover,
@@ -7083,15 +7171,15 @@ p:first-child {
 .btn.amber-800,
 .fab.amber-800 {
   background-color: #8c6900; }
-  .btn.amber-800:hover,
-  .fab.amber-800:hover {
+  .btn.amber-800[class^='-hover']:hover,
+  .fab.amber-800[class^='-hover']:hover {
     background-color: #fffefc; }
 
 .btn.amber-text-800,
 .fab.amber-text-800 {
   color: #8c6900; }
-  .btn.amber-text-800:hover,
-  .fab.amber-text-800:hover {
+  .btn.amber-text-800[class^='-hover']:hover,
+  .fab.amber-text-800[class^='-hover']:hover {
     color: #fffefc; }
 
 .btn.amber-text-hover-800:hover,
@@ -7113,15 +7201,15 @@ p:first-child {
 .btn.amber-900,
 .fab.amber-900 {
   background-color: #634a00; }
-  .btn.amber-900:hover,
-  .fab.amber-900:hover {
+  .btn.amber-900[class^='-hover']:hover,
+  .fab.amber-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.amber-text-900,
 .fab.amber-text-900 {
   color: #634a00; }
-  .btn.amber-text-900:hover,
-  .fab.amber-text-900:hover {
+  .btn.amber-text-900[class^='-hover']:hover,
+  .fab.amber-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.amber-text-hover-900:hover,
@@ -7143,15 +7231,15 @@ p:first-child {
 .btn.orange-50,
 .fab.orange-50 {
   background-color: #ffeacc; }
-  .btn.orange-50:hover,
-  .fab.orange-50:hover {
+  .btn.orange-50[class^='-hover']:hover,
+  .fab.orange-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.orange-text-50,
 .fab.orange-text-50 {
   color: #ffeacc; }
-  .btn.orange-text-50:hover,
-  .fab.orange-text-50:hover {
+  .btn.orange-text-50[class^='-hover']:hover,
+  .fab.orange-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.orange-text-hover-50:hover,
@@ -7173,15 +7261,15 @@ p:first-child {
 .btn.orange-100,
 .fab.orange-100 {
   background-color: #ffdaa3; }
-  .btn.orange-100:hover,
-  .fab.orange-100:hover {
+  .btn.orange-100[class^='-hover']:hover,
+  .fab.orange-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.orange-text-100,
 .fab.orange-text-100 {
   color: #ffdaa3; }
-  .btn.orange-text-100:hover,
-  .fab.orange-text-100:hover {
+  .btn.orange-text-100[class^='-hover']:hover,
+  .fab.orange-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.orange-text-hover-100:hover,
@@ -7203,15 +7291,15 @@ p:first-child {
 .btn.orange-200,
 .fab.orange-200 {
   background-color: #ffc97a; }
-  .btn.orange-200:hover,
-  .fab.orange-200:hover {
+  .btn.orange-200[class^='-hover']:hover,
+  .fab.orange-200[class^='-hover']:hover {
     background-color: #fffbf5; }
 
 .btn.orange-text-200,
 .fab.orange-text-200 {
   color: #ffc97a; }
-  .btn.orange-text-200:hover,
-  .fab.orange-text-200:hover {
+  .btn.orange-text-200[class^='-hover']:hover,
+  .fab.orange-text-200[class^='-hover']:hover {
     color: #fffbf5; }
 
 .btn.orange-text-hover-200:hover,
@@ -7233,15 +7321,15 @@ p:first-child {
 .btn.orange-300,
 .fab.orange-300 {
   background-color: #ffb952; }
-  .btn.orange-300:hover,
-  .fab.orange-300:hover {
+  .btn.orange-300[class^='-hover']:hover,
+  .fab.orange-300[class^='-hover']:hover {
     background-color: #ffdaa3; }
 
 .btn.orange-text-300,
 .fab.orange-text-300 {
   color: #ffb952; }
-  .btn.orange-text-300:hover,
-  .fab.orange-text-300:hover {
+  .btn.orange-text-300[class^='-hover']:hover,
+  .fab.orange-text-300[class^='-hover']:hover {
     color: #ffdaa3; }
 
 .btn.orange-text-hover-300:hover,
@@ -7263,15 +7351,15 @@ p:first-child {
 .btn.orange-400,
 .fab.orange-400 {
   background-color: #ffa829; }
-  .btn.orange-400:hover,
-  .fab.orange-400:hover {
+  .btn.orange-400[class^='-hover']:hover,
+  .fab.orange-400[class^='-hover']:hover {
     background-color: #ffb952; }
 
 .btn.orange-text-400,
 .fab.orange-text-400 {
   color: #ffa829; }
-  .btn.orange-text-400:hover,
-  .fab.orange-text-400:hover {
+  .btn.orange-text-400[class^='-hover']:hover,
+  .fab.orange-text-400[class^='-hover']:hover {
     color: #ffb952; }
 
 .btn.orange-text-hover-400:hover,
@@ -7293,8 +7381,8 @@ p:first-child {
 .btn.orange,
 .fab.orange {
   background-color: #ff9800; }
-  .btn.orange:hover,
-  .fab.orange:hover {
+  .btn.orange[class^='-hover']:hover,
+  .fab.orange[class^='-hover']:hover {
     background-color: #ffb952; }
 
 .btn.orange-text,
@@ -7313,6 +7401,10 @@ p:first-child {
 .fab.orange-text-hover:hover,
 .orange-text-hover:hover {
   color: #ff9800; }
+  .btn.orange-text-hover:hover[class^='-hover']:hover,
+  .fab.orange-text-hover:hover[class^='-hover']:hover,
+  .orange-text-hover:hover[class^='-hover']:hover {
+    color: #ad6700; }
 
 .orange-600 {
   background-color: #ffa829; }
@@ -7323,15 +7415,15 @@ p:first-child {
 .btn.orange-600,
 .fab.orange-600 {
   background-color: #d68000; }
-  .btn.orange-600:hover,
-  .fab.orange-600:hover {
+  .btn.orange-600[class^='-hover']:hover,
+  .fab.orange-600[class^='-hover']:hover {
     background-color: #ffb952; }
 
 .btn.orange-text-600,
 .fab.orange-text-600 {
   color: #d68000; }
-  .btn.orange-text-600:hover,
-  .fab.orange-text-600:hover {
+  .btn.orange-text-600[class^='-hover']:hover,
+  .fab.orange-text-600[class^='-hover']:hover {
     color: #ffb952; }
 
 .btn.orange-text-hover-600:hover,
@@ -7353,15 +7445,15 @@ p:first-child {
 .btn.orange-700,
 .fab.orange-700 {
   background-color: #ad6700; }
-  .btn.orange-700:hover,
-  .fab.orange-700:hover {
+  .btn.orange-700[class^='-hover']:hover,
+  .fab.orange-700[class^='-hover']:hover {
     background-color: #ffdaa3; }
 
 .btn.orange-text-700,
 .fab.orange-text-700 {
   color: #ad6700; }
-  .btn.orange-text-700:hover,
-  .fab.orange-text-700:hover {
+  .btn.orange-text-700[class^='-hover']:hover,
+  .fab.orange-text-700[class^='-hover']:hover {
     color: #ffdaa3; }
 
 .btn.orange-text-hover-700:hover,
@@ -7383,15 +7475,15 @@ p:first-child {
 .btn.orange-800,
 .fab.orange-800 {
   background-color: #854f00; }
-  .btn.orange-800:hover,
-  .fab.orange-800:hover {
+  .btn.orange-800[class^='-hover']:hover,
+  .fab.orange-800[class^='-hover']:hover {
     background-color: #fffbf5; }
 
 .btn.orange-text-800,
 .fab.orange-text-800 {
   color: #854f00; }
-  .btn.orange-text-800:hover,
-  .fab.orange-text-800:hover {
+  .btn.orange-text-800[class^='-hover']:hover,
+  .fab.orange-text-800[class^='-hover']:hover {
     color: #fffbf5; }
 
 .btn.orange-text-hover-800:hover,
@@ -7413,15 +7505,15 @@ p:first-child {
 .btn.orange-900,
 .fab.orange-900 {
   background-color: #5c3700; }
-  .btn.orange-900:hover,
-  .fab.orange-900:hover {
+  .btn.orange-900[class^='-hover']:hover,
+  .fab.orange-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.orange-text-900,
 .fab.orange-text-900 {
   color: #5c3700; }
-  .btn.orange-text-900:hover,
-  .fab.orange-text-900:hover {
+  .btn.orange-text-900[class^='-hover']:hover,
+  .fab.orange-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.orange-text-hover-900:hover,
@@ -7443,15 +7535,15 @@ p:first-child {
 .btn.deep-orange-50,
 .fab.deep-orange-50 {
   background-color: #fff2ee; }
-  .btn.deep-orange-50:hover,
-  .fab.deep-orange-50:hover {
+  .btn.deep-orange-50[class^='-hover']:hover,
+  .fab.deep-orange-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-orange-text-50,
 .fab.deep-orange-text-50 {
   color: #fff2ee; }
-  .btn.deep-orange-text-50:hover,
-  .fab.deep-orange-text-50:hover {
+  .btn.deep-orange-text-50[class^='-hover']:hover,
+  .fab.deep-orange-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-orange-text-hover-50:hover,
@@ -7473,15 +7565,15 @@ p:first-child {
 .btn.deep-orange-100,
 .fab.deep-orange-100 {
   background-color: #ffd3c5; }
-  .btn.deep-orange-100:hover,
-  .fab.deep-orange-100:hover {
+  .btn.deep-orange-100[class^='-hover']:hover,
+  .fab.deep-orange-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-orange-text-100,
 .fab.deep-orange-text-100 {
   color: #ffd3c5; }
-  .btn.deep-orange-text-100:hover,
-  .fab.deep-orange-text-100:hover {
+  .btn.deep-orange-text-100[class^='-hover']:hover,
+  .fab.deep-orange-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-orange-text-hover-100:hover,
@@ -7503,15 +7595,15 @@ p:first-child {
 .btn.deep-orange-200,
 .fab.deep-orange-200 {
   background-color: #ffb49c; }
-  .btn.deep-orange-200:hover,
-  .fab.deep-orange-200:hover {
+  .btn.deep-orange-200[class^='-hover']:hover,
+  .fab.deep-orange-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-orange-text-200,
 .fab.deep-orange-text-200 {
   color: #ffb49c; }
-  .btn.deep-orange-text-200:hover,
-  .fab.deep-orange-text-200:hover {
+  .btn.deep-orange-text-200[class^='-hover']:hover,
+  .fab.deep-orange-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-orange-text-hover-200:hover,
@@ -7533,15 +7625,15 @@ p:first-child {
 .btn.deep-orange-300,
 .fab.deep-orange-300 {
   background-color: #ff9574; }
-  .btn.deep-orange-300:hover,
-  .fab.deep-orange-300:hover {
+  .btn.deep-orange-300[class^='-hover']:hover,
+  .fab.deep-orange-300[class^='-hover']:hover {
     background-color: #ffd3c5; }
 
 .btn.deep-orange-text-300,
 .fab.deep-orange-text-300 {
   color: #ff9574; }
-  .btn.deep-orange-text-300:hover,
-  .fab.deep-orange-text-300:hover {
+  .btn.deep-orange-text-300[class^='-hover']:hover,
+  .fab.deep-orange-text-300[class^='-hover']:hover {
     color: #ffd3c5; }
 
 .btn.deep-orange-text-hover-300:hover,
@@ -7563,15 +7655,15 @@ p:first-child {
 .btn.deep-orange-400,
 .fab.deep-orange-400 {
   background-color: #ff764b; }
-  .btn.deep-orange-400:hover,
-  .fab.deep-orange-400:hover {
+  .btn.deep-orange-400[class^='-hover']:hover,
+  .fab.deep-orange-400[class^='-hover']:hover {
     background-color: #ff9574; }
 
 .btn.deep-orange-text-400,
 .fab.deep-orange-text-400 {
   color: #ff764b; }
-  .btn.deep-orange-text-400:hover,
-  .fab.deep-orange-text-400:hover {
+  .btn.deep-orange-text-400[class^='-hover']:hover,
+  .fab.deep-orange-text-400[class^='-hover']:hover {
     color: #ff9574; }
 
 .btn.deep-orange-text-hover-400:hover,
@@ -7593,8 +7685,8 @@ p:first-child {
 .btn.deep-orange,
 .fab.deep-orange {
   background-color: #ff5722; }
-  .btn.deep-orange:hover,
-  .fab.deep-orange:hover {
+  .btn.deep-orange[class^='-hover']:hover,
+  .fab.deep-orange[class^='-hover']:hover {
     background-color: #ff9574; }
 
 .btn.deep-orange-text,
@@ -7613,6 +7705,10 @@ p:first-child {
 .fab.deep-orange-text-hover:hover,
 .deep-orange-text-hover:hover {
   color: #ff5722; }
+  .btn.deep-orange-text-hover:hover[class^='-hover']:hover,
+  .fab.deep-orange-text-hover:hover[class^='-hover']:hover,
+  .deep-orange-text-hover:hover[class^='-hover']:hover {
+    color: #cf3200; }
 
 .deep-orange-600 {
   background-color: #ff764b; }
@@ -7623,15 +7719,15 @@ p:first-child {
 .btn.deep-orange-600,
 .fab.deep-orange-600 {
   background-color: #f83c00; }
-  .btn.deep-orange-600:hover,
-  .fab.deep-orange-600:hover {
+  .btn.deep-orange-600[class^='-hover']:hover,
+  .fab.deep-orange-600[class^='-hover']:hover {
     background-color: #ff9574; }
 
 .btn.deep-orange-text-600,
 .fab.deep-orange-text-600 {
   color: #f83c00; }
-  .btn.deep-orange-text-600:hover,
-  .fab.deep-orange-text-600:hover {
+  .btn.deep-orange-text-600[class^='-hover']:hover,
+  .fab.deep-orange-text-600[class^='-hover']:hover {
     color: #ff9574; }
 
 .btn.deep-orange-text-hover-600:hover,
@@ -7653,15 +7749,15 @@ p:first-child {
 .btn.deep-orange-700,
 .fab.deep-orange-700 {
   background-color: #cf3200; }
-  .btn.deep-orange-700:hover,
-  .fab.deep-orange-700:hover {
+  .btn.deep-orange-700[class^='-hover']:hover,
+  .fab.deep-orange-700[class^='-hover']:hover {
     background-color: #ffd3c5; }
 
 .btn.deep-orange-text-700,
 .fab.deep-orange-text-700 {
   color: #cf3200; }
-  .btn.deep-orange-text-700:hover,
-  .fab.deep-orange-text-700:hover {
+  .btn.deep-orange-text-700[class^='-hover']:hover,
+  .fab.deep-orange-text-700[class^='-hover']:hover {
     color: #ffd3c5; }
 
 .btn.deep-orange-text-hover-700:hover,
@@ -7683,15 +7779,15 @@ p:first-child {
 .btn.deep-orange-800,
 .fab.deep-orange-800 {
   background-color: #a72800; }
-  .btn.deep-orange-800:hover,
-  .fab.deep-orange-800:hover {
+  .btn.deep-orange-800[class^='-hover']:hover,
+  .fab.deep-orange-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-orange-text-800,
 .fab.deep-orange-text-800 {
   color: #a72800; }
-  .btn.deep-orange-text-800:hover,
-  .fab.deep-orange-text-800:hover {
+  .btn.deep-orange-text-800[class^='-hover']:hover,
+  .fab.deep-orange-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-orange-text-hover-800:hover,
@@ -7713,15 +7809,15 @@ p:first-child {
 .btn.deep-orange-900,
 .fab.deep-orange-900 {
   background-color: #7e1e00; }
-  .btn.deep-orange-900:hover,
-  .fab.deep-orange-900:hover {
+  .btn.deep-orange-900[class^='-hover']:hover,
+  .fab.deep-orange-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.deep-orange-text-900,
 .fab.deep-orange-text-900 {
   color: #7e1e00; }
-  .btn.deep-orange-text-900:hover,
-  .fab.deep-orange-text-900:hover {
+  .btn.deep-orange-text-900[class^='-hover']:hover,
+  .fab.deep-orange-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.deep-orange-text-hover-900:hover,
@@ -7743,15 +7839,15 @@ p:first-child {
 .btn.brown-50,
 .fab.brown-50 {
   background-color: #d5c0b8; }
-  .btn.brown-50:hover,
-  .fab.brown-50:hover {
+  .btn.brown-50[class^='-hover']:hover,
+  .fab.brown-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.brown-text-50,
 .fab.brown-text-50 {
   color: #d5c0b8; }
-  .btn.brown-text-50:hover,
-  .fab.brown-text-50:hover {
+  .btn.brown-text-50[class^='-hover']:hover,
+  .fab.brown-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.brown-text-hover-50:hover,
@@ -7773,15 +7869,15 @@ p:first-child {
 .btn.brown-100,
 .fab.brown-100 {
   background-color: #c6a99f; }
-  .btn.brown-100:hover,
-  .fab.brown-100:hover {
+  .btn.brown-100[class^='-hover']:hover,
+  .fab.brown-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.brown-text-100,
 .fab.brown-text-100 {
   color: #c6a99f; }
-  .btn.brown-text-100:hover,
-  .fab.brown-text-100:hover {
+  .btn.brown-text-100[class^='-hover']:hover,
+  .fab.brown-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.brown-text-hover-100:hover,
@@ -7803,15 +7899,15 @@ p:first-child {
 .btn.brown-200,
 .fab.brown-200 {
   background-color: #b69285; }
-  .btn.brown-200:hover,
-  .fab.brown-200:hover {
+  .btn.brown-200[class^='-hover']:hover,
+  .fab.brown-200[class^='-hover']:hover {
     background-color: #e4d7d2; }
 
 .btn.brown-text-200,
 .fab.brown-text-200 {
   color: #b69285; }
-  .btn.brown-text-200:hover,
-  .fab.brown-text-200:hover {
+  .btn.brown-text-200[class^='-hover']:hover,
+  .fab.brown-text-200[class^='-hover']:hover {
     color: #e4d7d2; }
 
 .btn.brown-text-hover-200:hover,
@@ -7833,15 +7929,15 @@ p:first-child {
 .btn.brown-300,
 .fab.brown-300 {
   background-color: #a77b6b; }
-  .btn.brown-300:hover,
-  .fab.brown-300:hover {
+  .btn.brown-300[class^='-hover']:hover,
+  .fab.brown-300[class^='-hover']:hover {
     background-color: #c6a99f; }
 
 .btn.brown-text-300,
 .fab.brown-text-300 {
   color: #a77b6b; }
-  .btn.brown-text-300:hover,
-  .fab.brown-text-300:hover {
+  .btn.brown-text-300[class^='-hover']:hover,
+  .fab.brown-text-300[class^='-hover']:hover {
     color: #c6a99f; }
 
 .btn.brown-text-hover-300:hover,
@@ -7863,15 +7959,15 @@ p:first-child {
 .btn.brown-400,
 .fab.brown-400 {
   background-color: #936757; }
-  .btn.brown-400:hover,
-  .fab.brown-400:hover {
+  .btn.brown-400[class^='-hover']:hover,
+  .fab.brown-400[class^='-hover']:hover {
     background-color: #a77b6b; }
 
 .btn.brown-text-400,
 .fab.brown-text-400 {
   color: #936757; }
-  .btn.brown-text-400:hover,
-  .fab.brown-text-400:hover {
+  .btn.brown-text-400[class^='-hover']:hover,
+  .fab.brown-text-400[class^='-hover']:hover {
     color: #a77b6b; }
 
 .btn.brown-text-hover-400:hover,
@@ -7893,8 +7989,8 @@ p:first-child {
 .btn.brown,
 .fab.brown {
   background-color: #795548; }
-  .btn.brown:hover,
-  .fab.brown:hover {
+  .btn.brown[class^='-hover']:hover,
+  .fab.brown[class^='-hover']:hover {
     background-color: #a77b6b; }
 
 .btn.brown-text,
@@ -7913,6 +8009,10 @@ p:first-child {
 .fab.brown-text-hover:hover,
 .brown-text-hover:hover {
   color: #795548; }
+  .btn.brown-text-hover:hover[class^='-hover']:hover,
+  .fab.brown-text-hover:hover[class^='-hover']:hover,
+  .brown-text-hover:hover[class^='-hover']:hover {
+    color: #46312a; }
 
 .brown-600 {
   background-color: #936757; }
@@ -7923,15 +8023,15 @@ p:first-child {
 .btn.brown-600,
 .fab.brown-600 {
   background-color: #5f4339; }
-  .btn.brown-600:hover,
-  .fab.brown-600:hover {
+  .btn.brown-600[class^='-hover']:hover,
+  .fab.brown-600[class^='-hover']:hover {
     background-color: #a77b6b; }
 
 .btn.brown-text-600,
 .fab.brown-text-600 {
   color: #5f4339; }
-  .btn.brown-text-600:hover,
-  .fab.brown-text-600:hover {
+  .btn.brown-text-600[class^='-hover']:hover,
+  .fab.brown-text-600[class^='-hover']:hover {
     color: #a77b6b; }
 
 .btn.brown-text-hover-600:hover,
@@ -7953,15 +8053,15 @@ p:first-child {
 .btn.brown-700,
 .fab.brown-700 {
   background-color: #46312a; }
-  .btn.brown-700:hover,
-  .fab.brown-700:hover {
+  .btn.brown-700[class^='-hover']:hover,
+  .fab.brown-700[class^='-hover']:hover {
     background-color: #c6a99f; }
 
 .btn.brown-text-700,
 .fab.brown-text-700 {
   color: #46312a; }
-  .btn.brown-text-700:hover,
-  .fab.brown-text-700:hover {
+  .btn.brown-text-700[class^='-hover']:hover,
+  .fab.brown-text-700[class^='-hover']:hover {
     color: #c6a99f; }
 
 .btn.brown-text-hover-700:hover,
@@ -7983,15 +8083,15 @@ p:first-child {
 .btn.brown-800,
 .fab.brown-800 {
   background-color: #2c1f1a; }
-  .btn.brown-800:hover,
-  .fab.brown-800:hover {
+  .btn.brown-800[class^='-hover']:hover,
+  .fab.brown-800[class^='-hover']:hover {
     background-color: #e4d7d2; }
 
 .btn.brown-text-800,
 .fab.brown-text-800 {
   color: #2c1f1a; }
-  .btn.brown-text-800:hover,
-  .fab.brown-text-800:hover {
+  .btn.brown-text-800[class^='-hover']:hover,
+  .fab.brown-text-800[class^='-hover']:hover {
     color: #e4d7d2; }
 
 .btn.brown-text-hover-800:hover,
@@ -8013,15 +8113,15 @@ p:first-child {
 .btn.brown-900,
 .fab.brown-900 {
   background-color: #130d0b; }
-  .btn.brown-900:hover,
-  .fab.brown-900:hover {
+  .btn.brown-900[class^='-hover']:hover,
+  .fab.brown-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.brown-text-900,
 .fab.brown-text-900 {
   color: #130d0b; }
-  .btn.brown-text-900:hover,
-  .fab.brown-text-900:hover {
+  .btn.brown-text-900[class^='-hover']:hover,
+  .fab.brown-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.brown-text-hover-900:hover,
@@ -8043,15 +8143,15 @@ p:first-child {
 .btn.burly-wood-50,
 .fab.burly-wood-50 {
   background-color: white; }
-  .btn.burly-wood-50:hover,
-  .fab.burly-wood-50:hover {
+  .btn.burly-wood-50[class^='-hover']:hover,
+  .fab.burly-wood-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.burly-wood-text-50,
 .fab.burly-wood-text-50 {
   color: white; }
-  .btn.burly-wood-text-50:hover,
-  .fab.burly-wood-text-50:hover {
+  .btn.burly-wood-text-50[class^='-hover']:hover,
+  .fab.burly-wood-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.burly-wood-text-hover-50:hover,
@@ -8073,15 +8173,15 @@ p:first-child {
 .btn.burly-wood-100,
 .fab.burly-wood-100 {
   background-color: #f8f1e7; }
-  .btn.burly-wood-100:hover,
-  .fab.burly-wood-100:hover {
+  .btn.burly-wood-100[class^='-hover']:hover,
+  .fab.burly-wood-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.burly-wood-text-100,
 .fab.burly-wood-text-100 {
   color: #f8f1e7; }
-  .btn.burly-wood-text-100:hover,
-  .fab.burly-wood-text-100:hover {
+  .btn.burly-wood-text-100[class^='-hover']:hover,
+  .fab.burly-wood-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.burly-wood-text-hover-100:hover,
@@ -8103,15 +8203,15 @@ p:first-child {
 .btn.burly-wood-200,
 .fab.burly-wood-200 {
   background-color: #efdec7; }
-  .btn.burly-wood-200:hover,
-  .fab.burly-wood-200:hover {
+  .btn.burly-wood-200[class^='-hover']:hover,
+  .fab.burly-wood-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.burly-wood-text-200,
 .fab.burly-wood-text-200 {
   color: #efdec7; }
-  .btn.burly-wood-text-200:hover,
-  .fab.burly-wood-text-200:hover {
+  .btn.burly-wood-text-200[class^='-hover']:hover,
+  .fab.burly-wood-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.burly-wood-text-hover-200:hover,
@@ -8133,15 +8233,15 @@ p:first-child {
 .btn.burly-wood-300,
 .fab.burly-wood-300 {
   background-color: #e7cba7; }
-  .btn.burly-wood-300:hover,
-  .fab.burly-wood-300:hover {
+  .btn.burly-wood-300[class^='-hover']:hover,
+  .fab.burly-wood-300[class^='-hover']:hover {
     background-color: #f8f1e7; }
 
 .btn.burly-wood-text-300,
 .fab.burly-wood-text-300 {
   color: #e7cba7; }
-  .btn.burly-wood-text-300:hover,
-  .fab.burly-wood-text-300:hover {
+  .btn.burly-wood-text-300[class^='-hover']:hover,
+  .fab.burly-wood-text-300[class^='-hover']:hover {
     color: #f8f1e7; }
 
 .btn.burly-wood-text-hover-300:hover,
@@ -8163,15 +8263,15 @@ p:first-child {
 .btn.burly-wood-400,
 .fab.burly-wood-400 {
   background-color: burlywood; }
-  .btn.burly-wood-400:hover,
-  .fab.burly-wood-400:hover {
+  .btn.burly-wood-400[class^='-hover']:hover,
+  .fab.burly-wood-400[class^='-hover']:hover {
     background-color: #e7cba7; }
 
 .btn.burly-wood-text-400,
 .fab.burly-wood-text-400 {
   color: burlywood; }
-  .btn.burly-wood-text-400:hover,
-  .fab.burly-wood-text-400:hover {
+  .btn.burly-wood-text-400[class^='-hover']:hover,
+  .fab.burly-wood-text-400[class^='-hover']:hover {
     color: #e7cba7; }
 
 .btn.burly-wood-text-hover-400:hover,
@@ -8193,8 +8293,8 @@ p:first-child {
 .btn.burly-wood,
 .fab.burly-wood {
   background-color: #d5a567; }
-  .btn.burly-wood:hover,
-  .fab.burly-wood:hover {
+  .btn.burly-wood[class^='-hover']:hover,
+  .fab.burly-wood[class^='-hover']:hover {
     background-color: #e7cba7; }
 
 .btn.burly-wood-text,
@@ -8213,6 +8313,10 @@ p:first-child {
 .fab.burly-wood-text-hover:hover,
 .burly-wood-text-hover:hover {
   color: #d5a567; }
+  .btn.burly-wood-text-hover:hover[class^='-hover']:hover,
+  .fab.burly-wood-text-hover:hover[class^='-hover']:hover,
+  .burly-wood-text-hover:hover[class^='-hover']:hover {
+    color: #b87e33; }
 
 .burly-wood-600 {
   background-color: burlywood; }
@@ -8223,15 +8327,15 @@ p:first-child {
 .btn.burly-wood-600,
 .fab.burly-wood-600 {
   background-color: #cc9247; }
-  .btn.burly-wood-600:hover,
-  .fab.burly-wood-600:hover {
+  .btn.burly-wood-600[class^='-hover']:hover,
+  .fab.burly-wood-600[class^='-hover']:hover {
     background-color: #e7cba7; }
 
 .btn.burly-wood-text-600,
 .fab.burly-wood-text-600 {
   color: #cc9247; }
-  .btn.burly-wood-text-600:hover,
-  .fab.burly-wood-text-600:hover {
+  .btn.burly-wood-text-600[class^='-hover']:hover,
+  .fab.burly-wood-text-600[class^='-hover']:hover {
     color: #e7cba7; }
 
 .btn.burly-wood-text-hover-600:hover,
@@ -8253,15 +8357,15 @@ p:first-child {
 .btn.burly-wood-700,
 .fab.burly-wood-700 {
   background-color: #b87e33; }
-  .btn.burly-wood-700:hover,
-  .fab.burly-wood-700:hover {
+  .btn.burly-wood-700[class^='-hover']:hover,
+  .fab.burly-wood-700[class^='-hover']:hover {
     background-color: #f8f1e7; }
 
 .btn.burly-wood-text-700,
 .fab.burly-wood-text-700 {
   color: #b87e33; }
-  .btn.burly-wood-text-700:hover,
-  .fab.burly-wood-text-700:hover {
+  .btn.burly-wood-text-700[class^='-hover']:hover,
+  .fab.burly-wood-text-700[class^='-hover']:hover {
     color: #f8f1e7; }
 
 .btn.burly-wood-text-hover-700:hover,
@@ -8283,15 +8387,15 @@ p:first-child {
 .btn.burly-wood-800,
 .fab.burly-wood-800 {
   background-color: #98682a; }
-  .btn.burly-wood-800:hover,
-  .fab.burly-wood-800:hover {
+  .btn.burly-wood-800[class^='-hover']:hover,
+  .fab.burly-wood-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.burly-wood-text-800,
 .fab.burly-wood-text-800 {
   color: #98682a; }
-  .btn.burly-wood-text-800:hover,
-  .fab.burly-wood-text-800:hover {
+  .btn.burly-wood-text-800[class^='-hover']:hover,
+  .fab.burly-wood-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.burly-wood-text-hover-800:hover,
@@ -8313,15 +8417,15 @@ p:first-child {
 .btn.burly-wood-900,
 .fab.burly-wood-900 {
   background-color: #785221; }
-  .btn.burly-wood-900:hover,
-  .fab.burly-wood-900:hover {
+  .btn.burly-wood-900[class^='-hover']:hover,
+  .fab.burly-wood-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.burly-wood-text-900,
 .fab.burly-wood-text-900 {
   color: #785221; }
-  .btn.burly-wood-text-900:hover,
-  .fab.burly-wood-text-900:hover {
+  .btn.burly-wood-text-900[class^='-hover']:hover,
+  .fab.burly-wood-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.burly-wood-text-hover-900:hover,
@@ -8343,15 +8447,15 @@ p:first-child {
 .btn.grey-50,
 .fab.grey-50 {
   background-color: white; }
-  .btn.grey-50:hover,
-  .fab.grey-50:hover {
+  .btn.grey-50[class^='-hover']:hover,
+  .fab.grey-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.grey-text-50,
 .fab.grey-text-50 {
   color: white; }
-  .btn.grey-text-50:hover,
-  .fab.grey-text-50:hover {
+  .btn.grey-text-50[class^='-hover']:hover,
+  .fab.grey-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.grey-text-hover-50:hover,
@@ -8373,15 +8477,15 @@ p:first-child {
 .btn.grey-100,
 .fab.grey-100 {
   background-color: #f0f0f0; }
-  .btn.grey-100:hover,
-  .fab.grey-100:hover {
+  .btn.grey-100[class^='-hover']:hover,
+  .fab.grey-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.grey-text-100,
 .fab.grey-text-100 {
   color: #f0f0f0; }
-  .btn.grey-text-100:hover,
-  .fab.grey-text-100:hover {
+  .btn.grey-text-100[class^='-hover']:hover,
+  .fab.grey-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.grey-text-hover-100:hover,
@@ -8403,15 +8507,15 @@ p:first-child {
 .btn.grey-200,
 .fab.grey-200 {
   background-color: #dbdbdb; }
-  .btn.grey-200:hover,
-  .fab.grey-200:hover {
+  .btn.grey-200[class^='-hover']:hover,
+  .fab.grey-200[class^='-hover']:hover {
     background-color: white; }
 
 .btn.grey-text-200,
 .fab.grey-text-200 {
   color: #dbdbdb; }
-  .btn.grey-text-200:hover,
-  .fab.grey-text-200:hover {
+  .btn.grey-text-200[class^='-hover']:hover,
+  .fab.grey-text-200[class^='-hover']:hover {
     color: white; }
 
 .btn.grey-text-hover-200:hover,
@@ -8433,15 +8537,15 @@ p:first-child {
 .btn.grey-300,
 .fab.grey-300 {
   background-color: #c7c7c7; }
-  .btn.grey-300:hover,
-  .fab.grey-300:hover {
+  .btn.grey-300[class^='-hover']:hover,
+  .fab.grey-300[class^='-hover']:hover {
     background-color: #f0f0f0; }
 
 .btn.grey-text-300,
 .fab.grey-text-300 {
   color: #c7c7c7; }
-  .btn.grey-text-300:hover,
-  .fab.grey-text-300:hover {
+  .btn.grey-text-300[class^='-hover']:hover,
+  .fab.grey-text-300[class^='-hover']:hover {
     color: #f0f0f0; }
 
 .btn.grey-text-hover-300:hover,
@@ -8463,15 +8567,15 @@ p:first-child {
 .btn.grey-400,
 .fab.grey-400 {
   background-color: #b2b2b2; }
-  .btn.grey-400:hover,
-  .fab.grey-400:hover {
+  .btn.grey-400[class^='-hover']:hover,
+  .fab.grey-400[class^='-hover']:hover {
     background-color: #c7c7c7; }
 
 .btn.grey-text-400,
 .fab.grey-text-400 {
   color: #b2b2b2; }
-  .btn.grey-text-400:hover,
-  .fab.grey-text-400:hover {
+  .btn.grey-text-400[class^='-hover']:hover,
+  .fab.grey-text-400[class^='-hover']:hover {
     color: #c7c7c7; }
 
 .btn.grey-text-hover-400:hover,
@@ -8493,8 +8597,8 @@ p:first-child {
 .btn.grey,
 .fab.grey {
   background-color: #9e9e9e; }
-  .btn.grey:hover,
-  .fab.grey:hover {
+  .btn.grey[class^='-hover']:hover,
+  .fab.grey[class^='-hover']:hover {
     background-color: #c7c7c7; }
 
 .btn.grey-text,
@@ -8513,6 +8617,10 @@ p:first-child {
 .fab.grey-text-hover:hover,
 .grey-text-hover:hover {
   color: #9e9e9e; }
+  .btn.grey-text-hover:hover[class^='-hover']:hover,
+  .fab.grey-text-hover:hover[class^='-hover']:hover,
+  .grey-text-hover:hover[class^='-hover']:hover {
+    color: #757575; }
 
 .grey-600 {
   background-color: #b2b2b2; }
@@ -8523,15 +8631,15 @@ p:first-child {
 .btn.grey-600,
 .fab.grey-600 {
   background-color: #8a8a8a; }
-  .btn.grey-600:hover,
-  .fab.grey-600:hover {
+  .btn.grey-600[class^='-hover']:hover,
+  .fab.grey-600[class^='-hover']:hover {
     background-color: #c7c7c7; }
 
 .btn.grey-text-600,
 .fab.grey-text-600 {
   color: #8a8a8a; }
-  .btn.grey-text-600:hover,
-  .fab.grey-text-600:hover {
+  .btn.grey-text-600[class^='-hover']:hover,
+  .fab.grey-text-600[class^='-hover']:hover {
     color: #c7c7c7; }
 
 .btn.grey-text-hover-600:hover,
@@ -8553,15 +8661,15 @@ p:first-child {
 .btn.grey-700,
 .fab.grey-700 {
   background-color: #757575; }
-  .btn.grey-700:hover,
-  .fab.grey-700:hover {
+  .btn.grey-700[class^='-hover']:hover,
+  .fab.grey-700[class^='-hover']:hover {
     background-color: #f0f0f0; }
 
 .btn.grey-text-700,
 .fab.grey-text-700 {
   color: #757575; }
-  .btn.grey-text-700:hover,
-  .fab.grey-text-700:hover {
+  .btn.grey-text-700[class^='-hover']:hover,
+  .fab.grey-text-700[class^='-hover']:hover {
     color: #f0f0f0; }
 
 .btn.grey-text-hover-700:hover,
@@ -8583,15 +8691,15 @@ p:first-child {
 .btn.grey-800,
 .fab.grey-800 {
   background-color: #616161; }
-  .btn.grey-800:hover,
-  .fab.grey-800:hover {
+  .btn.grey-800[class^='-hover']:hover,
+  .fab.grey-800[class^='-hover']:hover {
     background-color: white; }
 
 .btn.grey-text-800,
 .fab.grey-text-800 {
   color: #616161; }
-  .btn.grey-text-800:hover,
-  .fab.grey-text-800:hover {
+  .btn.grey-text-800[class^='-hover']:hover,
+  .fab.grey-text-800[class^='-hover']:hover {
     color: white; }
 
 .btn.grey-text-hover-800:hover,
@@ -8613,15 +8721,15 @@ p:first-child {
 .btn.grey-900,
 .fab.grey-900 {
   background-color: #4c4c4c; }
-  .btn.grey-900:hover,
-  .fab.grey-900:hover {
+  .btn.grey-900[class^='-hover']:hover,
+  .fab.grey-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.grey-text-900,
 .fab.grey-text-900 {
   color: #4c4c4c; }
-  .btn.grey-text-900:hover,
-  .fab.grey-text-900:hover {
+  .btn.grey-text-900[class^='-hover']:hover,
+  .fab.grey-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.grey-text-hover-900:hover,
@@ -8643,15 +8751,15 @@ p:first-child {
 .btn.blue-grey-50,
 .fab.blue-grey-50 {
   background-color: #d5dee2; }
-  .btn.blue-grey-50:hover,
-  .fab.blue-grey-50:hover {
+  .btn.blue-grey-50[class^='-hover']:hover,
+  .fab.blue-grey-50[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-grey-text-50,
 .fab.blue-grey-text-50 {
   color: #d5dee2; }
-  .btn.blue-grey-text-50:hover,
-  .fab.blue-grey-text-50:hover {
+  .btn.blue-grey-text-50[class^='-hover']:hover,
+  .fab.blue-grey-text-50[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-grey-text-hover-50:hover,
@@ -8673,15 +8781,15 @@ p:first-child {
 .btn.blue-grey-100,
 .fab.blue-grey-100 {
   background-color: #bdcbd1; }
-  .btn.blue-grey-100:hover,
-  .fab.blue-grey-100:hover {
+  .btn.blue-grey-100[class^='-hover']:hover,
+  .fab.blue-grey-100[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-grey-text-100,
 .fab.blue-grey-text-100 {
   color: #bdcbd1; }
-  .btn.blue-grey-text-100:hover,
-  .fab.blue-grey-text-100:hover {
+  .btn.blue-grey-text-100[class^='-hover']:hover,
+  .fab.blue-grey-text-100[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-grey-text-hover-100:hover,
@@ -8703,15 +8811,15 @@ p:first-child {
 .btn.blue-grey-200,
 .fab.blue-grey-200 {
   background-color: #a5b8c1; }
-  .btn.blue-grey-200:hover,
-  .fab.blue-grey-200:hover {
+  .btn.blue-grey-200[class^='-hover']:hover,
+  .fab.blue-grey-200[class^='-hover']:hover {
     background-color: #edf1f3; }
 
 .btn.blue-grey-text-200,
 .fab.blue-grey-text-200 {
   color: #a5b8c1; }
-  .btn.blue-grey-text-200:hover,
-  .fab.blue-grey-text-200:hover {
+  .btn.blue-grey-text-200[class^='-hover']:hover,
+  .fab.blue-grey-text-200[class^='-hover']:hover {
     color: #edf1f3; }
 
 .btn.blue-grey-text-hover-200:hover,
@@ -8733,15 +8841,15 @@ p:first-child {
 .btn.blue-grey-300,
 .fab.blue-grey-300 {
   background-color: #8da4b0; }
-  .btn.blue-grey-300:hover,
-  .fab.blue-grey-300:hover {
+  .btn.blue-grey-300[class^='-hover']:hover,
+  .fab.blue-grey-300[class^='-hover']:hover {
     background-color: #bdcbd1; }
 
 .btn.blue-grey-text-300,
 .fab.blue-grey-text-300 {
   color: #8da4b0; }
-  .btn.blue-grey-text-300:hover,
-  .fab.blue-grey-text-300:hover {
+  .btn.blue-grey-text-300[class^='-hover']:hover,
+  .fab.blue-grey-text-300[class^='-hover']:hover {
     color: #bdcbd1; }
 
 .btn.blue-grey-text-hover-300:hover,
@@ -8763,15 +8871,15 @@ p:first-child {
 .btn.blue-grey-400,
 .fab.blue-grey-400 {
   background-color: #74919f; }
-  .btn.blue-grey-400:hover,
-  .fab.blue-grey-400:hover {
+  .btn.blue-grey-400[class^='-hover']:hover,
+  .fab.blue-grey-400[class^='-hover']:hover {
     background-color: #8da4b0; }
 
 .btn.blue-grey-text-400,
 .fab.blue-grey-text-400 {
   color: #74919f; }
-  .btn.blue-grey-text-400:hover,
-  .fab.blue-grey-text-400:hover {
+  .btn.blue-grey-text-400[class^='-hover']:hover,
+  .fab.blue-grey-text-400[class^='-hover']:hover {
     color: #8da4b0; }
 
 .btn.blue-grey-text-hover-400:hover,
@@ -8793,8 +8901,8 @@ p:first-child {
 .btn.blue-grey,
 .fab.blue-grey {
   background-color: #607d8b; }
-  .btn.blue-grey:hover,
-  .fab.blue-grey:hover {
+  .btn.blue-grey[class^='-hover']:hover,
+  .fab.blue-grey[class^='-hover']:hover {
     background-color: #8da4b0; }
 
 .btn.blue-grey-text,
@@ -8813,6 +8921,10 @@ p:first-child {
 .fab.blue-grey-text-hover:hover,
 .blue-grey-text-hover:hover {
   color: #607d8b; }
+  .btn.blue-grey-text-hover:hover[class^='-hover']:hover,
+  .fab.blue-grey-text-hover:hover[class^='-hover']:hover,
+  .blue-grey-text-hover:hover[class^='-hover']:hover {
+    color: #3f525b; }
 
 .blue-grey-600 {
   background-color: #74919f; }
@@ -8823,15 +8935,15 @@ p:first-child {
 .btn.blue-grey-600,
 .fab.blue-grey-600 {
   background-color: #4f6773; }
-  .btn.blue-grey-600:hover,
-  .fab.blue-grey-600:hover {
+  .btn.blue-grey-600[class^='-hover']:hover,
+  .fab.blue-grey-600[class^='-hover']:hover {
     background-color: #8da4b0; }
 
 .btn.blue-grey-text-600,
 .fab.blue-grey-text-600 {
   color: #4f6773; }
-  .btn.blue-grey-text-600:hover,
-  .fab.blue-grey-text-600:hover {
+  .btn.blue-grey-text-600[class^='-hover']:hover,
+  .fab.blue-grey-text-600[class^='-hover']:hover {
     color: #8da4b0; }
 
 .btn.blue-grey-text-hover-600:hover,
@@ -8853,15 +8965,15 @@ p:first-child {
 .btn.blue-grey-700,
 .fab.blue-grey-700 {
   background-color: #3f525b; }
-  .btn.blue-grey-700:hover,
-  .fab.blue-grey-700:hover {
+  .btn.blue-grey-700[class^='-hover']:hover,
+  .fab.blue-grey-700[class^='-hover']:hover {
     background-color: #bdcbd1; }
 
 .btn.blue-grey-text-700,
 .fab.blue-grey-text-700 {
   color: #3f525b; }
-  .btn.blue-grey-text-700:hover,
-  .fab.blue-grey-text-700:hover {
+  .btn.blue-grey-text-700[class^='-hover']:hover,
+  .fab.blue-grey-text-700[class^='-hover']:hover {
     color: #bdcbd1; }
 
 .btn.blue-grey-text-hover-700:hover,
@@ -8883,15 +8995,15 @@ p:first-child {
 .btn.blue-grey-800,
 .fab.blue-grey-800 {
   background-color: #2e3c43; }
-  .btn.blue-grey-800:hover,
-  .fab.blue-grey-800:hover {
+  .btn.blue-grey-800[class^='-hover']:hover,
+  .fab.blue-grey-800[class^='-hover']:hover {
     background-color: #edf1f3; }
 
 .btn.blue-grey-text-800,
 .fab.blue-grey-text-800 {
   color: #2e3c43; }
-  .btn.blue-grey-text-800:hover,
-  .fab.blue-grey-text-800:hover {
+  .btn.blue-grey-text-800[class^='-hover']:hover,
+  .fab.blue-grey-text-800[class^='-hover']:hover {
     color: #edf1f3; }
 
 .btn.blue-grey-text-hover-800:hover,
@@ -8913,15 +9025,15 @@ p:first-child {
 .btn.blue-grey-900,
 .fab.blue-grey-900 {
   background-color: #1d262a; }
-  .btn.blue-grey-900:hover,
-  .fab.blue-grey-900:hover {
+  .btn.blue-grey-900[class^='-hover']:hover,
+  .fab.blue-grey-900[class^='-hover']:hover {
     background-color: white; }
 
 .btn.blue-grey-text-900,
 .fab.blue-grey-text-900 {
   color: #1d262a; }
-  .btn.blue-grey-text-900:hover,
-  .fab.blue-grey-text-900:hover {
+  .btn.blue-grey-text-900[class^='-hover']:hover,
+  .fab.blue-grey-text-900[class^='-hover']:hover {
     color: white; }
 
 .btn.blue-grey-text-hover-900:hover,
@@ -9167,9 +9279,10 @@ p:first-child {
     justify-content: flex-end;
     padding: 10px; }
     .card > .card-actions a {
-      color: #e91e63; }
+      color: #e91e63;
+      transition: box-shadow 0.5s, background-color 0.5s, color 0.5s; }
       .card > .card-actions a:hover {
-        color: #70b8ff; }
+        color: #a51043; }
     .card > .card-actions:last-child {
       border-top: solid 1px #f0f0f0; }
     .card > .card-actions.card-actions-left {
@@ -9805,12 +9918,20 @@ ul.collection {
     border: solid 1px #f0f0f0;
     border-bottom: 0;
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    align-items: center; }
+    ul.collection > li.selected {
+      background-color: #1e90ff;
+      color: #ffffff; }
     ul.collection > li:first-child {
       border-radius: 3px 3px 0 0; }
     ul.collection > li:last-child {
       border-radius: 0 0 3px 3px;
       border: solid 1px #f0f0f0; }
+    ul.collection > li > img:first-child {
+      border-radius: 100%;
+      height: 2.5rem;
+      margin-right: 1rem; }
   ul.collection.borderless > li {
     border: 0; }
 
@@ -9826,18 +9947,26 @@ div.collection {
     border: solid 1px #f0f0f0;
     border-bottom: 0;
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    align-items: center; }
+    div.collection > a.selected {
+      background-color: #1e90ff;
+      color: #ffffff; }
     div.collection > a:first-child {
       border-radius: 3px 3px 0 0; }
     div.collection > a:last-child {
       border-radius: 0 0 3px 3px;
       border: solid 1px #f0f0f0; }
-    div.collection > a:hover {
-      background-color: #1e90ff;
-      color: #ffffff; }
+    div.collection > a > img:first-child {
+      border-radius: 100%;
+      height: 2.5rem;
+      margin-right: 1rem; }
+    div.collection > a:hover:not(.selected) {
+      background-color: #f0f0f0;
+      color: #1e90ff; }
   div.collection.borderless > a {
     border: 0; }
-    div.collection.borderless > a:hover {
+    div.collection.borderless > a:hover:not(.selected) {
       background-color: transparent;
       color: #70b8ff; }
 
@@ -9890,7 +10019,7 @@ ul.breadcrumb {
     content: ""; }
 
 * + .tooltip {
-  padding: 5px 10px;
+  padding: 5px 20px;
   position: absolute;
   z-index: 2000;
   color: transparent;
@@ -9899,9 +10028,79 @@ ul.breadcrumb {
   font-size: 1rem;
   opacity: 0;
   pointer-events: none;
-  animation: tooltip-close 0.1s forwards; }
+  animation: tooltip-close 0.5s forwards; }
+  * + .tooltip.show-bounce {
+    animation: tooltip-open-bounce 0.5s forwards; }
+  * + .tooltip.show-spin {
+    animation: tooltip-open-spin 0.5s forwards; }
+  * + .tooltip.show-slide, * + .tooltip.show-slide-left {
+    animation: tooltip-open-slide-left 0.5s forwards; }
+  * + .tooltip.show-slide-right {
+    animation: tooltip-open-slide-right 0.5s forwards; }
+  * + .tooltip.show-slide-up {
+    animation: tooltip-open-slide-up 0.5s forwards; }
+  * + .tooltip.show-slide-down {
+    animation: tooltip-open-slide-down 0.5s forwards; }
   * + .tooltip.show {
-    animation: tooltip-open 0.1s forwards; }
+    animation: tooltip-open 0.5s forwards; }
+
+@keyframes tooltip-open-bounce {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: scale(0); }
+  75% {
+    transform: scale(1.2); }
+  100% {
+    display: inline;
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes tooltip-open-spin {
+  from {
+    display: none;
+    opacity: 0;
+    transform: rotate(0deg); }
+  to {
+    display: inline;
+    opacity: 1;
+    transform: rotate(360deg); } }
+
+@keyframes tooltip-open-slide-left {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateX(-50px); }
+  to {
+    display: inline;
+    opacity: 1; } }
+
+@keyframes tooltip-open-slide-right {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateX(50px); }
+  to {
+    display: inline;
+    opacity: 1; } }
+
+@keyframes tooltip-open-slide-up {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(50px); }
+  to {
+    display: inline;
+    opacity: 1; } }
+
+@keyframes tooltip-open-slide-down {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(-50px); }
+  to {
+    display: inline;
+    opacity: 1; } }
 
 @keyframes tooltip-open {
   from {

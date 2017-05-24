@@ -1,25 +1,19 @@
 extends ../../wrapper
 
 block content
-  .section
-    .card
-      .card-header.secondary-color.white-text
-        h2.card-title Views
-      .card-body
-        p.
-          View create an area that is the full width of their parent and the full viewport height.
-      .card-actions
-        a.btn(href='/examples/view1') Example 1
-        a.btn(href='/examples/view2') Example 2
-        a.btn(href='/examples/view3') Example 3
-    p.
-      Here is a view (example 1) at it's simplest
-    pre: code.language-html
-      = '<div class="view primary-color white-text"></div>\n'
-      = '<div class="view secondary-color white-text"></div>\n'
-    p.
-      You can also use grids to align items within a view
-    pre: code.language-html
-      = '<div class="grid grid-middle view primary-color white-text">\n'
-      = '    <h1>I am centered!</h1>\n'
-      = '</div>\n'
+  +card-header('Views', 'View create an area that is the full width of their parent and the full viewport height.')
+    //- .card-actions
+    //-   a.btn(href='/examples/view1') Example 1
+    //-   a.btn(href='/examples/view2') Example 2
+    //-   a.btn(href='/examples/view3') Example 3
+  p.
+    Here is a view (example 1) at it's simplest
+  pre: code.language-html
+    = '<div class="view primary-color white-text"></div>\n'
+    = '<div class="view secondary-color white-text"></div>\n'
+  p.
+    You can also use grids to align items within a view
+  pre: code.language-html
+    = '<div class="grid grid-middle view primary-color white-text">\n'
+    = '    <h1>I am centered!</h1>\n'
+    = '</div>\n'
