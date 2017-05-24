@@ -1,0 +1,51 @@
+body,
+html {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// Misc
+////////////////////////////////////////////////////////////////////////////////
+hr {
+  border: none;
+  border-bottom: solid 1px #ccc;
+  width: 100%;
+  margin: 40px 0;
+}
+
+p {
+  font-size: 1.25rem;
+  margin: $paragraph-margins;
+}
+
+p:not(.flow-text) {
+  line-height: 2rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+pre {
+  margin-bottom: $block-margin-bottom;
+}
+
+:not(pre) > code {
+  background-color: $light-grey;
+  color: $secondary-color;
+  padding: 0 3px;
+  border-radius: $border-radius;
+}

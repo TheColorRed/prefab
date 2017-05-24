@@ -1,0 +1,9 @@
+a {
+  text-decoration: none;
+  color: $link-text-color;
+  cursor: pointer;
+}
+
+a:hover {
+  color: $hover-text-color;
+}
