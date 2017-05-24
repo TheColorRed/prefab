@@ -60,14 +60,19 @@
     {
       "taskName": "Compress JavaScript",
       "echoCommand": true,
-      "windows": {
-        "command": "watch.cmd"
-      },
       "command": "watch",
-      "args": [
-        "uglifyjs -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js",
-        "--interval=1"
-      ]
+      "windows": {
+        "command": "watch.cmd",
+        "args": [
+          "uglifyjs -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js",
+          "--interval=1"
+        ]
+      },
+      "linux": {
+        "args": [
+          "uglifyjs -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js"
+        ]
+      }
     }
   ]
 }

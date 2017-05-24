@@ -8,12 +8,16 @@ block content
         p.
           Transitions add small effects to items to give them flair. This helps certain items stand out more than other items.
   .section
-    h2 Scalling
+    h2 Scaling
+    p.
+      Items can be scaled out by adding the #[code .scale-out] class, or can be scaled in by adding the #[code .scale-in] class.
+    p.
+      Click on the button that says "Scale Out" to scale the circle.
     .grid
-      .cell.cell-2
-        a#scaler.fab.fab-lg.red.white-text: i.material-icons add
-      .cell.cell-6
-        a#toggle.btn.red.white-text Toggle Scale
+      .cell.cell-2.cell-middle
+        +fab('arrow_downward', '', 'scaler')
+      .cell.cell-6.cell-middle
+        +button('Scale Out', '', 'toggle')
     script.
       let scaler = document.querySelector('#scaler');
       let toggle = document.querySelector('#toggle');
@@ -22,22 +26,80 @@ block content
         if (!isScaledOut) {
           scaler.classList.remove('scale-in');
           scaler.classList.add('scale-out');
+          toggle.innerText = 'Scale In';
         } else {
           scaler.classList.remove('scale-out');
           scaler.classList.add('scale-in');
+          toggle.innerText = 'Scale Out';
         }
       });
   .section
+    h2 Spin
+    .grid
+      .cell.cell-4.text-center
+        +fab('autorenew', 'spin-fast')
+      .cell.cell-4.text-center
+        +fab('autorenew', 'spin')
+      .cell.cell-4.text-center
+        +fab('autorenew', 'spin-slow')
+    pre: code.language-html
+      ='<!-- Fast Spin -->\n'
+      ='<a class="fab fab-lg spin-fast secondary-color white-text"><i class="material-icons">autorenew</i></a>\n\n'
+      ='<!-- Normal Spin -->\n'
+      ='<a class="fab fab-lg spin secondary-color white-text"><i class="material-icons">autorenew</i></a>\n\n'
+      ='<!-- Slow Spin -->\n'
+      ='<a class="fab fab-lg spin-slow secondary-color white-text"><i class="material-icons">autorenew</i></a>'
+  .section
+    h2 Spin Delay
+    .grid
+      .cell.cell-4.text-center
+        +fab('autorenew', 'spin-delay-fast')
+      .cell.cell-4.text-center
+        +fab('autorenew', 'spin-delay')
+      .cell.cell-4.text-center
+        +fab('autorenew', 'spin-delay-slow')
+    pre: code.language-html
+      ='<!-- Fast Spin Delay -->\n'
+      ='<a class="fab fab-lg spin-delay-fast secondary-color white-text"><i class="material-icons">autorenew</i></a>\n\n'
+      ='<!-- Normal Spin Delay -->\n'
+      ='<a class="fab fab-lg spin-delay secondary-color white-text"><i class="material-icons">autorenew</i></a>\n\n'
+      ='<!-- Slow Spin Delay -->\n'
+      ='<a class="fab fab-lg spin-delay-slow secondary-color white-text"><i class="material-icons">autorenew</i></a>'
+  .section
     h2 Pulse
     .grid
-      .cell.cell-6
-        a.fab.fab-lg.pulse.red.white-text: i.material-icons add
+      .cell.cell-4.text-center
+        h5 Fast
+        +fab('add', 'pulse-fast')
+      .cell.cell-4.text-center
+        h5 Normal
+        +fab('add', 'pulse')
+      .cell.cell-4.text-center
+        h5 Slow
+        +fab('add', 'pulse-slow')
     pre: code.language-html
-      ='<a class="fab fab-lg pulse red white-text"><i class="material-icons">add</i></a>'
+      ='<!-- Fast Pulse -->\n'
+      ='<a class="fab fab-lg pulse-fast secondary-color white-text"><i class="material-icons">add</i></a>\n\n'
+      ='<!-- Normal Pulse -->\n'
+      ='<a class="fab fab-lg pulse secondary-color white-text"><i class="material-icons">add</i></a>\n\n'
+      ='<!-- Slow Pulse -->\n'
+      ='<a class="fab fab-lg pulse-slow secondary-color white-text"><i class="material-icons">add</i></a>'
   .section
     h2 Heart Beat
     .grid
-      .cell.cell-6
-        a.fab.fab-lg.heart-beat.red.white-text: i.material-icons add
+      .cell.cell-4.text-center
+        h5 Fast
+        +fab('add', 'heart-beat-fast')
+      .cell.cell-4.text-center
+        h5 Normal
+        +fab('add', 'heart-beat')
+      .cell.cell-4.text-center
+        h5 Slow
+        +fab('add', 'heart-beat-slow')
     pre: code.language-html
-      ='<a class="fab fab-lg heart-beat red white-text"><i class="material-icons">add</i></a>'
+      ='<!-- Fast Heart Beat -->\n'
+      ='<a class="fab fab-lg heart-beat-fast secondary-color white-text"><i class="material-icons">add</i></a>\n\n'
+      ='<!-- Normal Heart Beat -->\n'
+      ='<a class="fab fab-lg heart-beat secondary-color white-text"><i class="material-icons">add</i></a>\n\n'
+      ='<!-- Slow Heart Beat -->\n'
+      ='<a class="fab fab-lg heart-beat-slow secondary-color white-text"><i class="material-icons">add</i></a>'

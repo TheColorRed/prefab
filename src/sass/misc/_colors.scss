@@ -1,139 +1,233 @@
-@each $name, $color in $base-colors {
-  $amount: 40;
+@mixin color-overrides($name, $color, $primary, $offset, $amount, $type: '') {
+  @if $amount != 0 {
+    .#{$name}-#{$offset} {
+      background-color: lighten($color, $amount);
+    }
 
-  @for $i from 0 through 9 {
-    @if $i == 0 {
-      .#{$name}-#{50} {
+    .#{$name}-text-#{$offset} {
+      color: lighten($color, $amount);
+    }
+
+    .btn.#{$name}-#{$offset},
+    .fab.#{$name}-#{$offset} {
+      @if ($type == 'lighten') {
         background-color: lighten($color, $amount);
-      }
-
-      .#{$name}-text-50 {
-        color: lighten($color, $amount);
-      }
-
-      @if $name == $primary {
-        .primary-color-50 {
-          background-color: lighten($color, $amount);
-        }
-
-        .primary-color-text-50 {
-          color: lighten($color, $amount);
-        }
-      }
-
-      @if $name == $secondary {
-        .secondary-color-50 {
-          background-color: lighten($color, $amount);
-        }
-
-        .secondary-color-text-50 {
-          color: lighten($color, $amount);
-        }
-      }
-      $amount: $amount - $lighten-darken-amount;
-    } @else if $i == 5 {
-      .#{$name} {
+      } @else if($type == 'darken') {
+        background-color: darken($color, $amount);
+      } @else {
         background-color: $color;
       }
 
-      .#{$name}-text {
+      &:hover {
+        background-color: lighten($color, $amount * 2);
+      }
+    }
+
+    .btn.#{$name}-text-#{$offset},
+    .fab.#{$name}-text-#{$offset} {
+      @if ($type == 'lighten') {
+        color: lighten($color, $amount);
+      } @else if($type == 'darken') {
+        color: darken($color, $amount);
+      } @else {
         color: $color;
       }
 
-      @if $name == $primary {
-        .primary-color {
+      &:hover {
+        color: lighten($color, $amount * 2);
+      }
+    }
+
+    .btn.#{$name}-text-hover-#{$offset}:hover,
+    .fab.#{$name}-text-hover-#{$offset}:hover,
+    .#{$name}-text-hover-#{$offset}:hover {
+      @if ($type == 'lighten') {
+        color: lighten($color, $amount) !important;
+      } @else if($type == 'darken') {
+        color: darken($color, $amount) !important;
+      } @else {
+        color: $color !important;
+      }
+    }
+
+    .btn.#{$name}-hover-#{$offset}:hover,
+    .fab.#{$name}-hover-#{$offset}:hover,
+    .#{$name}-hover-#{$offset}:hover {
+      @if ($type == 'lighten') {
+        background-color: lighten($color, $amount) !important;
+      } @else if($type == 'darken') {
+        background-color: darken($color, $amount) !important;
+      } @else {
+        background-color: $color !important;
+      }
+    }
+
+    @if $name == $primary {
+      .primary-color-#{$offset} {
+        @if ($type == 'lighten') {
+          background-color: lighten($color, $amount);
+        } @else if($type == 'darken') {
+          background-color: darken($color, $amount);
+        } @else {
           background-color: $color;
         }
+      }
 
-        .primary-color-text {
+      .primary-color-text-#{$offset} {
+        @if ($type == 'lighten') {
+          color: lighten($color, $amount);
+        } @else if($type == 'darken') {
+          color: darken($color, $amount);
+        } @else {
           color: $color;
         }
       }
+    }
 
-      @if $name == $secondary {
-        .secondary-color {
+    @if $name == $secondary {
+      .secondary-color-#{$offset} {
+        @if ($type == 'lighten') {
+          background-color: lighten($color, $amount);
+        } @else if($type == 'darken') {
+          background-color: darken($color, $amount);
+        } @else {
           background-color: $color;
         }
+      }
 
-        .secondary-color-text {
+      .secondary-color-text-#{$offset} {
+        @if ($type == 'lighten') {
+          color: lighten($color, $amount);
+        } @else if($type == 'darken') {
+          color: darken($color, $amount);
+        } @else {
           color: $color;
         }
       }
-      $amount: $amount + $lighten-darken-amount;
-    } @else if $i < 5 {
-      .#{$name}-#{($i*100)} {
-        background-color: lighten($color, $amount);
+    }
+  } @else {
+    .#{$name} {
+      background-color: $color;
+    }
+
+    .#{$name}-text {
+      color: $color;
+    }
+
+    .btn.#{$name},
+    .fab.#{$name} {
+      background-color: $color;
+
+      &:hover {
+        background-color: lighten($color, $lighten-darken-amount * 2);
+      }
+    }
+
+    .btn.#{$name}-text,
+    .fab.#{$name}-text {
+      color: $color;
+
+      &:hover {
+        color: lighten($color, $lighten-darken-amount * 2);
+      }
+    }
+
+    .btn.#{$name}-hover:hover,
+    .fab.#{$name}-hover:hover,
+    .#{$name}-hover:hover {
+      background-color: $color;
+    }
+
+    .btn.#{$name}-text-hover:hover,
+    .fab.#{$name}-text-hover:hover,
+    .#{$name}-text-hover:hover {
+      color: $color;
+    }
+
+    @if $name == $primary {
+      .primary-color {
+        background-color: $color;
       }
 
-      .#{$name}-text-#{($i*100)} {
-        color: lighten($color, $amount);
-      }
-
-      @if $name == $primary {
-        .primary-color-#{($i*100)} {
-          background-color: lighten($color, $amount);
-        }
-
-        .primary-color-text-#{($i*100)} {
-          color: lighten($color, $amount);
+      .btn.primary-color,
+      .fab.primary-color {
+        &:hover {
+          background-color: lighten($color, $lighten-darken-amount * 2);
         }
       }
 
-      @if $name == $secondary {
-        .secondary-color-#{($i*100)} {
-          background-color: lighten($color, $amount);
-        }
-
-        .secondary-color-text-#{($i*100)} {
-          color: lighten($color, $amount);
-        }
+      .primary-color-text {
+        color: $color;
       }
-      $amount: $amount - $lighten-darken-amount;
-    } @else if $i > 5 {
-      .#{$name}-#{($i*100)} {
-        background-color: darken($color, $amount);
+    }
+
+    @if $name == $secondary {
+      .secondary-color {
+        background-color: $color;
       }
 
-      .#{$name}-text-#{($i*100)} {
-        color: darken($color, $amount);
-      }
-
-      @if $name == $primary {
-        .primary-color-#{($i*100)} {
-          background-color: darken($color, $amount);
-        }
-
-        .primary-color-text-#{($i*100)} {
-          color: darken($color, $amount);
+      .btn.secondary-color,
+      .fab.secondary-color {
+        &:hover {
+          background-color: lighten($color, $lighten-darken-amount * 2);
         }
       }
 
-      @if $name == $secondary {
-        .secondary-color-#{($i*100)} {
-          background-color: darken($color, $amount);
-        }
-
-        .secondary-color-text-#{($i*100)} {
-          color: darken($color, $amount);
-        }
+      .secondary-color-text {
+        color: $color;
       }
-      $amount: $amount + $lighten-darken-amount;
     }
   }
 }
 
 .black {
   background-color: #000000;
+
+  &.btn:hover {
+    background-color: #000000;
+  }
 }
 
 .black-text {
   color: #000000;
+
+  &.btn:hover {
+    color: #000000;
+  }
 }
 
 .white {
   background-color: #ffffff;
+
+  &.btn:hover {
+    background-color: #ffffff;
+  }
 }
 
 .white-text {
   color: #ffffff;
+
+  &.btn:hover {
+    color: #ffffff;
+  }
+}
+
+@each $name, $color in $base-colors {
+  $amount: 40;
+
+  @for $i from 0 through 9 {
+    @if $i == 0 {
+      @include color-overrides($name, $color, $primary, 50, $amount, 'lighten');
+      $amount: $amount - $lighten-darken-amount;
+    } @else if $i == 5 {
+      @include color-overrides($name, $color, $primary, 0, $amount, '');
+      $amount: $amount + $lighten-darken-amount;
+    } @else if $i < 5 {
+      @include color-overrides($name, $color, $primary, $i * 100, $amount, 'lighten');
+      $amount: $amount - $lighten-darken-amount;
+    } @else if $i > 5 {
+      @include color-overrides($name, $color, $primary, $i * 100, $amount, 'darken');
+      $amount: $amount + $lighten-darken-amount;
+    }
+  }
 }
