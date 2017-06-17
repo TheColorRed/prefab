@@ -1,11 +1,23 @@
 @mixin color-overrides($name, $color, $primary, $offset, $amount, $type: '') {
   @if $amount != 0 {
     .#{$name}-#{$offset} {
-      background-color: lighten($color, $amount);
+      @if ($type == 'lighten') {
+        background-color: lighten($color, $amount);
+      } @else if($type == 'darken') {
+        background-color: darken($color, $amount);
+      } @else {
+        background-color: $color;
+      }
     }
 
     .#{$name}-text-#{$offset} {
-      color: lighten($color, $amount);
+      @if ($type == 'lighten') {
+        color: lighten($color, $amount);
+      } @else if($type == 'darken') {
+        color: darken($color, $amount);
+      } @else {
+        color: $color;
+      }
     }
 
     .btn.#{$name}-#{$offset},
@@ -206,6 +218,10 @@
   &.btn:hover {
     background-color: #ffffff;
   }
+}
+
+.white-text-hover:hover {
+  color: #ffffff;
 }
 
 .white-text {

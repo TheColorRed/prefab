@@ -12,3 +12,12 @@ declare namespace prefab {
         protected positionTooltip(): void;
     }
 }
+declare namespace prefab {
+    class dropdown {
+        protected element: HTMLElement;
+        protected dropdown: HTMLElement;
+        static init(): void;
+        constructor(element: HTMLElement, dropdown: HTMLElement);
+        protected click(e: MouseEvent): void;
+    }
+}

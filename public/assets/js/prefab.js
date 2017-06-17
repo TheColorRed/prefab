@@ -60,7 +60,28 @@ var prefab;
     }
     prefab.tooltip = tooltip;
 })(prefab || (prefab = {}));
+var prefab;
+(function (prefab) {
+    class dropdown {
+        constructor(element, dropdown) {
+            this.element = element;
+            this.dropdown = dropdown;
+            this.element.addEventListener('click', this.click.bind(this));
+        }
+        static init() {
+            let dropdowns = document.querySelectorAll('.dropdown');
+            for (let dd of dropdowns) {
+                new dropdown(dd.previousElementSibling, dd);
+            }
+        }
+        click(e) {
+            this.dropdown.classList.toggle('show');
+        }
+    }
+    prefab.dropdown = dropdown;
+})(prefab || (prefab = {}));
 document.addEventListener('DOMContentLoaded', e => {
     e.preventDefault();
     prefab.tooltip.init();
+    prefab.dropdown.init();
 });
