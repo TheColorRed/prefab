@@ -17,7 +17,60 @@ nav {
     z-index: 100;
   }
 
-  &.nav-vertical {
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-end;
+
+    &.left {
+      justify-content: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    & > li {
+      display: flex;
+      flex-direction: column;
+
+      & > ul {
+        display: block;
+
+        & > li > a {
+          padding: 0.8rem 3rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      & > a {
+        padding: 1.4rem 2rem;
+        text-decoration: none;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        font-weight: 400;
+        color: #ffffff;
+        transition: background-color 0.4s ease-in-out;
+      }
+
+      & > a:hover {
+        background-color: lighten($primary-color, $lighten-darken-amount);
+        color: #ffffff;
+      }
+
+      &.active {
+        background-color: darken($primary-color, $lighten-darken-amount);
+        color: #ffffff;
+      }
+    }
+  }
+
+  &.nav-sidebar {
     flex-direction: row;
     max-width: 400px;
     flex: 1;
@@ -27,9 +80,72 @@ nav {
     width: inherit;
     overflow: auto;
     z-index: 200;
+    background-color: #ffffff;
 
-    ul {
+    & > ul {
       flex-flow: column;
+
+      & > li {
+        & > a {
+          color: #000000;
+
+          &:hover {
+            background-color: $light-grey;
+          }
+        }
+
+        &.collapsible {
+          &.active {
+            background-color: $light-grey;
+          }
+
+          & > a {
+            color: #000000;
+          }
+
+          & > ul {
+            list-style: none;
+            display: flex;
+            flex-flow: row;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            justify-content: flex-end;
+            display: none;
+
+            & > li {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+
+          &.active > ul {
+            display: block;
+            background-color: #ffffff;
+
+            & > li > a {
+              color: #000000;
+            }
+
+            & > li > a {
+              font-weight: 300;
+            }
+
+            & > li.active > a {
+              background-color: darken($primary-color, $lighten-darken-amount);
+              color: #ffffff;
+            }
+
+            & > li > a:hover {
+              background-color: lighten($primary-color, $lighten-darken-amount);
+            }
+
+            & > li:not(.active) > a:hover {
+              background-color: $light-grey;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -50,51 +166,6 @@ nav {
 
       img {
         max-height: 50px;
-      }
-    }
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-flow: row;
-    padding: 0;
-    margin: 0;
-    flex: 1;
-    justify-content: flex-end;
-
-    &.left {
-      justify-content: flex-start;
-    }
-
-    &.center {
-      justify-content: center;
-    }
-
-    & > li {
-      display: flex;
-
-      & > a {
-        padding: 1.4rem 2rem;
-        text-decoration: none;
-        display: flex;
-        flex: 1;
-        align-items: center;
-        letter-spacing: 1px;
-        color: #ffffff;
-      }
-
-      & > a:hover {
-        background-color: lighten($primary-color, $lighten-darken-amount);
-        color: #ffffff;
-      }
-
-      &.active {
-        background-color: darken($primary-color, $lighten-darken-amount);
-
-        a {
-          color: #ffffff;
-        }
       }
     }
   }

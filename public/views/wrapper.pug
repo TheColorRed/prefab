@@ -5,7 +5,7 @@ html
     title Prefab Framework
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css')
     link(href='/css/prefab.min.css' rel='stylesheet')
-    script(src='/js/prefab.min.js')
+    script(src='/js/prefab.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-scss.min.js')
     style.
@@ -22,22 +22,29 @@ html
     main
       .grid
         .cell.cell-2
-          nav.nav-vertical.white.nav-raised-2
+          nav.nav-sidebar.nav-raised-2
             ul
               if section == 'css'
-                li(class=`${page == 'badge' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/badge') Badges
-                li(class=`${page == 'breadcrumb' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/breadcrumb') Breadcrumbs
-                li(class=`${page == 'card' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/card') Cards
-                li(class=`${page == 'collection' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/collection') Collections
-                li(class=`${page == 'color' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/color') Colors
-                li(class=`${page == 'layout' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/layout') Layout
-                li(class=`${page == 'navigation' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/navigation') Navigation
-                li(class=`${page == 'pagination' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/pagination') Pagination
-                li(class=`${page == 'transition' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/transition') Transitions
-                li(class=`${page == 'typography' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/typography') Typography
-                li(class=`${page == 'view' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/css/view') Views
+                li(class=`${page == 'badge' ? 'active' : ''}`): a(href='/doc/css/badge') Badges
+                li(class=`${page == 'breadcrumb' ? 'active' : ''}`): a(href='/doc/css/breadcrumb') Breadcrumbs
+                li(class=`${page == 'card' ? 'active' : ''}`): a(href='/doc/css/card') Cards
+                li(class=`${page == 'collection' ? 'active' : ''}`): a(href='/doc/css/collection') Collections
+                li(class=`${page == 'color' ? 'active' : ''}`): a(href='/doc/css/color') Colors
+                li(class=`${['textfield','buttons','checkboxes','radiobuttons'].indexOf(page) != -1 ? 'active' : ''}`).collapsible
+                  a(href='#') Forms
+                  ul
+                    li(class=`${page == 'buttons' ? 'active' : ''}`): a(href='/doc/css/buttons') Buttons
+                    li(class=`${page == 'checkboxes' ? 'active' : ''}`): a(href='/doc/css/checkboxes') Check Boxes
+                    li(class=`${page == 'radiobuttons' ? 'active' : ''}`): a(href='/doc/css/radiobuttons') Radio Buttons
+                    li(class=`${page == 'textfield' ? 'active' : ''}`): a(href='/doc/css/textfield') Text Fields
+                li(class=`${page == 'layout' ? 'active' : ''}`): a(href='/doc/css/layout') Layout
+                li(class=`${page == 'navigation' ? 'active' : ''}`): a(href='/doc/css/navigation') Navigation
+                li(class=`${page == 'pagination' ? 'active' : ''}`): a(href='/doc/css/pagination') Pagination
+                li(class=`${page == 'transition' ? 'active' : ''}`): a(href='/doc/css/transition') Transitions
+                li(class=`${page == 'typography' ? 'active' : ''}`): a(href='/doc/css/typography') Typography
+                li(class=`${page == 'view' ? 'active' : ''}`): a(href='/doc/css/view') Views
               else if section == 'js'
-                li(class=`${page == 'tooltip' ? 'active' : ''}`): a.dodger-blue-text(href='/doc/js/tooltip') Tooltips
+                li(class=`${page == 'tooltip' ? 'active' : ''}`): a(href='/doc/js/tooltip') Tooltips
         .cell.cell-10
           .grid.grid-vertical
             nav.fixed.cell.cell-10

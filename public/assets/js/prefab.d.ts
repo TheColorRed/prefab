@@ -12,3 +12,12 @@ declare namespace prefab {
         protected positionTooltip(): void;
     }
 }
+declare namespace prefab {
+    class collapsible {
+        protected a: HTMLAnchorElement;
+        protected li: HTMLLIElement;
+        static init(): void;
+        constructor(li: HTMLLIElement, a: HTMLAnchorElement);
+        private aClick(e);
+    }
+}

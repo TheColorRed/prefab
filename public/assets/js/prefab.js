@@ -60,7 +60,29 @@ var prefab;
     }
     prefab.tooltip = tooltip;
 })(prefab || (prefab = {}));
+var prefab;
+(function (prefab) {
+    class collapsible {
+        constructor(li, a) {
+            this.li = li;
+            this.a = a;
+            this.a.addEventListener('click', this.aClick.bind(this));
+        }
+        static init() {
+            let lis = document.querySelectorAll('nav li.collapsible');
+            for (let li of lis) {
+                new collapsible(li, li.querySelector('a'));
+            }
+        }
+        aClick(e) {
+            e.preventDefault();
+            this.a.parentElement ? this.a.parentElement.classList.toggle('active') : null;
+        }
+    }
+    prefab.collapsible = collapsible;
+})(prefab || (prefab = {}));
 document.addEventListener('DOMContentLoaded', e => {
     e.preventDefault();
     prefab.tooltip.init();
+    prefab.collapsible.init();
 });

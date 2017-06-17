@@ -9,6 +9,7 @@
   },
   "files": [
     "./components/tooltip.ts",
+    "./components/collapsible.ts",
     "./main.ts"
   ]
 }

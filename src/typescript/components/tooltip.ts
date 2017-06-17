@@ -1,12 +1,13 @@
 namespace prefab {
 
   export class tooltip {
+
     protected element: HTMLElement;
     protected tip: HTMLElement;
     protected timeout: NodeJS.Timer;
     protected tipsize: ClientRect;
 
-    public static init() {
+    public static init(): void {
       let tiphovers = document.querySelectorAll('.tooltip') as NodeListOf<HTMLElement>;
       for (let tip of tiphovers) {
         new tooltip(<HTMLElement>tip.previousElementSibling, tip);

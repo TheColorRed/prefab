@@ -1,0 +1,135 @@
+extends ../../wrapper
+block content
+  +card-header('Text Fields', 'A text field allows you to get user input.')
+  .section
+    h2 Text Field
+    p A basic text field can be placed anywhere and it will expand to the width of its parent.
+    .grid.grid-vertical.grid-padded-10.grid-margin-bottom-20
+      .cell.cell-3.cell
+        input(type='text')
+      .cell.cell-6
+        input(type='text')
+      .cell.cell-9
+        input(type='text')
+      .cell.cell-12
+        input.error(type='text')
+    pre: code.language-html
+      ='<div class="grid grid-vertical grid-padded-10">\n'
+      ='  <div class="cell cell-3 cell">\n'
+      ='    <input type="text"/>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-6">\n'
+      ='    <input type="text"/>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-9">\n'
+      ='    <input type="text"/>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-12">\n'
+      ='    <input class="error" type="text"/>\n'
+      ='  </div>\n'
+      ='</div>\n'
+  .section
+    h2 Text Groups
+    p A text group is a little more stylish than a basic text field. The basic markup looks like this where both the #[code label] and #[code span] are optional tags.
+    pre: code.language-html
+      ='<div class="text-group">\n'
+      ='  <label>Username</label>\n'
+      ='  <input type="text"/>\n'
+      ='  <span>Enter a creative username</span>\n'
+      ='</div>'
+    .grid.grid-vertical.grid-margin-bottom-20
+      .cell.cell-6
+        .text-group.error
+          label Username
+          input(type='text')
+          span Enter a creative username
+      .cell.cell-6
+        .grid.grid-padded-10
+          .cell.cell-6
+            .text-group
+              label Password
+              input(type='password')
+              span Select a strong password
+          .cell.cell-6
+            .text-group
+              label Re-type Password
+              input(type='password')
+              span Re-type your password
+      .cell.cell-6
+        .grid.grid-padded-10
+          .cell.cell-6
+            .text-group
+              label Email
+              input(type='text')
+              span Enter a valid email address
+          .cell.cell-6
+            .text-group
+              label Re-type Email
+              input(type='text')
+              span Re-type your email address
+      .cell.cell-6
+        .text-group
+          label Website
+          input(type='text')
+          span Your homepage
+      .cell.cell-6.text-right
+        input(type='reset' value='Clear').grey-200.grey-hover-400.black-text
+        input(type='submit' value='Submit').primary-color.primary-color-hover-700.white-text
+    pre: code.language-html
+      ='<div class="grid grid-vertical">\n'
+      ='  <div class="cell cell-6">\n'
+      ='    <div class="text-group">\n'
+      ='      <label>Username</label>\n'
+      ='      <input type="text"/>\n'
+      ='      <span>Enter a creative username</span>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-6">\n'
+      ='    <div class="grid grid-padded-10">\n'
+      ='      <div class="cell cell-6">\n'
+      ='        <div class="text-group">\n'
+      ='          <label>Password</label>\n'
+      ='          <input type="password"/>\n'
+      ='          <span>Select a strong password</span>\n'
+      ='        </div>\n'
+      ='      </div>\n'
+      ='      <div class="cell cell-6">\n'
+      ='        <div class="text-group">\n'
+      ='          <label>Re-type Password</label>\n'
+      ='          <input type="password"/>\n'
+      ='          <span>Re-type your password</span>\n'
+      ='        </div>\n'
+      ='      </div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-6">\n'
+      ='    <div class="grid grid-padded-10">\n'
+      ='      <div class="cell cell-6">\n'
+      ='        <div class="text-group">\n'
+      ='          <label>Email</label>\n'
+      ='          <input type="text"/>\n'
+      ='          <span>Enter a valid email address</span>\n'
+      ='        </div>\n'
+      ='      </div>\n'
+      ='      <div class="cell cell-6">\n'
+      ='        <div class="text-group">\n'
+      ='          <label>Re-type Email</label>\n'
+      ='          <input type="text"/>\n'
+      ='          <span>Re-type your email address</span>\n'
+      ='        </div>\n'
+      ='      </div>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-6">\n'
+      ='    <div class="text-group">\n'
+      ='      <label>Website</label>\n'
+      ='      <input type="text"/>\n'
+      ='      <span>Your homepage</span>\n'
+      ='    </div>\n'
+      ='  </div>\n'
+      ='  <div class="cell cell-6 text-right">\n'
+      ='    <input type="reset" value="Clear" class="grey-200 grey-hover-400 black-text"/>\n'
+      ='    <input type="submit" value="Submit" class="primary-color primary-color-hover-700 white-text"/>\n'
+      ='  </div>\n'
+      ='</div>'
+
