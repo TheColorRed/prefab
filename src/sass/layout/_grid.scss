@@ -58,16 +58,18 @@
   }
   $i: 5;
 
-  @while ($i <= 100) {
+  @while ($i <= 200) {
     &.grid-padded-#{$i} {
       &.grid-vertical {
-        & > .cell:not(:last-child) {
+        & > .cell:not(:last-child),
+        & > .grid:not(:last-child) {
           margin-bottom: #{$i}px;
         }
       }
 
       &:not(.grid-vertical) {
-        & > .cell:not(:last-child) {
+        & > .cell:not(:last-child),
+        & > .grid:not(:last-child) {
           margin-right: #{$i}px;
         }
       }

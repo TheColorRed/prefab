@@ -65,11 +65,12 @@
         "command": "watch.cmd",
         "args": [
           "--interval=1",
-          "uglifyjs -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js"
+          "uglifyjs.cmd -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js"
         ]
       },
       "linux": {
         "args": [
+          "--interval=1",
           "uglifyjs -c -m -o ./public/assets/js/prefab.min.js -- ./public/assets/js/prefab.js"
         ]
       }

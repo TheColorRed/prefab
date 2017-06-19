@@ -1,0 +1,44 @@
+extends ../../wrapper
+block content
+  .section
+    .grid.grid-vertical.grid-margin-bottom-10.grid-padded-100
+      .grid.grid-vertical
+        .cell
+          h2 Determinate Progress Bar
+        .grid#example1
+          .cell.cell-1
+            input(type='number' min='0' max='100' value='75').text-center#percentage
+          .cell.cell-11
+            .grid
+              .grid.grid-vertical.grid-padded-20
+                .cell.cell-11.cell-end
+                  div Progress bar with text (needs to have #[code .progress-lg] attched)
+                  .progress.grey-100.progress-lg
+                    .grid.grid-middle
+                      .cell#example1-value 75%
+                    .bar(style='width:75%').blue
+                .cell.cell-11.cell-end
+                  div Large progress bar
+                  .progress.grey-100.progress-lg
+                    .bar(style='width:75%').blue
+                .cell.cell-11.cell-end
+                  div Medium progress bar
+                  .progress.grey-100.progress-md
+                    .bar(style='width:75%').blue
+                .cell.cell-11.cell-end
+                  div Small progress bar (default)
+                  .progress.grey-100
+                    .bar(style='width:75%').blue
+      .cell.cell-12
+        h2 Indeterminate Progress Bar
+        .progress.progress-md.grey-outline
+          .bar.blue.indeterminate
+    script.
+      let bars = document.querySelectorAll('#example1 .bar')
+      let percentage = document.querySelector('#percentage')
+      percentage.addEventListener('input', e => {
+        for(let bar of bars){
+          bar.style.width = percentage.value + '%'
+          document.querySelector('#example1-value').textContent=percentage.value + '%'
+        }
+      })
