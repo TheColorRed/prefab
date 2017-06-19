@@ -12,6 +12,10 @@
     flex-direction: column;
   }
 
+  &.grid-horizontal {
+    flex-direction: row;
+  }
+
   &.grid-middle {
     align-items: center;
     justify-content: center;
@@ -44,9 +48,31 @@
   &.grid-stretch {
     align-items: stretch;
   }
+  $i: 5;
 
-  &.grid-margin-bottom {
-    margin-bottom: $block-margin-bottom;
+  @while ($i <= 100) {
+    &.grid-margin-bottom-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+    $i: $i + 5;
+  }
+  $i: 5;
+
+  @while ($i <= 100) {
+    &.grid-padded-#{$i} {
+      &.grid-vertical {
+        & > .cell:not(:last-child) {
+          margin-bottom: #{$i}px;
+        }
+      }
+
+      &:not(.grid-vertical) {
+        & > .cell:not(:last-child) {
+          margin-right: #{$i}px;
+        }
+      }
+    }
+    $i: $i + 5;
   }
 
   & > .cell {
@@ -59,6 +85,7 @@
 
     &.cell-end {
       align-self: flex-end;
+      justify-content: flex-end;
     }
 
     &.cell-start {

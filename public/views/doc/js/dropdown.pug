@@ -1,0 +1,19 @@
+extends ../../wrapper
+block content
+  .card.section
+    .card-header.secondary-color.white-text
+      h2.card-title Dropdowns
+    .card-body
+        p.
+          Dropdowns hide more options that can be selected. What would a framework be witout them?
+  .section
+    a: i.material-icons more_vert
+    ul.dropdown
+      li: a(href='') View Profile
+      li: a(href='') Edit Profile
+      li.divider
+      li: a(href='') Cut
+      li: a(href='') Copy
+      li: a(href='') Paste
+      li.divider
+      li: a(href='') Logout

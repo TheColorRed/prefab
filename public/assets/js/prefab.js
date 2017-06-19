@@ -67,6 +67,7 @@ var prefab;
             this.element = element;
             this.dropdown = dropdown;
             this.element.addEventListener('click', this.click.bind(this));
+            document.addEventListener('click', this.click.bind(this));
         }
         static init() {
             let dropdowns = document.querySelectorAll('.dropdown');
@@ -75,13 +76,41 @@ var prefab;
             }
         }
         click(e) {
-            this.dropdown.classList.toggle('show');
+            e.stopPropagation();
+            if (e.currentTarget == this.element) {
+                this.dropdown.classList.toggle('show');
+            }
+            else if (e.currentTarget == document) {
+                this.dropdown.classList.remove('show');
+            }
         }
     }
     prefab.dropdown = dropdown;
+})(prefab || (prefab = {}));
+var prefab;
+(function (prefab) {
+    class collapsible {
+        constructor(li, a) {
+            this.li = li;
+            this.a = a;
+            this.a.addEventListener('click', this.aClick.bind(this));
+        }
+        static init() {
+            let lis = document.querySelectorAll('nav li.collapsible');
+            for (let li of lis) {
+                new collapsible(li, li.querySelector('a'));
+            }
+        }
+        aClick(e) {
+            e.preventDefault();
+            this.a.parentElement ? this.a.parentElement.classList.toggle('active') : null;
+        }
+    }
+    prefab.collapsible = collapsible;
 })(prefab || (prefab = {}));
 document.addEventListener('DOMContentLoaded', e => {
     e.preventDefault();
     prefab.tooltip.init();
     prefab.dropdown.init();
+    prefab.collapsible.init();
 });

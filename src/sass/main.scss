@@ -38,8 +38,10 @@
 @import './tags/a';
 @import './tags/headers';
 @import './tags/button';
+@import './tags/textfield';
 
 // Import misc
+@import './misc/text';
 @import './misc/borders';
 @import './misc/colors';
 @import './misc/helpers';
@@ -57,3 +59,4 @@
 @import './components/pagination';
 @import './components/tooltip';
 // @import './components/parallax'
+@import './misc/colors';

@@ -1,52 +1,40 @@
 @mixin color-overrides($name, $color, $primary, $offset, $amount, $type: '') {
   @if $amount != 0 {
     .#{$name}-#{$offset} {
-      @if ($type == 'lighten') {
-        background-color: lighten($color, $amount);
-      } @else if($type == 'darken') {
-        background-color: darken($color, $amount);
-      } @else {
-        background-color: $color;
-      }
+      background-color: lighten($color, $amount) !important;
     }
 
     .#{$name}-text-#{$offset} {
-      @if ($type == 'lighten') {
-        color: lighten($color, $amount);
-      } @else if($type == 'darken') {
-        color: darken($color, $amount);
-      } @else {
-        color: $color;
-      }
+      color: lighten($color, $amount) !important;
     }
 
     .btn.#{$name}-#{$offset},
     .fab.#{$name}-#{$offset} {
       @if ($type == 'lighten') {
-        background-color: lighten($color, $amount);
+        background-color: lighten($color, $amount) !important;
       } @else if($type == 'darken') {
-        background-color: darken($color, $amount);
+        background-color: darken($color, $amount) !important;
       } @else {
-        background-color: $color;
+        background-color: $color !important;
       }
 
       &[class^='-hover']:hover {
-        background-color: lighten($color, $amount * 2);
+        background-color: lighten($color, $amount * 2) !important;
       }
     }
 
     .btn.#{$name}-text-#{$offset},
     .fab.#{$name}-text-#{$offset} {
       @if ($type == 'lighten') {
-        color: lighten($color, $amount);
+        color: lighten($color, $amount) !important;
       } @else if($type == 'darken') {
-        color: darken($color, $amount);
+        color: darken($color, $amount) !important;
       } @else {
-        color: $color;
+        color: $color !important;
       }
 
       &[class^='-hover']:hover {
-        color: lighten($color, $amount * 2);
+        color: lighten($color, $amount * 2) !important;
       }
     }
 
@@ -77,21 +65,45 @@
     @if $name == $primary {
       .primary-color-#{$offset} {
         @if ($type == 'lighten') {
-          background-color: lighten($color, $amount);
+          background-color: lighten($color, $amount) !important;
         } @else if($type == 'darken') {
-          background-color: darken($color, $amount);
+          background-color: darken($color, $amount) !important;
         } @else {
-          background-color: $color;
+          background-color: $color !important;
         }
       }
 
       .primary-color-text-#{$offset} {
         @if ($type == 'lighten') {
-          color: lighten($color, $amount);
+          color: lighten($color, $amount) !important;
         } @else if($type == 'darken') {
-          color: darken($color, $amount);
+          color: darken($color, $amount) !important;
         } @else {
-          color: $color;
+          color: $color !important;
+        }
+      }
+
+      .btn.primary-color-hover-#{$offset}:hover,
+      .fab.primary-color-hover-#{$offset}:hover,
+      .primary-color-hover-#{$offset}:hover {
+        @if ($type == 'lighten') {
+          background-color: lighten($color, $amount) !important;
+        } @else if($type == 'darken') {
+          background-color: darken($color, $amount) !important;
+        } @else {
+          background-color: $color !important;
+        }
+      }
+
+      .btn.primary-color-text-hover-#{$offset}:hover,
+      .fab.primary-color-text-hover-#{$offset}:hover,
+      .primary-color-text-hover-#{$offset}:hover {
+        @if ($type == 'lighten') {
+          color: lighten($color, $amount) !important;
+        } @else if($type == 'darken') {
+          color: darken($color, $amount) !important;
+        } @else {
+          color: $color !important;
         }
       }
     }
@@ -99,136 +111,164 @@
     @if $name == $secondary {
       .secondary-color-#{$offset} {
         @if ($type == 'lighten') {
-          background-color: lighten($color, $amount);
+          background-color: lighten($color, $amount) !important;
         } @else if($type == 'darken') {
-          background-color: darken($color, $amount);
+          background-color: darken($color, $amount) !important;
         } @else {
-          background-color: $color;
+          background-color: $color !important;
         }
       }
 
       .secondary-color-text-#{$offset} {
         @if ($type == 'lighten') {
-          color: lighten($color, $amount);
+          color: lighten($color, $amount) !important;
         } @else if($type == 'darken') {
-          color: darken($color, $amount);
+          color: darken($color, $amount) !important;
         } @else {
-          color: $color;
+          color: $color !important;
+        }
+      }
+
+      .btn.secondary-color-hover-#{$offset}:hover,
+      .fab.secondary-color-hover-#{$offset}:hover,
+      .secondary-color-hover-#{$offset}:hover {
+        @if ($type == 'lighten') {
+          background-color: lighten($color, $amount) !important;
+        } @else if($type == 'darken') {
+          background-color: darken($color, $amount) !important;
+        } @else {
+          background-color: $color !important;
+        }
+      }
+
+      .btn.secondary-color-text-hover-#{$offset}:hover,
+      .fab.secondary-color-text-hover-#{$offset}:hover,
+      .secondary-color-text-hover-#{$offset}:hover {
+        @if ($type == 'lighten') {
+          color: lighten($color, $amount) !important;
+        } @else if($type == 'darken') {
+          color: darken($color, $amount) !important;
+        } @else {
+          color: $color !important;
         }
       }
     }
   } @else {
     .#{$name} {
-      background-color: $color;
+      background-color: $color !important;
     }
 
     .#{$name}-text {
-      color: $color;
+      color: $color !important;
     }
 
     .btn.#{$name},
     .fab.#{$name} {
-      background-color: $color;
+      background-color: $color !important;
 
       &[class^='-hover']:hover {
-        background-color: lighten($color, $lighten-darken-amount * 2);
+        background-color: lighten($color, $lighten-darken-amount * 2) !important;
       }
     }
 
     .btn.#{$name}-text,
     .fab.#{$name}-text {
-      color: $color;
+      color: $color !important;
 
       &:hover {
-        color: lighten($color, $lighten-darken-amount * 2);
+        color: lighten($color, $lighten-darken-amount * 2) !important;
       }
     }
 
     .btn.#{$name}-hover:hover,
     .fab.#{$name}-hover:hover,
     .#{$name}-hover:hover {
-      background-color: $color;
+      background-color: $color !important;
     }
 
     .btn.#{$name}-text-hover:hover,
     .fab.#{$name}-text-hover:hover,
     .#{$name}-text-hover:hover {
-      color: $color;
+      color: $color !important;
 
       &[class^='-hover']:hover {
-        color: darken($color, $lighten-darken-amount * 2);
+        color: darken($color, $lighten-darken-amount * 2) !important;
       }
     }
 
     @if $name == $primary {
       .primary-color {
-        background-color: $color;
+        background-color: $color !important;
       }
 
       .btn.primary-color,
       .fab.primary-color {
         &:hover {
-          background-color: lighten($color, $lighten-darken-amount * 2);
+          background-color: lighten($color, $lighten-darken-amount * 2) !important;
         }
       }
 
       .primary-color-text {
-        color: $color;
+        color: $color !important;
       }
     }
 
     @if $name == $secondary {
       .secondary-color {
-        background-color: $color;
+        background-color: $color !important;
       }
 
       .btn.secondary-color,
       .fab.secondary-color {
         &:hover {
-          background-color: lighten($color, $lighten-darken-amount * 2);
+          background-color: lighten($color, $lighten-darken-amount * 2) !important;
         }
       }
 
       .secondary-color-text {
-        color: $color;
+        color: $color !important;
       }
     }
   }
 }
 
+.btn.black,
+.fab.black,
 .black {
-  background-color: #000000;
+  background-color: #000000 !important;
 
   &.btn:hover {
-    background-color: #000000;
+    background-color: #000000 !important;
   }
 }
 
+.btn.black-text,
+.fab.black-text,
 .black-text {
-  color: #000000;
+  color: #000000 !important;
 
   &.btn:hover {
-    color: #000000;
+    color: #000000 !important;
   }
 }
 
+.btn.white,
+.fab.white,
 .white {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
 
   &.btn:hover {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
   }
 }
 
-.white-text-hover:hover {
-  color: #ffffff;
-}
-
+.btn.white-text,
+.fab.white-text,
 .white-text {
-  color: #ffffff;
+  color: #ffffff !important;
 
   &.btn:hover {
-    color: #ffffff;
+    color: #ffffff !important;
   }
 }
 

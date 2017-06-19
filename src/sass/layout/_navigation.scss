@@ -18,47 +18,7 @@ nav {
     z-index: 100;
   }
 
-  &.nav-vertical {
-    flex-direction: row;
-    max-width: 400px;
-    flex: 1;
-    height: 100vh;
-    align-items: flex-start;
-    position: fixed;
-    width: inherit;
-    overflow: auto;
-    z-index: 200;
-
-    ul {
-      flex-flow: column;
-    }
-  }
-
-  .cell {
-    display: flex;
-  }
-
-  .brand {
-    display: flex;
-    flex-flow: column;
-    flex: 0;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 300;
-    white-space: nowrap;
-
-    & > a {
-      display: flex;
-      flex: 1;
-      align-items: center;
-
-      img {
-        max-height: 50px;
-      }
-    }
-  }
-
-  ul {
+  & ul {
     list-style: none;
     display: flex;
     flex-flow: row;
@@ -77,6 +37,16 @@ nav {
 
     & > li {
       display: flex;
+      flex-direction: column;
+
+      & > ul {
+        display: block;
+
+        & > li > a {
+          padding: 0.8rem 3rem;
+          font-size: 0.9rem;
+        }
+      }
 
       & > a {
         padding: 1.4rem 2rem;
@@ -84,8 +54,9 @@ nav {
         display: flex;
         flex: 1;
         align-items: center;
-        letter-spacing: 1px;
+        font-weight: 400;
         color: #ffffff;
+        transition: background-color 0.3s ease-in-out;
       }
 
       & > a:hover {
@@ -95,10 +66,113 @@ nav {
 
       &.active {
         background-color: darken($primary-color, $lighten-darken-amount);
+        color: #ffffff;
+      }
+    }
+  }
 
-        a {
-          color: #ffffff;
+  &.nav-sidebar {
+    flex-direction: row;
+    max-width: 400px;
+    flex: 1;
+    height: 100vh;
+    align-items: flex-start;
+    position: fixed;
+    width: inherit;
+    overflow: auto;
+    z-index: 200;
+    background-color: #ffffff;
+
+    & > ul {
+      flex-flow: column;
+
+      & > li {
+        & > a {
+          color: #000000;
+
+          &:hover {
+            background-color: $light-grey;
+          }
         }
+
+        &.active {
+          background-color: $light-grey;
+        }
+
+        &.collapsible {
+          &.active {
+            background-color: $light-grey;
+          }
+
+          & > a {
+            color: #000000;
+          }
+
+          & > ul {
+            list-style: none;
+            display: flex;
+            flex-flow: row;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            justify-content: flex-end;
+            display: none;
+
+            & > li {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+
+          &.active > ul {
+            display: block;
+            background-color: #ffffff;
+
+            & > li > a {
+              color: #000000;
+            }
+
+            & > li > a {
+              font-weight: 300;
+            }
+
+            & > li.active > a {
+              background-color: darken($primary-color, $lighten-darken-amount);
+              color: #ffffff;
+            }
+
+            & > li > a:hover {
+              background-color: lighten($primary-color, $lighten-darken-amount);
+            }
+
+            & > li:not(.active) > a:hover {
+              background-color: $light-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cell {
+    display: flex;
+  }
+
+  .brand {
+    display: flex;
+    flex-flow: column;
+    flex: 0;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 300;
+
+    & > a {
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      img {
+        max-height: 50px;
       }
     }
   }
